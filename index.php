@@ -1,13 +1,22 @@
 <?php
-
-echo ('Toto je prvni commit.');
-echo '<br>';
-$i = 8;
-
-for ($l = 0; $l < 800; $l+= $i){
-    echo $l;
-    echo '<br>';
-}
-
-echo ('Toto je druhy commit. A vytvoření nové větve.');
+    include '_webSession.php';
+    include_once '_phpFunction.php';
 ?>
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pakoštane 2019</title>
+        <link rel="stylesheet" href="./css/defaultStyle.css" type="text/css">
+        <link rel="icon" type="image/png" href="./img/fav.png"/>
+        <script src="./js/script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <?php
+                include 'structureHeader.php';
+                include 'structureSection.php';
+            ?>
+        </div>
+    </body>
+</html>
