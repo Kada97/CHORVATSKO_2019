@@ -1,0 +1,136 @@
+body{
+    margin: 0;
+    background-color: #272727;
+    color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+hr{
+    margin-bottom:1em;
+    width: 90%;
+}
+
+#header{
+    background-color: rgb(45,45,45);
+    color: #FD7912;
+    text-align: center;
+    font-size: 28pt;
+    line-height: 1.3em;
+    height: 1.3em;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 15px;
+}
+
+#footer{
+    position: absolute;
+    top: 0;
+    background-color: inherit;
+    color: rgb(100,100,100);
+    text-align: center;
+    font-size: 6pt;
+    width: 100%;
+}
+
+#footer p{
+    margin: 0;
+    
+}
+
+#container{
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 100%;
+}
+
+#loginFormDiv {
+    background-color: inherit;
+    position: relative;
+    left: 20%;
+    top: 75px;
+    width: 60%;
+}
+
+#loginMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+}
+
+#loginMinorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    top: 25px;
+    width: 90%;
+}
+
+fieldset {
+    padding: 1em;
+    font: 80% sans-serif;
+    border-radius: 15px;
+    border-color: rgb(45,45,45);
+    color: #73E2AF;
+    display: grid;
+}
+
+#legendLogin{
+    font-size: 1.55em;
+}
+
+fieldset .formRow >label{
+    float:left;
+    width: 35%;
+    margin-right:1em;
+    padding-top:0.2em;
+    text-align:right;
+    font-weight:bold;
+    color: #FD7912;
+    font-size: 2em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.txtField{
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-size: 1.8em;
+    margin-top: 35px;
+    width: 80%;
+    left: 10%;
+    height:40px;
+    background-color: #EEEEEE;
+    color: black;
+    text-align: center;
+}
+
+.submit{
+    position: relative;
+    background-color: rgb(85,85,85);
+    color: #FD7912;
+    left: 37.5%;
+    width: 25%;
+    height: 55px;
+    border-radius: 15px;
+    margin-top: 70px;
+    font-size: 18pt;
+}
+
+.button {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    background-color: inherit;
+    color: white;
+    border: none;
+    display: contents;
+}
