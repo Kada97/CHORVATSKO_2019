@@ -1,22 +1,22 @@
-<div id="form">
-    <form method="POST">
+<div id="loginFormDiv">
+    <form id="loginMajorForm" method="POST">
         <fieldset>
-            <legend>Přihlášení</legend>
+            <legend id="legendLogin" align="center">Přihlášení</legend>
 
             <div class = "formRow">
-                <label for = "nick">Uživatelské jméno: </label>
+                <label for = "username" hidden>Uživatelské jméno: </label>
                 <input class = "txtField" type = "text" id = "username" name = "username" value = "<?php (isset($_SESSION['loginUsername']) ? htmlspecialchars($_SESSION['loginUsername']) : '')?>" placeholder = "Uživatelské jméno" required autofocus autocomplete="off">
             </div>
 
             <div class = "formRow">
-                <label for = "pswd">Heslo: </label>
-                <input class = "txtField" type = "password" id = "password" name = "password" value = "">
+                <label for = "password" hidden>Heslo: </label>
+                <input class = "txtField" type = "password" id = "password" name = "password" placeholder = "Heslo" value = "">
             </div>
 
             <div class = "formRow">
-                <input class="subm" type = "submit" id = "login" name = "login" value = "Přihlásit" >
-                <label for = "Lgin" hidden>Přihlásit</label>
-            </div>
+                <label for = "login" hidden>Přihlásit</label>
+                <input class="submit" type = "submit" id = "login" name = "login" value = "Přihlásit" >
+            </div>  
 
             <?php
                 include '_divErrorMsg.php';
@@ -26,28 +26,26 @@
             
     <hr>
             
-    <form method="POST">
+    <form id="loginMinorForm" method="POST">
         <div class = "formRow">
-            <label for = "butr" hidden>Registrace</label>
-            <button id= "butr" class="butt" name = "registerPage">Registrace</button>
+            <label for = "buttonR" hidden>Registrace</label>
+            <button id= "buttonR" class="button" name = "registerPage">Registrace</button>
         </div>
 
         <div class = "formRow">
-            <label for = "butu" hidden>Zapomenuté uživatelské jméno</label>
-            <button id= "butu" class="butt" name = "forgUsernamePage">Zapomenuté uživatelské jméno</button>
+            <label for = "buttonU" hidden>Zapomenuté uživatelské jméno</label>
+            <button id= "buttonU" class="button" name = "forgUsernamePage">Zapomenuté uživatelské jméno</button>
         </div>
 
         <div class = "formRow">
-            <label for = "butp" hidden>Zapomenuté heslo nebo potřebuji pomoc</label>
-            <button id = "butp" class="butt" name = "forgPasswordPage">Zapomenuté heslo nebo potřebuji pomoc</button>
+            <label for = "buttonP" hidden>Zapomenuté heslo nebo potřebuji pomoc</label>
+            <button id = "buttonP" class="button" name = "forgPasswordPage">Zapomenuté heslo nebo potřebuji pomoc</button>
         </div>
 
         <div class = "formRow">
-            <label for = "butm" hidden>Manuál</label>
-            <button id = "butm" class="butt" name = "readManual">Manuál</button>
+            <label for = "buttonM" hidden>Manuál</label>
+            <button id = "buttonM" class="button" name = "readManual">Manuál</button>
         </div>
     </form>
             
 </div>
-
-<div id="welcomeLogo"></div>

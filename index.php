@@ -12,7 +12,7 @@
         <script src="./js/script.js"></script>
     </head>
     <body>
-        <div class="container">
+        <div id="container">
             <?php
                 include 'structureHeader.php';
                 include 'structureSection.php';
