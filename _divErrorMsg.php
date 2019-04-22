@@ -3,5 +3,3 @@
         (isset($_SESSION['error_msg']) ? htmlspecialchars($_SESSION['error_msg']) : '')
     ?>
 </div>
-
-
