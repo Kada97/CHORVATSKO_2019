@@ -26,9 +26,9 @@
     }
     
     function dbRecount() {
-	include '_webSession.php';
-	include '_connectDB.php';
-        include '_recountDB.php';
+//	include '_webSession.php';
+//	include '_connectDB.php';
+//        include '_recountDB.php';
     }
     
     function numbDay() {
