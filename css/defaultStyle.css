@@ -1,0 +1,419 @@
+body{
+    margin: 0;
+    background-color: #272727;
+    color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+hr{
+    margin-bottom:1em;
+    width: 90%;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+#header{
+    background-color: rgb(45,45,45);
+    color: #FD7912;
+    text-align: center;
+    font-size: 28pt;
+    line-height: 1.3em;
+    height: 1.3em;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 15px;
+}
+
+#footer{
+    position: absolute;
+    top: 0;
+    background-color: inherit;
+    color: rgb(100,100,100);
+    text-align: center;
+    font-size: 6pt;
+    width: 100%;
+}
+
+#footer p{
+    margin: 0;
+    
+}
+
+#container{
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 100%;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+#loginFormDiv {
+    background-color: inherit;
+    position: relative;
+    left: 20%;
+    top: 75px;
+    width: 60%;
+}
+
+#registerFormDiv {
+    background-color: inherit;
+    position: relative;
+    left: 20%;
+    top: 75px;
+    width: 60%;
+}
+
+#forgotUsernameFormDiv {
+    background-color: inherit;
+    position: relative;
+    left: 20%;
+    top: 75px;
+    width: 60%;
+}
+
+#forgotPasswordFormDiv {
+    background-color: inherit;
+    position: relative;
+    left: 20%;
+    top: 75px;
+    width: 60%;
+}
+
+#manualFormDiv {
+    background-color: inherit;
+    position: relative;
+    left: 20%;
+    top: 75px;
+    width: 60%;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* - MAJOR FORMS -------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+#loginMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+}
+
+#registerMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+}
+
+#forgotUsernameMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+}
+
+#forgotPasswordMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* - MINOR FORMS -------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+#loginMinorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    top: 25px;
+    width: 90%;
+}
+
+#registerMinorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    top: 25px;
+    width: 90%;
+}
+
+#forgotUsernameMinorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    top: 25px;
+    width: 90%;
+}
+
+#forgotPasswordMinorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    top: 25px;
+    width: 90%;
+}
+
+#manualMinorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    top: 25px;
+    width: 90%;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+fieldset {
+    padding: 1em;
+    font: 80% sans-serif;
+    border-radius: 15px;
+    border-color: rgb(45,45,45);
+    color: #73E2AF;
+    display: grid;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* - LEGENDS -----------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+#legendLogin {
+    font-size: 1.55em;
+}
+
+#legendRegister {
+    font-size: 1.55em;
+}
+
+#legendForgotUsername {
+    font-size: 1.55em;
+}
+
+#legendForgotPassword {
+    font-size: 1.55em;
+}
+
+#legendManual {
+    font-size: 1.55em;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+fieldset .formRow >label {
+    float:left;
+    width: 35%;
+    margin-right:1em;
+    padding-top:0.2em;
+    text-align:right;
+    font-weight:bold;
+    color: #FD7912;
+    font-size: 2em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.txtField {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-size: 1.8em;
+    margin-top: 25px;
+    width: 80%;
+    left: 10%;
+    height:40px;
+    background-color: #EEEEEE;
+    color: black;
+    text-align: center;
+}
+
+#birthdateLikeRow {
+    padding-top: 20px;
+}
+
+.formRow {
+    margin-top: 5px;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* - DATE LABELS -------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+#birthdateLikeRow > label {
+    position: relative;
+    text-align: left;
+    font-size: 1.5em;
+    color: #6e6e6e;
+    margin: 0;
+    width: 80%;
+    left: 10%;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* - RADIOBUTTONS ------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+#birthdateLikeRow > #sexMale {
+    color: #60c9fa;
+    float: none;
+    position: relative;
+    left: 10%;
+    transform: scale(1.75);
+    top: 20%;
+    height: 50%;
+    margin-right: 20px;
+}
+
+#birthdateLikeRow > #sexFemale {
+    color: #de60fa;
+    float: none;
+    position: relative;
+    left: 10%;
+    transform: scale(1.75);
+    top: 20%;
+    height: 50%;
+    margin-right: 20px;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* - CHECKBOXES --------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+#birthdateLikeRow > #chB1 {
+    color: #de60fa;
+    float: left;
+    position: relative;
+    left: 10%;
+    transform: scale(1.75);
+    top: 20%;
+    height: 50%;
+    margin-right: 20px;
+}
+
+#birthdateLikeRow > #chB2 {
+    color: #de60fa;
+    float: left;
+    position: relative;
+    left: 10%;
+    transform: scale(1.75);
+    top: 20%;
+    height: 50%;
+    margin-right: 20px;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+.txtFieldBirthdayLike {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-size: 1.8em;
+    margin-top: 5px;
+    width: 80%;
+    left: 10%;
+    height:40px;
+    background-color: #EEEEEE;
+    color: black;
+    text-align: center;
+}
+
+.txtFieldBirthdayLikeResult {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-size: 2.9em;
+    margin-top: 5px;
+    width: 80%;
+    left: 10%;
+    height:100px;
+    background-color: #EEEEEE;
+    color: black;
+    text-align: left;
+    color: #73E2AF;
+    background: inherit;
+    border: none;
+    overflow: auto;
+}
+
+.registerMinorForm > .formRow {
+    margin-top: 25px;
+    margin-bottom: 300px;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* - BUTTONS -----------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+.submit {
+    position: relative;
+    background-color: rgb(85,85,85);
+    color: #FD7912;
+    left: 37.5%;
+    width: 25%;
+    height: 55px;
+    border-radius: 15px;
+    margin-top: 70px;
+    font-size: 18pt;
+}
+
+.button {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    background-color: inherit;
+    color: white;
+    border: none;
+    display: contents;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* - ERRORS ------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+#errorDiv {
+    color: #fe4b28;
+    text-align: center;
+    font-size: 1.9em;
+    font-family: "Lucida Console", Monaco, monospace;
+    margin-bottom: -20px;
+    font-weight: bold;
+    animation: blinker 1.2s linear infinite;
+}
+
+.pswdNotMatchRegistration {
+    animation: blinker 1.2s linear infinite;
+    background: #fe4b28;
+}
+
+.pswdMatchRegistration {
+    background: greenyellow;
+}
+
+@keyframes blinker {
+  35% {
+    opacity: 0.35;
+  }
+}
+
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
