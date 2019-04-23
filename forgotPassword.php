@@ -49,22 +49,23 @@
                         
                 $query      = mysqli_query($conn, $queryLog);
             
-                if(mysqli_num_rows($query) == 0){
+                if (mysqli_num_rows($query) == 0) {
                     $_SESSION['error_msg'] = 'Uživatel s těmito daty neexistuje!';
                 }
 
-                if($_SESSION['error_msg'] == ""){
+                if ($_SESSION['error_msg'] == '') {
                     $row = mysqli_fetch_assoc($query);
                     $id = $row['id'];
-                    $sql = "UPDATE users SET needhelp ='PLEASE HELP' WHERE id='".$id."';";
+                    $sql = "UPDATE users SET needhelp ='PLEASE HELP' WHERE id='$id';";
                     $query = mysqli_query($conn, $sql);
                     
                     if ($query) {
                         session_destroy();
                         session_start();
-                        header("Location: .");
-                    } else {
-                        $_SESSION['error_msg'] = "Chyba při vyplňování žádosti";
+                        header('Location: .');
+                    }
+                    else {
+                        $_SESSION['error_msg'] = 'Chyba při vyplňování žádosti';
                     } 
                 }
             }

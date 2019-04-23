@@ -21,7 +21,7 @@
             if ($username == null) {$_SESSION['error_msg'] = 'Uživatelské jméno nevyplněno!';}
             if ($password == null) {$_SESSION['error_msg'] = 'Heslo nevyplněno!';}
             
-            if ($_SESSION['error_msg'] == ''){
+            if ($_SESSION['error_msg'] == '') {
                 include '_connectDB.php';
                 $username   = removeDangerFromString($username);
                 $password   = removeDangerFromString($password);
@@ -36,10 +36,10 @@
                 if ($_SESSION['error_msg'] == '') {
                     $row = mysqli_fetch_assoc($query);
                     
-                    if ($password == $row['password']){
+                    if ($password == $row['password']) {
                         $_SESSION['user']       = $row;
                         $_SESSION['username']   = $username;
-			$_SESSION['userID']	= $row["id"];
+			$_SESSION['userID']	= $row['id'];
                         $_SESSION['loggedin']   = 1;
 
                         $get = mysqli_query($conn, "SELECT * FROM userdata WHERE username = '$username';");

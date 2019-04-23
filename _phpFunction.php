@@ -1,6 +1,6 @@
 <?php
     function removeDangerFromString($wrongString) {
-        include "_connectDB.php";
+        include '_connectDB.php';
         htmlspecialchars($wrongString);
         $newString = stripslashes($wrongString);
         $newString = mysqli_escape_string($conn, $newString);
@@ -10,8 +10,8 @@
     }
     
     function getVerificationCode($base) {
-        $t1     = mb_substr(str_shuffle($base), 1, 1, "utf-8");
-        $t2     = mb_substr(str_shuffle($base), -2,1, "utf-8");
+        $t1     = mb_substr(str_shuffle($base), 1, 1, 'utf-8');
+        $t2     = mb_substr(str_shuffle($base), -2,1, 'utf-8');
         $t3     = chr(rand(97, 122));
         $t4     = rand(0,9);
         $t5     = rand(0,9);
@@ -26,15 +26,15 @@
     }
     
     function dbRecount() {
-	include "_webSession.php";
-	include "_connectDB.php";
-        include "_recountDB.php";
+	include '_webSession.php';
+	include '_connectDB.php';
+        include '_recountDB.php';
     }
     
     function numbDay() {
 	//-21
 	$m = 0;
-	$m += date("i");
+	$m += date('i');
 	$result = $m % 8;
 	if($result == 0){
 	    $result = 9;
@@ -53,7 +53,7 @@
         $u = isset($_SESSION['username']) ? $_SESSION['username'] : 'None' ;
         $d = '';
 
-        foreach ($_POST as $key => $value){
+        foreach ($_POST as $key => $value) {
             $d .= '['.$key.']';
             $d .= ' => ';
             $d .= $value;

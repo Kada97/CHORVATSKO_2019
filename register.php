@@ -89,13 +89,13 @@
         elseif ($agree1 == null) {
             $_SESSION['error_msg'] = 'Je potřeba souhlasit se všemi hodnotami!';
         }
-        else{
+        else {
             $agree1 = 'YES';
         }
         if ($agree2 == null) {
             $_SESSION['error_msg'] = 'Je potřeba souhlasit se všemi hodnotami!';
         }
-        else{
+        else {
             $agree2 = 'YES';
         }
         
@@ -135,9 +135,10 @@
                     unset($_REQUEST);
                     unset($_POST);
                     unset($_GET);
-                    header("Location: .");
-                } else {
-                    $_SESSION['error_msg'] = "Chyba při registraci.";
+                    header('Location: .');
+                }
+                else {
+                    $_SESSION['error_msg'] = 'Chyba při registraci.';
                 }
             }
         }

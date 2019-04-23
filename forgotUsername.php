@@ -52,19 +52,19 @@
                 $_SESSION['error_msg'] = 'V tenhle datum se nikdo z uživatelů nenarodil!';
             }
             
-            if ($_SESSION['error_msg'] == ''){
+            if ($_SESSION['error_msg'] == '') {
                 $queryLog   = "SELECT * FROM users WHERE "
                             . "firstname = '$firstname' AND "
                             . "lastname = '$lastname' AND "
                             . "birthdate = '$birthdate';";
                 $query      = mysqli_query($conn, $queryLog);
             
-                if(mysqli_num_rows($query) == 0){
+                if (mysqli_num_rows($query) == 0) {
                     $_SESSION['error_msg'] = 'Uživatel s touto kombinací dat neexistuje!';
                     sendLog('forgotUsernamePage', 'Pokus o obnovení s kombinací: [Jméno: ' . $firstname . ' Příjmení: ' . $lastname . 'Datum narození: ' . $birthdate . ']' , '1');
                 }
 
-                if($_SESSION['error_msg'] == ''){
+                if ($_SESSION['error_msg'] == '') {
                     $row = mysqli_fetch_assoc($query);
                     $accountUsername = $row['username'];
                     include 'resultForgotUsername.php';     
