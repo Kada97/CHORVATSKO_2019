@@ -78,6 +78,14 @@ hr{
     width: 60%;
 }
 
+#forgotPasswordFormDiv {
+    background-color: inherit;
+    position: relative;
+    left: 20%;
+    top: 75px;
+    width: 60%;
+}
+
 /* ---------------------------------------------------------------------------*/
 /* - MAJOR FORMS -------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
@@ -97,6 +105,13 @@ hr{
 }
 
 #forgotUsernameMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+}
+
+#forgotPasswordMajorForm {
     background-color: inherit;
     position: relative;
     left: 5%;
@@ -131,6 +146,14 @@ hr{
     width: 90%;
 }
 
+#forgotPasswordMinorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    top: 25px;
+    width: 90%;
+}
+
 /* ---------------------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
@@ -157,6 +180,10 @@ fieldset {
 }
 
 #legendForgotUsername {
+    font-size: 1.55em;
+}
+
+#legendForgotPassword {
     font-size: 1.55em;
 }
 
