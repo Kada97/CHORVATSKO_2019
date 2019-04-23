@@ -23,5 +23,3 @@
         </div>
     </form>
 </div>
-        
-<div id="welcomeLogo"></div>

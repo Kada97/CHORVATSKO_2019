@@ -6,10 +6,10 @@
         else{
             foreach ($_POST as $key => $value) {
                 switch ($key) {
-//                    case 'registerPage':    include 'registerPage.php';         break;
-//                    case 'register':        include 'register.php';             break;
-//                    case 'loginPage':       include 'loginPage.php';            break;
-//                    case 'login':           include 'login.php';                break;
+                    case 'registerPage':    include 'registerPage.php';         break;
+                    case 'register':        include 'register.php';             break;
+                    case 'loginPage':       include 'loginPage.php';            break;
+                    case 'login':           include 'login.php';                break;
 //                    case 'forgUsernamePage':include 'forgotUsernamePage.php';   break;
 //                    case 'forgUsernameGet': include 'forgotUsername.php';       break;
 //                    case 'forgPasswordPage':include 'forgotPasswordPage.php';   break;
@@ -19,17 +19,17 @@
             }
         }
         if($_SESSION['error_msg'] != '') {
-            include 'sendErrorMsg.php';
+            sendLog('', '');
         }
     }
-//    else {
-//        echo '<header><nav>';
-//        include 'navigation.php';
-//        echo '</nav></header>';
-//	
-//        if (empty($_POST)) {
-//            include '_home.php';
-//        }
+    else {
+        echo '<header><nav>';
+        include 'navigation.php';
+        echo '</nav></header>';
+	
+        if (empty($_POST)) {
+            include '_home.php';
+        }
 //        else{
 //            foreach ($_POST as $key => $value) {
 //                switch ($key){
@@ -112,7 +112,7 @@
 //            }
 //        }
 //        if (isset($_SESSION) && $_SESSION['error_msg'] != '') {
-//            include 'sendErrorMsg.php';
+//            sendLog('?', $_SESSION['error_msg']);
 //        }
-//    }
+    }
 ?>
