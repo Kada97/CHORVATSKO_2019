@@ -10,10 +10,10 @@
                     case 'register':        include 'register.php';             break;
                     case 'loginPage':       include 'loginPage.php';            break;
                     case 'login':           include 'login.php';                break;
-//                    case 'forgUsernamePage':include 'forgotUsernamePage.php';   break;
-//                    case 'forgUsernameGet': include 'forgotUsername.php';       break;
-//                    case 'forgPasswordPage':include 'forgotPasswordPage.php';   break;
-//                    case 'forgPassword':    include 'forgotPassword.php';       break;
+                    case 'forgUsernamePage':include 'forgotUsernamePage.php';   break;
+                    case 'forgUsernameGet': include 'forgotUsername.php';       break;
+                    case 'forgPasswordPage':include 'forgotPasswordPage.php';   break;
+                    case 'forgPassword':    include 'forgotPassword.php';       break;
                     case 'readManual':      include '_webManual.php';           break;
                 }
             }
