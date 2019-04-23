@@ -57,7 +57,9 @@
                     case 'LOGOUT':              include '_logout.php'; /*logOut();*/break;
 //                    case 'profile':             include 'profile.php'; break;
 //                    case 'settings':            include 'settings.php'; break;
-//                    case 'about':               include 'about.php'; break;
+                    case 'about':               include 'about.php'; break;
+                    case 'aboutCurrency':       include 'coinsComparePage.php'; break;
+                    case 'manuals':             include 'manualsAndInstructions.php'; break;
 //                    case 'coinManager':         include 'coinManager.php'; break;
 //                    case 'confirmCoins':        include 'confirmCoins.php'; break;
 //                    case 'sendMoneyPage':       include 'sendMoneyPage.php'; break;
@@ -87,7 +89,7 @@
 //                            case 'dayQuestion':         include 'dayQuestionPage.php'; break;
 //                            case 'gameResults':         include 'gameResultsPage.php'; break;
 //                            case 'achievements':        include 'achievementsPage.php'; break;
-//                            case 'aboutCoins':          include 'coinsComparePage.php'; break;
+                             case 'aboutCurrency':        include 'coinsComparePage.php'; break;
 //                            case 'uplGall':             include 'uplGalleryPage.php'; break;
 //                            case 'caldC':               include 'calendarCamp.php'; break;
 //                            case 'caldD':               include 'calendarDay.php'; break;
@@ -96,14 +98,10 @@
 //                            case 'confirmCoins':        include 'confirmCoins.php'; break;
 //                            case 'sendMoneyPage':       include 'sendMoneyPage.php'; break;
 //                            case 'sendMoney':           include 'sendMoney.php'; break;
-//
-                            case 'LOGOUT':              include '_logout.php'; /*logOut();*/break;
 //                            case 'profile':             include 'profile.php'; break;
 //                            case 'settings':            include 'settings.php'; break;
-//                            case 'about':               include 'about.php'; break;
-//                            case 'profile':             include 'profile.php'; break;
-//                            case 'settings':            include 'settings.php'; break;
-//                            case 'about':               include 'about.php'; break;
+                            case 'manuals':             include 'manualsAndInstructions.php'; break;
+                            case 'about':               include 'about.php'; break;
                             case 'LOGOUT':              include '_logout.php'; /*logOut();*/break;
                             case 'home':                include '_home.php';break;
                             default:                    $key = 'home'; $value = 'home';
@@ -111,8 +109,8 @@
                 }
             }
         }
-//        if (isset($_SESSION) && $_SESSION['error_msg'] != '') {
-//            sendLog('', $_SESSION['error_msg']);
-//        }
+        if (isset($_SESSION) && $_SESSION['error_msg'] != '') {
+            sendLog('', $_SESSION['error_msg']);
+        }
     }
 ?>

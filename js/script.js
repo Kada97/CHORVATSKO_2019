@@ -13,6 +13,10 @@ function go(){
 //    
 }
 
+function goManInstr(){
+    document.homeNavManInstr.submit();
+}
+
 function setJsActive() {
     document.getElementById("jsActive").value = 1;
 }

@@ -94,11 +94,11 @@
                 </option>
                 <option value = "ratT">
                     Žebříček týmů
-                </option>
+                </option>-->
                 <option value = "profile">
                     Můj profil
                 </option>
-                <option value = "team">
+                <!--<option value = "team">
                     Můj tým
                 </option>
                 <option value = "gameResults">
@@ -133,13 +133,13 @@
                 </option>
                 <option value = "sendMoneyPage">
                     Poslat peníze
-                </option>
-                <option value = "aboutCoins">
-                    Jak vypadají žetony
+                </option>-->
+                <option value = "manuals">
+                    Návody a pokyny
                 </option>
                 <option value = "about">
                     O tomto webu
-                </option>-->
+                </option>
                 <option value = "LOGOUT">
                     Logout
                 </option>
