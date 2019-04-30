@@ -1,139 +1,79 @@
-<div id="navBar">
-<?php
-    if (isSet($_SESSION['username'])) {
-	if ($_SESSION['username'] == "Admin") {
-	   
-        echo    '<form method="POST">
-	    ';/*
-                    <label for = "buttHom" hidden>Přehled</label>
-                    <button id= "buttHom" name = "home" class="navButton">Přehled</button>
-			
-                    <label for = "buttRatU" hidden>Žebříček uživatelů</label>
-                    <button id= "buttRatU" name = "ratU" class="navButton">Žebříček uživatelů</button>
-		    
-		    <label for = "buttRatT" hidden>Žebříček týmů</label>
-                    <button id= "buttRatT" name = "ratT" class="navButton">Žebříček týmů</button>
-
-		    <label for = "buttAddPic" hidden>Přidat obrázek</label>
-                    <button id= "buttAddPic" name = "addPicPage" class="navButton">Přidat obrázek</button>
-		    
-		    <label for = "buttDQu" hidden>Hádanky</label>
-                    <button id= "buttDQu" name = "dayQuestion" class="navButton">Hádanky</button>
-
-		    <label for = "buttPublGall" hidden>Galerie</label>
-                    <button id= "buttPublGall" name = "publGall" class="navButton">Galerie</button>
-		    
-		    <label for = "buttUseCode" hidden>Uplatnit kód</label>
-                    <button id= "buttUseCode" name = "useCodePage" class="navButton">Uplatnit kód</button>
-
-		    <label for = "buttPrivGall" hidden>Soukromá galerie</label>
-                    <button id= "buttPrivGall" name = "privGall" class="navButton">Soukromá galerie</button>
-	 
-		    <label for = "buttDownPublAll" hidden>Stáhnout všechny veřejné obrázky</label>
-                    <button id= "buttDownPublAll" name = "buttDownPublAll" class="navButton">Stáhnout všechny veřejné obrázky</button>
-		    
-        '; */
-//        if(isset($_SESSION["admin"]) && $_SESSION["username"] == "Admin"){echo'
-//                    ';/*<label for = "buttAddT" hidden>Přidat tým</label>
-//                    <button id= "buttAddT" name = "addT" class="navButton">Přidat tým</button>*/;echo'
-//                    <label for = "buttAddCode" hidden>Přidat kód</label>
-//                    <button id= "buttAddCode" name = "addNewCodePage" class="navButton">Přidat kód</button>
-//                    <label for = "buttEditUser" hidden>Upravit uživatele</label>
-//                    <button id= "buttEditUser" name = "editUserPage" class="navButton">Upravit uživatele</button>
-//		    <label for = "buttCoinMan" hidden>Žetonový manager</label>
-//                    <button id= "buttCoinMan" name = "coinManager" class="navButton">Žetonový manager</button>
-//        ';}            
-//        echo    '</form>'; 
-	/*
-            echo    '<form method="POST" name = "homeNav" id = "homeOptions">
-                        <div class="navSelect">
-                            <label for = "homeOption" hidden>Option</label>
-                            <select id = "homeOption" name = "homeOption" onChange="go()" >
-                                <option value="msg" disabled selected hidden>
-                                    Menu
-                                </option>
-                                <option value = "profile">
-                                    Můj profil
-                                </option>
-                                <option value = "team">
-                                    Můj tým
-                                </option>
-                                <option value = "about">
-                                    About us
-                                </option>
-                                <option value = "LOGOUT">
-                                    Logout
-                                </option>
-                            </select>
-                        </div>
-                    </form>';
-	*/}
-	    
-///////////////////////////////////////	
-///////////////////////////////////////
-    }?>	    
-    
-    <form method="POST" name = "homeNav" id = "mobileOptions">
+<div id="navBar" <?php echo (isset($_SESSION['loggedin'])) ? '' : 'hidden' ?>>
+   
+    <!--NON-ADMIN MENU-->
+    <?php 
+        echo (isSet($_SESSION['username']) && $_SESSION['username'] == 'Admin')
+        ? '<!--'
+        : ''
+    ?>
+    <form method="POST" 
+          name = "homeNav" 
+          id = "mobileOptions" 
+          <?php echo (isSet($_SESSION['username']) && $_SESSION['username'] == 'Admin')
+          ? 'hidden disabled'
+          : ''
+          ?>
+    >
         <div class="navSelectMobile">
             <label for = "mobileOptions" hidden>Menu</label>
             <select id = "mobileOptions" name = "mobileOptions" onChange="go()" >
                 <option value="msg" disabled selected hidden>
                     Menu
                 </option>
-<!--                    <option value = "home">
+                <option value = "home" disabled>
                     Přehled
                 </option>
-                <option value = "caldC">
+                <option value = "caldC" disabled>
                     Kalendář celého tábora
                 </option>
-                <option value = "caldD">
+                <option value = "caldD" disabled>
                     Kalendář dne
                 </option>
-                <option value = "ratU">
+                <option value = "ratU" disabled>
                     Žebříček uživatelů
                 </option>
-                <option value = "ratT">
+                <option value = "ratT" disabled>
                     Žebříček týmů
-                </option>-->
-                <option value = "profile">
+                </option>
+                <option value = "profile" disabled>
                     Můj profil
                 </option>
-                <!--<option value = "team">
+                <option value = "team" disabled>
                     Můj tým
                 </option>
-                <option value = "gameResults">
+                <option value = "gameResults" disabled>
                     Výsledky z her
                 </option>
-                <option value = "achievements">
+                <option value = "achievements" disabled>
                     Rekordy
                 </option>
-                <option value = "gameSpiner">
+                <option value = "gameSpiner" disabled>
                     Hra Automat
                 </option>
-                <option value = "addPicPage">
+                <option value = "addPicPage" disabled>
                    Přidat obrázek
                 </option>
-                <option value = "publGall">
+                <option value = "publGall" disabled>
                     Galerie
                 </option>
-                <option value = "privGall">
+                <option value = "privGall" disabled>
                     Soukromá galerie
                 </option>
-                <option value = "uplGall">
+                <option value = "uplGall" disabled>
                     Všechny mé uploadované obrázky
                 </option>
-                <option value = "buttDownPublAll">
+                <option value = "buttDownPublAll" disabled>
                     Stáhnout vše veřejné
                 </option>
-                <option value = "dayQuestion">
+                <option value = "dayQuestion" disabled>
                    Hádanky
                 </option>
-                <option value = "useCodePage">
+                <option value = "useCodePage" disabled>
                     Použít kód
                 </option>
-                <option value = "sendMoneyPage">
+                <option value = "sendMoneyPage" disabled>
                     Poslat peníze
-                </option>-->
+                </option>
                 <option value = "manuals">
                     Návody a pokyny
                 </option>
@@ -146,5 +86,46 @@
             </select>
         </div>
     </form>
-</div>
+    <?php echo (isSet($_SESSION['username']) && $_SESSION['username'] == 'Admin') ? '-->' : ''; ?>
     
+    <!--ADMIN MENU-->
+    <?php echo (isSet($_SESSION['username']) && $_SESSION['username'] == 'Admin') ? '' : '<!--'; ?>
+    
+    <form method="POST" 
+          name = "homeNavAdmin" 
+          id = "mobileOptions" 
+        <?php echo (isSet($_SESSION['username']) && $_SESSION['username'] == 'Admin') ? '' : 'hidden disabled ' ?>
+    >  
+        <div class="navSelectMobile">
+            <label for = "mobileOptions" hidden>Admin menu</label>
+            <select id = "mobileOptions" name = "mobileOptions" onChange="goAdmin()" >
+                <option value="msg" disabled selected hidden>
+                    Admin menu
+                </option>
+                <option value = "addNewTeamPage">
+                    Přidat tým
+                </option>
+                <option value = "addNewCodePage">
+                    Přidat kód
+                </option>
+                <option value = "editUserPage">
+                    Upravit uživatele
+                </option>
+                <option value = "bankManager">
+                    Bankovní manažer
+                </option>
+                
+                
+                
+                
+                
+                
+                <option value = "LOGOUT">
+                    Logout
+                </option>
+            </select>
+        </div>
+    </form>
+    <?php echo (isSet($_SESSION['username']) && $_SESSION['username'] == 'Admin') ? '' : '-->' ?>
+    
+</div>

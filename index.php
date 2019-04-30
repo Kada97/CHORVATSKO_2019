@@ -12,6 +12,9 @@
         <script src="./js/script.js"></script>
     </head>
     <body>
+        <?php 
+            include '_allDebug.php'; 
+        ?>
         <div id="container">
             <?php
                 include 'structureHeader.php';

@@ -17,6 +17,10 @@ function goManInstr(){
     document.homeNavManInstr.submit();
 }
 
+function goAdmin(){
+    document.homeNavAdmin.submit();
+}
+
 function setJsActive() {
     document.getElementById("jsActive").value = 1;
 }
@@ -93,7 +97,6 @@ function closeTab(){
     pswdC.addEventListener("blur",validatePasswords);
 
     form.addEventListener("submit",function (e) {
-        validateEmail(e);
         validatePasswords(e);
     });
 

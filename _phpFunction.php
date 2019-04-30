@@ -48,18 +48,20 @@
     function sendLog($location, $what, $priority = 0) {
         include '_connectDB.php';
         
-        $w = $what != '' ? $what : $_SESSION['error_msg'];
-        $l = $location != '' ? $location : $_SESSION['error_location'];
+        $w = $what != '' ? $what : (isset($_SESSION['error_msg']) ? $_SESSION['error_msg'] : '');
+        $l = $location != '' ? $location : (isset($_SESSION['error_location']) ? $_SESSION['error_location'] : '');
         $u = isset($_SESSION['username']) ? $_SESSION['username'] : 'None' ;
         $d = '';
 
-        foreach ($_POST as $key => $value) {
-            $d .= '['.$key.']';
-            $d .= ' => ';
-            $d .= $value;
-            $d .= '  |  ';
+        if (isset($_POST)) {
+            foreach ($_POST as $key => $value) {
+                $d .= '['.$key.']';
+                $d .= ' => ';
+                $d .= $value;
+                $d .= '  |  ';
+            }
         }
-
+        
         $loggerQuery = "INSERT INTO logger (who, location, what, detail, priority) VALUES ('$u', '$l', '$w', '$d', '$priority');";
         $logger = mysqli_query($conn, $loggerQuery) or die(mysqli_error($conn));
         
