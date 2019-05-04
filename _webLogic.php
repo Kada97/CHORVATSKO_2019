@@ -38,27 +38,29 @@
                     case 'addNewTeam':          include 'addNewTeam.php';               break;
                     case 'addNewCode':          include 'addNewCode.php';               break;
                     case 'confirmCoins':        include 'confirmCoins.php';             break;
+                    case 'addNewPic':           include 'addNewPicture.php'; break;
                     default:
                         //If not buttons, then select-option menu
                         switch ($value) {
                             //ADMIN cases
                             case 'addNewTeamPage':      include 'addNewTeamPage.php';           break;
                             case 'addNewCodePage':      include 'addNewCodePage.php';           break;
-                            case 'bankManager':         include 'coinManager.php';              break;
+                            case 'bankManager':         include 'coinManagerPage.php';          break;
             
                             //USER cases
 
-                            case 'home':                include '_home.php'; break;
+                            case 'home':                include '_home.php';                    break;
                             
                             //USER and HOST cases
 
-                            case 'aboutCurrency':       include 'coinsComparePage.php'; break;
-                            case 'manuals':             include 'manualsAndInstructions.php'; break;
-                            case 'about':               include 'about.php'; break;
+                            case 'aboutCurrency':       include 'coinsComparePage.php';         break;
+                            case 'manuals':             include 'manualsAndInstructions.php';   break;
+                            case 'about':               include 'about.php';                    break;
+                            case 'addPicPage':          include 'addNewPicturePage.php';        break;
 
                             //EVERYONE cases
 
-                            case 'LOGOUT':              include '_logout.php'; break;
+                            case 'LOGOUT':              include '_logout.php';                  break;
                             default:                    $key = 'home'; $value = 'home';
 
                             //OLD cases
@@ -69,8 +71,6 @@
             //                            case 'editUserPage':        include 'editUserPage.php'; break;
             //                            case 'editUserPrep':        include 'editUserPrep.php'; break;
             //                            case 'editUser':            include 'editUser.php'; break;
-            //                            case 'addPicPage':          include 'addNewPicturePage.php'; break;
-            //                            case 'addNewPic':           include 'addNewPicture.php'; break;
             //                            case 'publGall':            include 'publicGalleryPage.php'; break;
             //                            case 'privGall':            include 'privateGalleryPage.php'; break;
             //                            case 'buttDownPublAll':     include 'downloadAllPublicPictures.php'; break;

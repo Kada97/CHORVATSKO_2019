@@ -24,7 +24,7 @@
                 <input type="number" 
                        class = "txtFieldBirthdayLike"
                        name="forType" 
-                       value = "<?php (isset($_SESSION['addNewCodeForType']) ? htmlspecialchars($_SESSION['addNewCodeForType']) : '')?>"
+                       value = "<?php echo (isset($_SESSION['addNewCodeForType']) ? htmlspecialchars($_SESSION['addNewCodeForType']) : '')?>"
                        min="1" 
                        max="2" 
                        required
@@ -38,7 +38,7 @@
                        id = "valueCode" 
                        name = "valueCode" 
                        placeholder="Nominální hodnota kódu"
-                       value = "<?php (isset($_SESSION['addNewCodeValueCode']) ? htmlspecialchars($_SESSION['addNewCodeValueCode']) : '')?>"
+                       value = "<?php echo (isset($_SESSION['addNewCodeValueCode']) ? htmlspecialchars($_SESSION['addNewCodeValueCode']) : '')?>"
                        required
                        >
             </div>
@@ -59,7 +59,7 @@
                        class = "txtFieldBirthdayLike"
                        min="1" 
                        max="6" 
-                       value = "<?php (isset($_SESSION['addNewCodeTypeGame']) ? htmlspecialchars($_SESSION['addNewCodeTypeGame']) : '')?>"
+                       value = "<?php echo (isset($_SESSION['addNewCodeTypeGame']) ? htmlspecialchars($_SESSION['addNewCodeTypeGame']) : '')?>"
                        required=""
                        >
             </div>

@@ -150,6 +150,13 @@ hr{
     margin-top: 50px;
 }
 
+#bankManagerMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    margin-top: 50px;
+}
 /* ---------------------------------------------------------------------------*/
 /* - MINOR FORMS -------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
@@ -274,6 +281,53 @@ fieldset .formRow > label {
 
 .formRow {
     margin-top: 5px;
+}
+
+#bankManagerRow {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.bankManagerCoinLabel {
+    position: relative;
+    left: 29.5% !important;
+    width: 7.5% !important;
+    margin-right:0 !important;
+    padding-top:0.2em !important;
+    text-align:right !important;
+    font-weight:bold !important;
+    color: #FD7912 !important;
+    font-size: 2em !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+.bankManagerUserLabel {
+    position: relative;
+    left: 29.5% !important;
+    width: 7.5% !important;
+    margin-right:0 !important;
+    padding-top:0.2em !important;
+    text-align:right !important;
+    font-weight:bold !important;
+    color: #FD7912 !important;
+    font-size: 2em !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+.bankManagerValueField {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-size: 1.8em;
+    width: 25%;
+    left: 30%;
+    height:40px;
+    background-color: #EEEEEE;
+    color: black;
+    text-align: right;
 }
 
 /* ---------------------------------------------------------------------------*/

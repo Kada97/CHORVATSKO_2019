@@ -50,7 +50,7 @@
                 <option value = "gameSpiner" disabled>
                     Hra Automat
                 </option>
-                <option value = "addPicPage" disabled>
+                <option value = "addPicPage">
                    Přidat obrázek
                 </option>
                 <option value = "publGall" disabled>
