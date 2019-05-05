@@ -50,6 +50,8 @@
                             //USER cases
 
                             case 'home':                include '_home.php';                    break;
+                            case 'privGall':            include 'privateGalleryPage.php';       break;
+                            
                             
                             //USER and HOST cases
 
@@ -59,8 +61,9 @@
                             case 'addPicPage':          include 'addNewPicturePage.php';        break;
 
                             //EVERYONE cases
-
-                            
+                        
+                            case 'uplGall':             include 'uplGalleryPage.php';           break;
+                            case 'publGall':            include 'publicGalleryPage.php';        break;
                             case 'calendar':            include 'calendarCamp.php';             break;
                             case 'LOGOUT':              include '_logout.php';                  break;
                             default:                    $key = 'home'; $value = 'home';
@@ -73,8 +76,7 @@
             //                            case 'editUserPage':        include 'editUserPage.php'; break;
             //                            case 'editUserPrep':        include 'editUserPrep.php'; break;
             //                            case 'editUser':            include 'editUser.php'; break;
-            //                            case 'publGall':            include 'publicGalleryPage.php'; break;
-            //                            case 'privGall':            include 'privateGalleryPage.php'; break;
+            //                            
             //                            case 'buttDownPublAll':     include 'downloadAllPublicPictures.php'; break;
             //                            case 'ratU':                include 'ratingUsersPage.php'; break;
             //                            case 'viewUserPrep':        include 'viewUserPrep.php'; break;
@@ -86,7 +88,6 @@
             //                            case 'gameResults':         include 'gameResultsPage.php'; break;
             //                            case 'achievements':        include 'achievementsPage.php'; break;
 
-            //                            case 'uplGall':             include 'uplGalleryPage.php'; break;
             //                            case 'gameSpiner':          include 'gameSpiner.php'; break;  
             //                            
             //                            case 'sendMoneyPage':       include 'sendMoneyPage.php'; break;

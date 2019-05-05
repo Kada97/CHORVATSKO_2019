@@ -50,13 +50,13 @@
                 <option value = "addPicPage">
                    Přidat obrázek
                 </option>
-                <option value = "publGall" disabled>
+                <option value = "publGall">
                     Galerie
                 </option>
-                <option value = "privGall" disabled>
+                <option value = "privGall">
                     Soukromá galerie
                 </option>
-                <option value = "uplGall" disabled>
+                <option value = "uplGall">
                     Všechny mé uploadované obrázky
                 </option>
                 <option value = "buttDownPublAll" disabled>
@@ -117,7 +117,15 @@
                 <option value = "addPicPage">
                    Přidat obrázek
                 </option>
-                
+                <option value = "publGall">
+                    Galerie
+                </option>
+                <option value = "privGall">
+                    Soukromá galerie
+                </option>
+                <option value = "uplGall">
+                    Všechny mé uploadované obrázky
+                </option>
                 
                 
                 
