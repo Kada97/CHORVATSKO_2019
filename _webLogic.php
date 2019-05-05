@@ -60,6 +60,8 @@
 
                             //EVERYONE cases
 
+                            
+                            case 'calendar':            include 'calendarCamp.php';             break;
                             case 'LOGOUT':              include '_logout.php';                  break;
                             default:                    $key = 'home'; $value = 'home';
 
@@ -85,8 +87,6 @@
             //                            case 'achievements':        include 'achievementsPage.php'; break;
 
             //                            case 'uplGall':             include 'uplGalleryPage.php'; break;
-            //                            case 'caldC':               include 'calendarCamp.php'; break;
-            //                            case 'caldD':               include 'calendarDay.php'; break;
             //                            case 'gameSpiner':          include 'gameSpiner.php'; break;  
             //                            
             //                            case 'sendMoneyPage':       include 'sendMoneyPage.php'; break;

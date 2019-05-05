@@ -23,11 +23,8 @@
                 <option value = "home" disabled>
                     Přehled
                 </option>
-                <option value = "caldC" disabled>
-                    Kalendář celého tábora
-                </option>
-                <option value = "caldD" disabled>
-                    Kalendář dne
+                <option value = "calendar">
+                    Kalendář
                 </option>
                 <option value = "ratU" disabled>
                     Žebříček uživatelů
@@ -66,7 +63,7 @@
                     Stáhnout vše veřejné
                 </option>
                 <option value = "dayQuestion" disabled>
-                   Hádanky
+                    Hádanky
                 </option>
                 <option value = "useCodePage" disabled>
                     Použít kód
@@ -101,6 +98,9 @@
             <select id = "mobileOptions" name = "mobileOptions" onChange="goAdmin()" >
                 <option value="msg" disabled selected hidden>
                     Admin menu
+                </option>
+                <option value = "calendar">
+                    Kalendář
                 </option>
                 <option value = "addNewTeamPage">
                     Přidat tým

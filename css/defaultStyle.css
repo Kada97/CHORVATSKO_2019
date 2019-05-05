@@ -619,5 +619,28 @@ select option:disabled {
 }
 
 /* ---------------------------------------------------------------------------*/
+/* - CALENDAR ----------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
-/* ---------------------------------------------------------------------------*/
+
+#fieldsetCalendar {
+    position: relative;
+    width: 50%;
+    left: 25%;
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-top: 10px;
+    
+}
+
+.calendarDay {
+    color: #FD7912;
+}
+
+.calendarDayDetail {
+    color: #73E2AF;
+}
+
+.calendarDayDetailRow {
+    color: #60c9fa;
+}
+
