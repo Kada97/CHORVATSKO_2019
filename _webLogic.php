@@ -38,7 +38,7 @@
                     case 'addNewTeam':          include 'addNewTeam.php';               break;
                     case 'addNewCode':          include 'addNewCode.php';               break;
                     case 'confirmCoins':        include 'confirmCoins.php';             break;
-                    case 'addNewPic':           include 'addNewPicture.php'; break;
+                    case 'addNewPic':           include 'addNewPicture.php';            break;
                     default:
                         //If not buttons, then select-option menu
                         switch ($value) {

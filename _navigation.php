@@ -114,7 +114,9 @@
                 <option value = "bankManager">
                     Bankovní manažer
                 </option>
-                
+                <option value = "addPicPage">
+                   Přidat obrázek
+                </option>
                 
                 
                 

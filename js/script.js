@@ -99,6 +99,23 @@ function closeTab(){
     form.addEventListener("submit",function (e) {
         validatePasswords(e);
     });
+    
+function pictureRightsSelect(myVal) {
+    if (myVal == 'user'){
+        ifTouser.classList.remove("hiding");
+    }
+    else {
+        ifTouser.classList.add("hiding");
+    }
+    
+    if (myVal == 'other'){
+        choosePurpose.classList.remove("hiding");
+    }
+    else {
+        choosePurpose.classList.add("hiding");
+    }
+    
+}    
 
 
 
