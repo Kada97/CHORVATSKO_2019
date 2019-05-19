@@ -1,0 +1,182 @@
+Všechny soutìe mají svou obtínostní kategorii.
+Ke kadé obtínostní kategorii je evidováno rozmezí moného penìního ohodnocení.
+Všechny vısledky je nutné pøepoèíst na procenta.
+Procenta budou graficky ve formátu %.
+Procenta budou poèetnì ve formátu èíselného koeficientu na škále mezi 0 a 1 s max 4 desetinnımi místy.
+
+Reálnı vısledek soutìe (skóre, peníze), kterı tım dostane je poèítán vzorcem:
+
+procenta_koef * ohodnocení = SCORE
+vısledek bude vdy zaokrouhlen na celá èísla dle standardních matematickıch pravidel.
+
+napø.:
+úspìšnost tımu = 81,75%
+rozpoèet soutìe = 700
+
+
+0,8175 * 700 = 572,25 => 572
+
+
+Podle charakteru soutìe se bude lišit zpùsob pøepoèítávání.
+
+Kadá soutì má svùj pøedpoklad vısledku - odhadovanı èas èi odhadované nasbírané pøedmìty apod.
+Kadı v soutìi skonèí jinak a proto tento pøedpoklad vısledku je potøeba dál rozvinout k zachování rovnováhy celého systému.
+
+Nastavením ideální hodnoty rozumíme tedy nastavení jistého pøedpokladu, kterı bude pro úèel pøepoètu na procenta tvoøit celek, 
+aby bylo moné k nìjaké hodnotì procenta vùbec dopoèítat.
+
+V pøípadì, e se bude uvaovat o nastavení ideální hodnoty, lze postupova následovnì:
+a) nastavit ideální hodnotu odhadem pøed zahájením soutìe
+b) nastavit ideální hodnotu po diskusi pøed zahájením soutìe
+c) nastavit ideální hodnotu po soutìi s ohledem na vısledky - odhadem
+d) nastavit ideální hodnotu po soutìi s ohledem na vısledky - prùmìr
+e) nastavit ideální hodnotu po soutìi s ohledem na vısledky, 
+	pokud budou velice špatné nebo rozdíl mezi 
+	prvním a posledním bude extrémní 			- hodnota nad prùmìrem a k nejlepším, klidnì i pøes 
+								(èím více se vzdaluje hodnota od prùmìru smìrem k nejlepšímu, 
+								tím více se sráí odstup jednotlivıch vısledkù, jinımi slovy:
+									- nejlepším se ubírá a slabším se pøidává
+									- vše matematicky správnì, zachovává se pomìr
+									- sníí se tím riziko nenávratného skóre odskoèení od standardu)
+
+
+
+Varianty pøepoètù a rùznıch zpùsobù vısledkù her:
+
+1)
+Je danı èas, a vznikne rùznı vısledek napøíklad váha vytøídìné èoèky ze smìsi.
+- znám tedy poèet maximální váhy èoèky ve smìsi
+- jednoduše udìlám pomìr
+- èas nehraje roli
+
+2) 
+Je danı poadavek a vznikne jeho rùzné dokonèení, napøíklad máte vytøídit všechnu èoèku ze smìsi.
+- znám tedy namìøenı èas, je mùe bıt diametrálnì odlišnı v kadém tımu
+- èas pøevádíme na sekundy
+- nyní se musí pøistoupit k pøidìlení ideální hodnoty èasu
+- pozor! - vyšší èas neznamená lepší skóre, ale naopak. Musí se postupovat inverznì.
+- kolik je smìsi a èoèky, nehraje roli
+
+3)
+Jsou dané pokusy, øešíme abilitu, zda byl poadavek v rámci pokusu splnìn, napøíklad pøíchod na snídani a pøítomnost pøesnì v 8:00 - buï tam je nebo není
+- jednoduchá logika pøidìlování vıher: ANO / NE
+- v tu chvíli vznikne pomìr úspìšnıch pokusù a všech pokusù
+- èas ani hodnoty nehrají roli
+
+4)
+Jsou dané pokusy, øešíme vısledky jednotlivıch pokusù, které se sèítají, napøíklad lukostøelba
+- pokusy pøedstavují èas, kterı se nyní nemusí øešit
+- vısledky pokusy se seètou - nasbírané body a maximální body, vznikne tedy pomìr
+- jednotlivé pokusy ani èas nehrají roli
+
+5)
+Je danı èas a vznikne rùznı vısledek, napøíklad váha jednotlivıch surovin z vytøídìné smìsi èoèky, rıe a fazolí
+- známe maximální váhy jednotlivıch surovin ve smìsi
+- známe vytøídìné váhy surovin
+- vznikne tedy pomìr
+- s ohledem na praktiènost - rıe se tøídí o mnoho hùøe ne- li hrách, proto bude mít vyšší hodnotu ne lehce vysbírané suroviny
+- rozdìlíme tedy jednotlivé hodnoty koeficientù jednotlivım surovinám podle sloitosti, napøíklad èoèka: 4, rıe: 9, fazole: 2
+- koeficienty seèteme: 4 + 9 + 2 = 15
+- souètem koeficientù vydìlíme rozpoèet (100%) a získáme 6,667% na jeden díl - ty zpìtnì vynásobíme koeficienty
+- získáme e hodnota dílù pro suroviny je: èoèka 26,67%, rıe: 60%, fazole: 13,33%
+- nyní známe hodnotu dílù pro suroviny, do kterıch rozpoèteme vısledné pomìry
+- pokud bylo vytøídìno èoèky: 600/1000g (60%), rıe: 100/500g (20%), fazolí: 1000/1000g (100%), zasadíme tyto pomìry do vypoèítanıch dílù
+- pokud je 26,67 celek, 60% tvoøí 16, pokud je 60 celek, 20% tvoøí 12, pokud je 13,33 celek, 100% je 13,33
+- vısledky seèteme: 16 + 12 + 13,33 = 41,33
+- èas nehraje roli, princip tkví v rozdìlení celku na díly a jejich jednotlivım naplòování
+
+6)
+Jsou dané bodovací faktory a vısledek je ohodnocován, mnohdy subjektivnì s maximálním potenciálem objektivity, napøíklad hodnocení fotografií
+- Je daná tabulka faktorù, které mají svou maximální hodnotu v bodech (napø. 1, 2, 3, 5, 10, ... - logicky zadané pro danı parametr)
+- v pøípadì, e jednotlivé faktory jsou ohodnoceny stejnì maximální hodnotou, v dalším postupu je moné postupovat dvìma zpùsoby
+- jedním zpùsobem je seèíst maximální moné ohodnocení všech faktorù a seèíst veškeré pøidìlené body, získáme pomìr, kterı je vısledkem
+- druhım zpùsobem docílíme stejného vısledku v pøípadì stejnıch maximálních hodnot, ale v pøípadì rùznıch hodnot je nutno postupovat postupem níe
+- v pøípadì, e jednotlivé faktory jsou ohodnoceny rùznou maximální hodnotou, je potøeba postupovat pøesnì podle zadání, napsaného níe
+- za kadı faktor spoèteme pomìr, jak moc byl úspìšnı
+- vısledné pomìry seèteme a vydìlíme poètem faktorù, vznikne prùmìrná hodnota zadanıch bodù vèetnì zapoèítání rùzné váhy
+
+7)
+PODOBNÉ PØEDCHOZÍMU
+Jsou dané bodovací faktory a vısledek je ohodnocován, mnohdy subjektivnì s maximálním potenciálem objektivity, napøíklad hodnocení fotografií
+- Maximální hodnota bodù mùe bıt rozdílná, proto vdy body dopoèítáme dosazením na 10
+- z 1/1 -> 10/10, z 4/5 -> 8/10, z 3/6 -> 5/10, ze 3/9 -> 3/10, ze 2/3 -> 7/10, ze 7/8 -> 9/10
+- pøevádìním (dosazením) na 10 se stane to, e jsme nuceni zaokrouhlovat a to bude hrát hlavní roli ve vısledcích, nebo toto eliminuje moné dilema 
+- VŠECHNY ZÍSKANÉ body v tabulce seèteme
+- následnì odstaníme duplicity, pokud má nìkdo stejnou hodnotu, postupujeme NAVİŠENÍM hodnoty jednomu z nich
+- v pøípadì, e se jedná o evidovanou soutì v èasovém horizontu, pøièteme JEDNIÈKU tomu, kdo odehrál døíve
+- v pøípadì, e se nejedná o soutì, ke které mohl bıt evidovanı èas, pøièteme JEDNIÈKU tomu, koho zvolí náhodnı generátor
+- tøi øádky vıše opakujeme do té doby, ne 
+- vısledky, které jsou dány fungují pouze pro seøazení, získáme tedy tabulku poøadí podle skóre
+- dále bude vytvoøené tabulka pro pøidìlování penìz a vısledného skóre, podle které budeme odmìòovat soutìící na bázi jejich vısledkù (poøadí)
+
+8)
+Existuje aplikace i soutìe
+- kadá aplikace má svùj vlastní zpùsob ohodnocování
+- vzhledem k monostem a èetnostem pouívání budou vıhry z aplikací o nìco niší na hru ne jiné soutìe
+- souèet vıher z aplikací by mìl bıt poté srovnatelnı s normální soutìí
+- nìkteré aplikace jsou omezeny poètem kol, zahájení, pokusy, levely èi jinımi a to buï na den nebo na celek èi do jejich vlastního vyèerpání pøiravenıch zdrojù
+- nìkteré aplikace èi soutìe nebudou vdy vıdìleèné, budou poadovat startovné èi vstupní sázku, která nemusí bıt znovu vyhrána
+- nìkteré aplikace mohou strhnout peníze z úètu oproti zadané sázce - v pøípadì prohry a pravidel dané hry nemusí bıt startovné jedinım nákladem na prùbìh hry
+- nìkteré aplikace jsou pøímo nebezpeèné a budou se snait hráèe nanejvıše obrat
+
+9)
+Bonusy
+- nìkde bude aplikován bonus oèekávaného limitu (u splnitelnıch soutìí) kterı dále bude ovlivòovat vısledek
+- bonus dostanou zpravidla ti soutìící nebo ty tımy, které splní nìjakı pøedem danı milník
+- budou existovat i záporné bonusy - postihy, pokud hra skonèí s nìjakou zadanou podmínkou - toto nejsou trestné body, toto je nìco jako vytaení èerného petra
+
+10)
+Trestné body
+- podle pøedem domluveného pravidla nebo zadání budou trestné body sniovat vısledek
+- v pøípadì tımù nebo jistıch her procentuelní vısledek
+- v pøípadì her pro jednotlivce bude sniováno skóre
+- všechny trestné body i jejich hodnoty je nutno evidovat
+
+11)
+Play-off
+- bude sestrojen pavouk, v pøípadì nedostatku entit, bude taena WildCard pro pøeskoèení základních kol
+- bude existovat tabulka vıher na bázi poøadí - podle vısledku v pavouku
+- je moné kombinovat s klasickou skupinovou tabulkou
+
+12)
+Skupinová tabulka
+- bude sestrojena tabulka kadı s kadım
+- podle potenciálu soutìe bude rozdílnı zpùsob ohodnocení
+- mùeme oèekávat jisté skóre, je bude tvoøit celek (100%)
+- mùeme vytvoøit tabulku vıher podle poøadí
+- mùeme vıhry ignorovat a hodnotit tabulku pouze jako postup pro play-off
+- mùeme vytvoøit pomìrovou monost - seèteme všechny uskuteènìné sety a seèteme všechny hráèem vyhrané sety vısledky podìlíme 
+(tato monost je ovlivòována všemi hráèi a jakımkoli vısledkem - ostatní budou fandit rùznım, strategicky, aby mìli vyšší vıhru)
+- mùeme evidovat èasy a øíci, e je potøeba, aby všechny zápasy byly v celkovém souètu stihnuty do celkového èasu
+- mùeme evidovat vısledky a øíci, e je potøeba, aby všechny zápasy v celkovém souètu dosahovaly hodnoty poadovaného skóre
+
+13)
+Nejlepší èas
+- tato monost je ovlivnìna nejlepším vısledkem
+- nejlepší vısledek je povaován za 100%
+- vše se následnì poèítá od nejlepšího vısledku
+- z principu dvojnásobek èi polovina vısledku èiní 0%
+- pokud je soutì odehrána s nejlepším èasem 100 sekund, bude tento èas 100% - nejhorší èas s 0% bude jakıkoliv vyšší (dvojnásobek) ne 200s - vèetnì
+- pokud je soutì odehrána s nejlepším skóre 100 bodù, bude toto skóre 100% - nejhorší skóre s 0% bude jakékoliv niší (polovina) ne 50 bodù - vèetnì 
+
+14)
+Pomìry
+- tato monost byla vyuita vıše, ale lze pouít samostatnì
+- pokud znám maximální poèet napøíklad balónkù, mùu evidovat poèet naházenıch balónkù - lze vytvoøit pomìr
+
+15)
+Kompozitní vısledky
+- v pøípadì e existují v soutìi stanovištì, mùe bıt na kadém stanovišti pouita rùzná metoda pøidìlování/poèítání vısledkù
+- metody mohou bıt pouity nezávisle na tìch, které jsou popsány vıše, je moné, e se vymyslí novı zpùsob
+- v tomto pøípadì lze vidìt podobnost v bodì 6)
+- v kadém pøípadì je potøeba poèítat jednotlivá stanovištì zvláš a pøevést vısledky vdy na procenta
+- pokud májí stanovištì rùzné váhy - nešel by udìlat pouhı prùmìr, mùeme vyuít zpùsob rozdìlení celku na díly podle nároèností, viz bod 5)
+- tímto zpùsobem se dopoèítáme vısledku, kterı bude v rozmezí 0-100%
+
+
+
+U nìkterıch soutìí se mùou hodnoty vısledkù dostat nad 100%, napøíklad:
+- vılov z bazénu
+- naplòování kbelíkù
+- pøiètení bonusù za limity
+- pøiètení bonusù od vedoucích jako zvláštní ohodnocení (to bude konstantnì dané)

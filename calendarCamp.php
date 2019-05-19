@@ -38,6 +38,9 @@
             </div>
         </div>
     </div>
+        
+        
+        - tabuka obsahuje ID-číslo akce, Název, Přesný datum a čas, nutnost dodržení času či existence možnosti přesunu, místo, definování tým X jednotlivci X web, náročnost(ní koeficient), požadavky
 
     
     
