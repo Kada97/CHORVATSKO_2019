@@ -51,7 +51,8 @@
                         <li>3 = Reward (Nemusí být nutně QR; odměna jednotlivce, týmu, či bonusové ohodnocení)</li>
                         <li>4 = Daily Quest (Nemusí být nutně QR; za vykonané úkoly jakéhokoli rázu náleží odměna)</li>
                         <li>5 = InGame (Nemusí být nutně QR; při hrách se můžou objevit kódy)</li>
-                        <li>6 = Other (Nemusí být nutně QR; jiné nespecifikované, potřeba vyplnit poznámku</li>
+                        <li>6 = Indície k rozklíčování šifry kolíku (Nemusí být nutně QR; nepočítá se odměna - nominální hodnota kódu, vyplní se 0)</li>
+                        <li>7 = Other (Nemusí být nutně QR; jiné nespecifikované, potřeba vyplnit poznámku</li>
                     </ul>
                 </label>
                 <input type="number" 

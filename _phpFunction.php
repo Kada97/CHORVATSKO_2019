@@ -1,4 +1,7 @@
 <?php
+
+    include '_dbRecountMoney.php';
+
     function removeDangerFromString($wrongString) {
         include '_connectDB.php';
         htmlspecialchars($wrongString);
@@ -101,7 +104,7 @@
         
         $rank = '';
         $loginCoef = 0;
-        $limit = 6;
+        $limit = 30;
         $i = $numberLogins - $limit;
         while ($i > 0) {
             
@@ -109,12 +112,6 @@
             $loginCoef++;
             if ($loginCoef >=10) {
                 break;
-            }
-        }
-        
-        for ($i = 0; $i<=10; $i++) {
-            if($i * $limit == $numberLogins) {
-                getRankPrice();
             }
         }
         
@@ -140,16 +137,16 @@
         $nB = 0;
         switch ($rank) {
             case 'NOOB'                         : $nB = 0; break;
-            case 'WEBOVÝ ODPAD'                 : $nB = 1; break;
-            case 'NÁVŠTĚVNÍK'                   : $nB = 2; break;
-            case 'ZAČÁTEČNÍK'                   : $nB = 3; break;
-            case 'TEN, KDO TO VZAL VÁŽNĚ'       : $nB = 5; break;
-            case 'CHVÁLYHODNÝ'                  : $nB = 6; break;
-            case 'ZKUŠENÝ'                      : $nB = 7; break;
-            case 'NOLIFER'                      : $nB = 8; break;
-            case 'ZÁVISLÝ'                      : $nB = 11; break;
-            case 'NEOČEKÁVANÝ'                  : $nB = 13; break;
-            case 'SAHAJÍCÍ ZA HRANICE VESMÍRU'  : $nB = 15; break;
+            case 'WEBOVÝ ODPAD'                 : $nB = 0.1; break;
+            case 'NÁVŠTĚVNÍK'                   : $nB = 0.3; break;
+            case 'ZAČÁTEČNÍK'                   : $nB = 0.6; break;
+            case 'TEN, KDO TO VZAL VÁŽNĚ'       : $nB = 1; break;
+            case 'CHVÁLYHODNÝ'                  : $nB = 1.5; break;
+            case 'ZKUŠENÝ'                      : $nB = 2.1; break;
+            case 'NOLIFER'                      : $nB = 2.8; break;
+            case 'ZÁVISLÝ'                      : $nB = 3.6; break;
+            case 'NEOČEKÁVANÝ'                  : $nB = 4.5; break;
+            case 'SAHAJÍCÍ ZA HRANICE VESMÍRU'  : $nB = 5.5; break;
         }
         
         return $nB;

@@ -14,11 +14,19 @@ $userdataSql = "
     ('$username' , 'NOOB')
     ;";
 
+$moneyRecordsSql = "
+    INSERT INTO money_records
+    (username)
+    VALUES
+    ('$username')
+    ;";
+
 
 
 // CREATING ROWS IN DB
 $register = mysqli_query($conn, $registerSql) or die(mysqli_error($conn));
 $userData = mysqli_query($conn, $userdataSql) or die(mysqli_error($conn));
-$kolikUserdata = 
+$moneyRecords = mysqli_query($conn, $moneyRecordsSql) or die(mysqli_error($conn));
+//$kolikUserdata = 
 
 

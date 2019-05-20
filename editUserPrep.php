@@ -48,10 +48,10 @@
         $age            = $res["age"];
         $needhelp       = $res["needhelp"];
         
-        $query = mysqli_query($conn, "SELECT team_id FROM userdata WHERE id ='" . $id. "';");
+        $query = mysqli_query($conn, "SELECT teamId FROM userdata WHERE id ='" . $id. "';");
         $res = mysqli_fetch_assoc($query);
         
-        $team = $res["team_id"];
+        $team = $res["teamId"];
         
         
         $teamCheck = mysqli_query($conn, "SELECT * FROM teams WHERE id='".$team."';");
@@ -72,7 +72,7 @@
         $_SESSION['editUserNeedhelp']       = $needhelp;
         $_SESSION['editUserTeam']           = $team;
         
-        include 'editUserPageSet.php';
+        include 'editUserSetPage.php';
 
 ?>
 

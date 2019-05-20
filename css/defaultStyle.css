@@ -172,6 +172,30 @@ hr{
     width: 90%;
     margin-top: 50px;
 }
+
+#sendMoneyMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    margin-top: 50px;
+}
+
+#useCodeMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    margin-top: 50px;
+}
+
+#editUserMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    margin-top: 50px;
+}
 /* ---------------------------------------------------------------------------*/
 /* - MINOR FORMS -------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
@@ -371,6 +395,16 @@ fieldset .formRow > label {
     border-radius: 10px;
     font-size: 1.1em;
 }
+
+.sendMoneyUserSelect {
+    position: relative;
+    left: 10%;
+    width: 25%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+
 
 
 /* ---------------------------------------------------------------------------*/

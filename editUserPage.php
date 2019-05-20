@@ -1,6 +1,6 @@
 <?php
-    $_SESSION['error_msg'] = "";
-    include "_connectDB.php";
+    $_SESSION['error_msg'] = '';
+    include '_connectDB.php';
     $allQuery = mysqli_query($conn, "SELECT * FROM users ORDER BY lastname;");
     $i = mysqli_num_rows($allQuery);
     

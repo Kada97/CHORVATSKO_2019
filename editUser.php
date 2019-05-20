@@ -1,5 +1,5 @@
 <?php
-if (isSet($_POST["editUser"])) {
+if (isSet($_POST['editUser'])) {
     
     //$username       = null;
     $password       = null;
@@ -30,64 +30,63 @@ if (isSet($_POST["editUser"])) {
 //                                        $_SESSION['editUserUsernameNew']    = $value; break;
                                     
             case 'editPassword':    $password                           = $value;
-                                        $_SESSION['editUserPasswordNew']    = $value; break;
+                                    $_SESSION['editUserPasswordNew']    = $value; break;
                                     
             case 'editVerification':$verification                       = $value;
-                                        $_SESSION['editUserVerificationNew']= $value; break;
+                                    $_SESSION['editUserVerificationNew']= $value; break;
             
             case 'editFirstname':   $firstname                          = $value;
-                                        $_SESSION['editUserFirstnameNew']   = $value; break;
+                                    $_SESSION['editUserFirstnameNew']   = $value; break;
             
             case 'editLastname':    $lastname                           = $value;
-                                        $_SESSION['editUserLastnameNew']    = $value; break;
+                                    $_SESSION['editUserLastnameNew']    = $value; break;
             
             case 'editBirthdate':   $birthdate                          = $value;
-                                        $_SESSION['editUserBirthdateNew']   = $value; break;
+                                    $_SESSION['editUserBirthdateNew']   = $value; break;
             
             case 'editSex':         $sex                                = $value;
-                                        $_SESSION['editUserSexNew']         = $value; break;
+                                    $_SESSION['editUserSexNew']         = $value; break;
             
             case 'editAge':         $age                                = $value;
-                                        $_SESSION['editUserAgeNew']         = $value; break;
+                                    $_SESSION['editUserAgeNew']         = $value; break;
             
             case 'editNeedhelp':    $needhelp                           = $value;
-                                        $_SESSION['editUserNeedhelpNew']    = $value; break;
+                                    $_SESSION['editUserNeedhelpNew']    = $value; break;
             
-            case 'editTeam':    $team                           = $value;
-                                        $_SESSION['editUserTeamNew']    = $value; break;
+            case 'editTeam':        $team                               = $value;
+                                    $_SESSION['editUserTeamNew']        = $value; break;
         }
     }
-
 //    if ($username == null) {
 //        $_SESSION['error_msg'] = "Nové uživatelské jméno není vyplněno";
 //    }
     if ($password == null) {
-        $_SESSION['error_msg'] = "Nové heslo není vyplněno";
+        $_SESSION['error_msg'] = 'Nové heslo není vyplněno';
     }
     if ($verification == null) {
-        $_SESSION['error_msg'] = "Nový ověřovací kód není vyplněn";
+        $_SESSION['error_msg'] = 'Nový ověřovací kód není vyplněn';
     }
     if ($firstname == null) {
-        $_SESSION['error_msg'] = "Nové jméno není vyplněno";
+        $_SESSION['error_msg'] = 'Nové jméno není vyplněno';
     }
     if ($lastname == null) {
-        $_SESSION['error_msg'] = "Nové příjmení není vyplněno";
+        $_SESSION['error_msg'] = 'Nové příjmení není vyplněno';
     }
     if ($birthdate == null) {
-        $_SESSION['error_msg'] = "Nový datum narození není vyplněno";
+        $_SESSION['error_msg'] = 'Nový datum narození není vyplněno';
     }
     if ($sex == null) {
-        $_SESSION['error_msg'] = "Nové pohlaví není vyplněno";
+        $_SESSION['error_msg'] = 'Nové pohlaví není vyplněno';
     }
     if ($age == null) {
-        $_SESSION['error_msg'] = "Nový věk není vyplněn";
+        $_SESSION['error_msg'] = 'Nový věk není vyplněn';
     }
     if ($needhelp == null) {
-        $_SESSION['error_msg'] = "Nové informace o pomoci není vyplněna";
+        $_SESSION['error_msg'] = 'Nové informace o pomoci není vyplněna';
     }
     
     
-    if ($_SESSION['error_msg'] == "") {
+    if ($_SESSION['error_msg'] == '') {
 //        $control = 0;
 //        if($username == $_SESSION['editUserUsername']){
 //            $control = 1;
@@ -104,15 +103,15 @@ if (isSet($_POST["editUser"])) {
         $_SESSION['editUserNeedhelp']       = $needhelp;
         $_SESSION['editUserTeam']           = $team;
 
-        include "_connectDB.php";
+        include '_connectDB.php';
         
-        //$username = removeDangerFromString($username);
-        $password = removeDangerFromString($password);
-        $verification = removeDangerFromString($verification);
-        $firstname = removeDangerFromString($firstname);
-        $lastname = removeDangerFromString($lastname);
-        $age = removeDangerFromString($age);
-        $needhelp = removeDangerFromString($needhelp);
+        //$username     = removeDangerFromString($username);
+        $password       = removeDangerFromString($password);
+        $verification   = removeDangerFromString($verification);
+        $firstname      = removeDangerFromString($firstname);
+        $lastname       = removeDangerFromString($lastname);
+        $age            = removeDangerFromString($age);
+        $needhelp       = removeDangerFromString($needhelp);
         
 
         //$usernameCheck = mysqli_query($conn, "SELECT username FROM users WHERE username='" . $username . "'");
@@ -125,26 +124,27 @@ if (isSet($_POST["editUser"])) {
 //        }
         $teamCheck = mysqli_query($conn, "SELECT * FROM teams;");
         if (mysqli_num_rows($teamCheck) < $team) {
-            $_SESSION['error_msg'] = "Tolik týmů ani není!";
+            $_SESSION['error_msg'] = 'Tolik týmů ani není!';
         }
         
-        if ($_SESSION['error_msg'] == "") {
+        
+        if ($_SESSION['error_msg'] == '') {
          
             $upd = "UPDATE users SET "
                     //. "username = '" . $username. "',"
-                    . "password = '" . $password. "',"
-                    . "firstname = '" . $firstname. "',"
-                    . "lastname = '" . $lastname. "',"
-                    . "verification = '" . $verification. "',"
-                    . "birthdate = '" . $birthdate. "',"
-                    . "sex = '" . $sex. "',"
-                    . "age = '" . $age. "',"
-                    . "needhelp = '" . $needhelp. "'"
-                    . " WHERE id='" . $_SESSION['editUserId'] . "';";
+                    . "password = '" . $password. "', "
+                    . "firstname = '" . $firstname. "', "
+                    . "lastname = '" . $lastname. "', "
+                    . "verification = '" . $verification. "', "
+                    . "birthdate = '" . $birthdate. "', "
+                    . "sex = '" . $sex. "', "
+                    . "age = '" . $age. "', "
+                    . "needhelp = '" . $needhelp. "' "
+                    . "WHERE id='" . $_SESSION['editUserId'] . "';";
             
             $query = mysqli_query($conn, $upd);
             
-            $upd = "UPDATE userdata SET team_id = '".$team."' WHERE id='" . $_SESSION['editUserId'] . "';";
+            $upd = "UPDATE userdata SET teamId = '".$team."' WHERE id='" . $_SESSION['editUserId'] . "';";
             $query = mysqli_query($conn, $upd);
             
             $upd = "UPDATE teams SET numb_registered = '".$nV."' WHERE id='".$team."';";
@@ -173,9 +173,9 @@ if (isSet($_POST["editUser"])) {
             $_SESSION['editUserNeedhelpNew']       = null;
             $_SESSION['editUserTeamNew']           = null;
             
-            header("Location: .");
+            include 'editUserPage.php';
         } else {
-            $_SESSION['error_msg'] = "Chyba při změně!";
+            $_SESSION['error_msg'] = 'Chyba při změně!';
         }
     }
 }

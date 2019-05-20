@@ -73,7 +73,7 @@
                 <input type="number" 
                        name="coin2" 
                        class="bankManagerValueField"
-                       va1e = "<?php echo (isset($_SESSION['coin2']) ? htmlspecialchars($_SESSION['coin2']) : '0')?>"
+                       va1ue = "<?php echo (isset($_SESSION['coin2']) ? htmlspecialchars($_SESSION['coin2']) : '0')?>"
                        >
             </div>
             

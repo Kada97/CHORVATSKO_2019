@@ -41,7 +41,7 @@
                 <option value = "gameResults" disabled>
                     Výsledky z her
                 </option>
-                <option value = "achievements" disabled>
+                <option value = "achievements">
                     Rekordy
                 </option>
                 <option value = "gameSpiner" disabled>
@@ -65,10 +65,10 @@
                 <option value = "dailyQuestion">
                     Hádanky
                 </option>
-                <option value = "useCodePage" disabled>
+                <option value = "useCodePage">
                     Použít kód
                 </option>
-                <option value = "sendMoneyPage" disabled>
+                <option value = "sendMoneyPage">
                     Poslat peníze
                 </option>
                 <option value = "manuals">

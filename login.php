@@ -53,7 +53,7 @@
                         $nR = checkRank($nL);
                         $nB = getRankPrice($nR);
                         
-                        $upd = "UPDATE userdata SET weblogins = '$nL', rank = '$nR', rankPercentBonus = '$nB' WHERE username = '$username';";
+                        $upd = "UPDATE userdata SET weblogins = '$nL', rank = '$nR', rank_percent_bonus = '$nB' WHERE username = '$username';";
                         $query = mysqli_query($conn, $upd);
                         
                         sendLog('loginPage', 'Uživatel: ' . $username . ' se úspěšně přihlásil.');
