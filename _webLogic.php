@@ -59,6 +59,7 @@
                             case 'manuals':             include 'manualsAndInstructions.php';   break;
                             case 'about':               include 'about.php';                    break;
                             case 'addPicPage':          include 'addNewPicturePage.php';        break;
+                            case 'dailyQuestion':       include 'dailyQuestionPage.php';        break;
 
                             //EVERYONE cases
                         
@@ -84,7 +85,7 @@
             //                            case 'viewTeamPrep':        include 'viewTeamPrep.php'; break;
             //                            case 'useCodePage':         include 'useCodePage.php'; break;
             //                            case 'useCode':             include 'useCode.php'; break;
-            //                            case 'dayQuestion':         include 'dayQuestionPage.php'; break;
+            //                            
             //                            case 'gameResults':         include 'gameResultsPage.php'; break;
             //                            case 'achievements':        include 'achievementsPage.php'; break;
 

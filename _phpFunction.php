@@ -31,18 +31,48 @@
 //        include '_recountDB.php';
     }
     
-    function numbDay() {
-	//-21
-	$m = 0;
-	$m += date('i');
-	$result = $m % 8;
-	if($result == 0){
-	    $result = 9;
-	}
+    function getDailyQuestion() {
+        // "day-part" , for e.g. 6-2
+        // days: 9 FRI-SAT
+        // parts: 4
+        // in hours: 8-12, 12-16, 16-20, 20-22 + 6-8
+        // first day only last part 20-22 + 6-8
+        // last day only first part 8-12
+        // Start: 14. 6. 2019 minus 13 to get ONE
+        // End: 22. 6. 2019
+        
+        $d = date('j') - 13;
+        $h = date('G');
+        $part = 0;
+        
+        //testing
+	//$d = date('i')%4+1;
+        //$h = date('G')+13;
+        
+        if ($h >= 8 && $h < 12) {
+            $part = 1;
+        }
+        elseif ($h >= 12 && $h < 16) {
+            $part = 2;
+        }
+        elseif ($h >= 16 && $h < 20) {
+            $part = 3;
+        }
+        elseif ($h >= 20 && $h < 22) {
+            $part = 4;
+        }
+        elseif ($h >= 6 && $h < 8){
+            $part = 4;
+            $d-=1;
+        }
+        else {
+            $d = 0;
+            $part = 0;
+        }
+        
+        $result = 'src/apk/dailyQuestions/' . $d . '-' . $part . '.jpg';
         
 	return $result;
-	//return mt_rand(1, 9);
-	//return date("d")- 21;
     }
     
     function sendLog($location, $what, $priority = 0) {
@@ -65,5 +95,63 @@
         $loggerQuery = "INSERT INTO logger (who, location, what, detail, priority) VALUES ('$u', '$l', '$w', '$d', '$priority');";
         $logger = mysqli_query($conn, $loggerQuery) or die(mysqli_error($conn));
         
+    }
+    
+    function checkRank($numberLogins){
+        
+        $rank = '';
+        $loginCoef = 0;
+        $limit = 6;
+        $i = $numberLogins - $limit;
+        while ($i > 0) {
+            
+            $i -= $limit;
+            $loginCoef++;
+            if ($loginCoef >=10) {
+                break;
+            }
+        }
+        
+        for ($i = 0; $i<=10; $i++) {
+            if($i * $limit == $numberLogins) {
+                getRankPrice();
+            }
+        }
+        
+        switch ($loginCoef) {
+            case 0 : $rank = 'NOOB'; break;
+            case 1 : $rank = 'WEBOVÝ ODPAD'; break;
+            case 2 : $rank = 'NÁVŠTĚVNÍK'; break;
+            case 3 : $rank = 'ZAČÁTEČNÍK'; break;
+            case 4 : $rank = 'TEN, KDO TO VZAL VÁŽNĚ'; break;
+            case 5 : $rank = 'CHVÁLYHODNÝ'; break;
+            case 6 : $rank = 'ZKUŠENÝ'; break;
+            case 7 : $rank = 'NOLIFER'; break;
+            case 8 : $rank = 'ZÁVISLÝ'; break;
+            case 9 : $rank = 'NEOČEKÁVANÝ'; break;
+            case 10 : $rank = 'SAHAJÍCÍ ZA HRANICE VESMÍRU'; break;
+        }
+        
+        return $rank;
+        
+    }
+    
+    function getRankPrice($rank) {
+        $nB = 0;
+        switch ($rank) {
+            case 'NOOB'                         : $nB = 0; break;
+            case 'WEBOVÝ ODPAD'                 : $nB = 1; break;
+            case 'NÁVŠTĚVNÍK'                   : $nB = 2; break;
+            case 'ZAČÁTEČNÍK'                   : $nB = 3; break;
+            case 'TEN, KDO TO VZAL VÁŽNĚ'       : $nB = 5; break;
+            case 'CHVÁLYHODNÝ'                  : $nB = 6; break;
+            case 'ZKUŠENÝ'                      : $nB = 7; break;
+            case 'NOLIFER'                      : $nB = 8; break;
+            case 'ZÁVISLÝ'                      : $nB = 11; break;
+            case 'NEOČEKÁVANÝ'                  : $nB = 13; break;
+            case 'SAHAJÍCÍ ZA HRANICE VESMÍRU'  : $nB = 15; break;
+        }
+        
+        return $nB;
     }
 ?>

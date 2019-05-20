@@ -62,7 +62,7 @@
                 <option value = "buttDownPublAll" disabled>
                     Stáhnout vše veřejné
                 </option>
-                <option value = "dayQuestion" disabled>
+                <option value = "dailyQuestion">
                     Hádanky
                 </option>
                 <option value = "useCodePage" disabled>
