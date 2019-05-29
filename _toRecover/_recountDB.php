@@ -1,309 +1,309 @@
 <?php
 //codes,coins,errors,newcodes,teamdata,teams,userdata,users,gametictactoe
 
-$coin_n_v_ch_white_val = 0;
-$coin_n_v_ch_red_val = 0;
-$coin_n_v_ch_blue_val = 0;
-$coin_n_v_ch_green_val = 0;
-$coin_n_v_ch_black_val = 0;
-$coin_n_v_std_white_val = 0;
-$coin_n_v_std_red_val = 0;
-$coin_n_v_std_blue_val = 0;
-$coin_n_v_std_green_val = 0;
-$coin_n_v_std_black_val = 0;
-$coin_y_v_std_white_val = 0;
-$coin_y_v_std_blue_val = 0;
-$coin_y_v_std_green_val = 0;
-$coin_y_v_std_red_val = 0;
-$coin_y_v_std_black_val = 0;
-$coin_y_v_oth_red_val = 0;
-$coin_y_v_oth_green_val = 0;
-$coin_y_v_oth_lightblue_val = 0;
-$coin_y_v_oth_whitepurple_val = 0;
-$coin_y_v_ult_red_val = 0;
-$coin_y_v_ult_darkblue_val = 0;
-$coin_y_v_ult_green_val = 0;
-$coin_y_v_ult_lightblue_val = 0;
-$coin_y_v_ult_black_val = 0;
-$coin_y_v_ult_purple_val = 0;
-$coin_y_v_ult_yellow_val = 0;
-$coin_n_v_ch_white_tot = 0;
-$coin_n_v_ch_red_tot = 0;
-$coin_n_v_ch_blue_tot = 0;
-$coin_n_v_ch_green_tot = 0;
-$coin_n_v_ch_black_tot = 0;
-$coin_n_v_std_white_tot = 0;
-$coin_n_v_std_red_tot = 0;
-$coin_n_v_std_blue_tot = 0;
-$coin_n_v_std_green_tot = 0;
-$coin_n_v_std_black_tot = 0;
-$coin_y_v_std_white_tot = 0;
-$coin_y_v_std_blue_tot = 0;
-$coin_y_v_std_green_tot = 0;
-$coin_y_v_std_red_tot = 0;
-$coin_y_v_std_black_tot = 0;
-$coin_y_v_oth_red_tot = 0;
-$coin_y_v_oth_green_tot = 0;
-$coin_y_v_oth_lightblue_tot = 0;
-$coin_y_v_oth_whitepurple_tot = 0;
-$coin_y_v_ult_red_tot = 0;
-$coin_y_v_ult_darkblue_tot = 0;
-$coin_y_v_ult_green_tot = 0;
-$coin_y_v_ult_lightblue_tot = 0;
-$coin_y_v_ult_black_tot = 0;
-$coin_y_v_ult_purple_tot = 0;
-$coin_y_v_ult_yellow_tot = 0;
-$coin_n_v_ch_white_qua = 0;
-$coin_n_v_ch_red_qua = 0;
-$coin_n_v_ch_blue_qua = 0;
-$coin_n_v_ch_green_qua = 0;
-$coin_n_v_ch_black_qua = 0;
-$coin_n_v_std_white_qua = 0;
-$coin_n_v_std_red_qua = 0;
-$coin_n_v_std_blue_qua = 0;
-$coin_n_v_std_green_qua = 0;
-$coin_n_v_std_black_qua = 0;
-$coin_y_v_std_white_qua = 0;
-$coin_y_v_std_blue_qua = 0;
-$coin_y_v_std_green_qua = 0;
-$coin_y_v_std_red_qua = 0;
-$coin_y_v_std_black_qua = 0;
-$coin_y_v_oth_red_qua = 0;
-$coin_y_v_oth_green_qua = 0;
-$coin_y_v_oth_lightblue_qua = 0;
-$coin_y_v_oth_whitepurple_qua = 0;
-$coin_y_v_ult_red_qua = 0;
-$coin_y_v_ult_darkblue_qua = 0;
-$coin_y_v_ult_green_qua = 0;
-$coin_y_v_ult_lightblue_qua = 0;
-$coin_y_v_ult_black_qua = 0;
-$coin_y_v_ult_purple_qua = 0;
-$coin_y_v_ult_yellow_qua = 0;
+//$coin_n_v_ch_white_val = 0;
+//$coin_n_v_ch_red_val = 0;
+//$coin_n_v_ch_blue_val = 0;
+//$coin_n_v_ch_green_val = 0;
+//$coin_n_v_ch_black_val = 0;
+//$coin_n_v_std_white_val = 0;
+//$coin_n_v_std_red_val = 0;
+//$coin_n_v_std_blue_val = 0;
+//$coin_n_v_std_green_val = 0;
+//$coin_n_v_std_black_val = 0;
+//$coin_y_v_std_white_val = 0;
+//$coin_y_v_std_blue_val = 0;
+//$coin_y_v_std_green_val = 0;
+//$coin_y_v_std_red_val = 0;
+//$coin_y_v_std_black_val = 0;
+//$coin_y_v_oth_red_val = 0;
+//$coin_y_v_oth_green_val = 0;
+//$coin_y_v_oth_lightblue_val = 0;
+//$coin_y_v_oth_whitepurple_val = 0;
+//$coin_y_v_ult_red_val = 0;
+//$coin_y_v_ult_darkblue_val = 0;
+//$coin_y_v_ult_green_val = 0;
+//$coin_y_v_ult_lightblue_val = 0;
+//$coin_y_v_ult_black_val = 0;
+//$coin_y_v_ult_purple_val = 0;
+//$coin_y_v_ult_yellow_val = 0;
+//$coin_n_v_ch_white_tot = 0;
+//$coin_n_v_ch_red_tot = 0;
+//$coin_n_v_ch_blue_tot = 0;
+//$coin_n_v_ch_green_tot = 0;
+//$coin_n_v_ch_black_tot = 0;
+//$coin_n_v_std_white_tot = 0;
+//$coin_n_v_std_red_tot = 0;
+//$coin_n_v_std_blue_tot = 0;
+//$coin_n_v_std_green_tot = 0;
+//$coin_n_v_std_black_tot = 0;
+//$coin_y_v_std_white_tot = 0;
+//$coin_y_v_std_blue_tot = 0;
+//$coin_y_v_std_green_tot = 0;
+//$coin_y_v_std_red_tot = 0;
+//$coin_y_v_std_black_tot = 0;
+//$coin_y_v_oth_red_tot = 0;
+//$coin_y_v_oth_green_tot = 0;
+//$coin_y_v_oth_lightblue_tot = 0;
+//$coin_y_v_oth_whitepurple_tot = 0;
+//$coin_y_v_ult_red_tot = 0;
+//$coin_y_v_ult_darkblue_tot = 0;
+//$coin_y_v_ult_green_tot = 0;
+//$coin_y_v_ult_lightblue_tot = 0;
+//$coin_y_v_ult_black_tot = 0;
+//$coin_y_v_ult_purple_tot = 0;
+//$coin_y_v_ult_yellow_tot = 0;
+//$coin_n_v_ch_white_qua = 0;
+//$coin_n_v_ch_red_qua = 0;
+//$coin_n_v_ch_blue_qua = 0;
+//$coin_n_v_ch_green_qua = 0;
+//$coin_n_v_ch_black_qua = 0;
+//$coin_n_v_std_white_qua = 0;
+//$coin_n_v_std_red_qua = 0;
+//$coin_n_v_std_blue_qua = 0;
+//$coin_n_v_std_green_qua = 0;
+//$coin_n_v_std_black_qua = 0;
+//$coin_y_v_std_white_qua = 0;
+//$coin_y_v_std_blue_qua = 0;
+//$coin_y_v_std_green_qua = 0;
+//$coin_y_v_std_red_qua = 0;
+//$coin_y_v_std_black_qua = 0;
+//$coin_y_v_oth_red_qua = 0;
+//$coin_y_v_oth_green_qua = 0;
+//$coin_y_v_oth_lightblue_qua = 0;
+//$coin_y_v_oth_whitepurple_qua = 0;
+//$coin_y_v_ult_red_qua = 0;
+//$coin_y_v_ult_darkblue_qua = 0;
+//$coin_y_v_ult_green_qua = 0;
+//$coin_y_v_ult_lightblue_qua = 0;
+//$coin_y_v_ult_black_qua = 0;
+//$coin_y_v_ult_purple_qua = 0;
+//$coin_y_v_ult_yellow_qua = 0;
 
 // GET TABLE OF COINS AND DEFINE VARIABLES
-$sqlGetCoins = "SELECT * FROM coins;";
-$allCoinsData = mysqli_query($conn, $sqlGetCoins);
-while($coinResult = mysqli_fetch_assoc($allCoinsData)){
-    switch($coinResult['label']){
-	
-        case 'coin_nv_ch_white':	    $coin_n_v_ch_white_val	    = $coinResult["value"];break;
-        case 'coin_nv_ch_red':		    $coin_n_v_ch_red_val	    = $coinResult['value'];break;
-        case 'coin_nv_ch_blue':		    $coin_n_v_ch_bluex_val	    = $coinResult['value'];break;
-        case 'coin_nv_ch_green':	    $coin_n_v_ch_greenx_val	    = $coinResult['value'];break;
-        case 'coin_nv_ch_black':	    $coin_n_v_ch_black_val	    = $coinResult['value'];break;
-        case 'coin_nv_std_white':	    $coin_n_v_std_white_val	    = $coinResult['value'];break;
-        case 'coin_nv_std_red':		    $coin_n_v_std_red_val	    = $coinResult['value'];break;
-        case 'coin_nv_std_blue':	    $coin_n_v_std_blue_val	    = $coinResult['value'];break;
-        case 'coin_nv_std_green':	    $coin_n_v_std_green_val	    = $coinResult['value'];break;
-        case 'coin_nv_std_black':	    $coin_n_v_std_black_val	    = $coinResult['value'];break;
-        case 'coin_yv_std_white':	    $coin_y_v_std_white_val	    = $coinResult['value'];break;
-        case 'coin_yv_std_blue':	    $coin_y_v_std_blue_val	    = $coinResult['value'];break;
-        case 'coin_yv_std_green':	    $coin_y_v_std_green_val	    = $coinResult['value'];break;
-        case 'coin_yv_std_red':		    $coin_y_v_std_red_val	    = $coinResult['value'];break;
-        case 'coin_yv_std_black':	    $coin_y_v_std_black_val	    = $coinResult['value'];break;
-        case 'coin_yv_oth_red':		    $coin_y_v_oth_red_val	    = $coinResult['value'];break;
-        case 'coin_yv_oth_green':	    $coin_y_v_oth_green_val	    = $coinResult['value'];break;
-        case 'coin_yv_oth_lightblue':	    $coin_y_v_oth_lightblue_val	    = $coinResult['value'];break;
-        case 'coin_yv_oth_whitepurple':	    $coin_y_v_oth_whitepurple_val   = $coinResult['value'];break;
-        case 'coin_yv_ult_red':		    $coin_y_v_ult_red_val	    = $coinResult['value'];break;
-        case 'coin_yv_ult_darkblue':	    $coin_y_v_ult_darkblue_val	    = $coinResult['value'];break;
-        case 'coin_yv_ult_green':	    $coin_y_v_ult_green_val	    = $coinResult['value'];break;
-        case 'coin_yv_ult_lightblue':	    $coin_y_v_ult_lightblue_val	    = $coinResult['value'];break;
-        case 'coin_yv_ult_black':	    $coin_y_v_ult_black_val	    = $coinResult['value'];break;
-        case 'coin_yv_ult_purple':	    $coin_y_v_ult_purple_val	    = $coinResult['value'];break;
-        case 'coin_yv_ult_yellow':	    $coin_y_v_ult_yellow_val	    = $coinResult['value'];break;
-    }
-    switch($coinResult['label']){
-	case 'coin_nv_ch_white':	    $coin_n_v_ch_white_qua	    = $coinResult['quantity'];break;
-        case 'coin_nv_ch_red':		    $coin_n_v_ch_red_qua	    = $coinResult['quantity'];break;
-        case 'coin_nv_ch_blue':		    $coin_n_v_ch_blue_qua	    = $coinResult['quantity'];break;
-        case 'coin_nv_ch_green':	    $coin_n_v_ch_green_qua	    = $coinResult['quantity'];break;
-        case 'coin_nv_ch_black':	    $coin_n_v_ch_black_qua	    = $coinResult['quantity'];break;
-        case 'coin_nv_std_white':	    $coin_n_v_std_white_qua	    = $coinResult['quantity'];break;
-        case 'coin_nv_std_red':		    $coin_n_v_std_red_qua	    = $coinResult['quantity'];break;
-        case 'coin_nv_std_blue':	    $coin_n_v_std_blue_qua	    = $coinResult['quantity'];break;
-        case 'coin_nv_std_green':	    $coin_n_v_std_green_qua	    = $coinResult['quantity'];break;
-        case 'coin_nv_std_black':	    $coin_n_v_std_black_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_std_white':	    $coin_y_v_std_white_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_std_blue':	    $coin_y_v_std_blue_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_std_green':	    $coin_y_v_std_green_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_std_red':		    $coin_y_v_std_red_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_std_black':	    $coin_y_v_std_black_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_oth_red':		    $coin_y_v_oth_red_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_oth_green':	    $coin_y_v_oth_green_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_oth_lightblue':	    $coin_y_v_oth_lightblue_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_oth_whitepurple':	    $coin_y_v_oth_whitepurple_qua   = $coinResult['quantity'];break;
-        case 'coin_yv_ult_red':		    $coin_y_v_ult_red_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_ult_darkblue':	    $coin_y_v_ult_darkblue_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_ult_green':	    $coin_y_v_ult_green_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_ult_lightblue':	    $coin_y_v_ult_lightblue_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_ult_black':	    $coin_y_v_ult_black_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_ult_purple':	    $coin_y_v_ult_purple_qua	    = $coinResult['quantity'];break;
-        case 'coin_yv_ult_yellow':	    $coin_y_v_ult_yellow_qua	    = $coinResult['quantity'];break;
-    }
-}
+//$sqlGetCoins = "SELECT * FROM coins;";
+//$allCoinsData = mysqli_query($conn, $sqlGetCoins);
+//while($coinResult = mysqli_fetch_assoc($allCoinsData)){
+//    switch($coinResult['label']){
+//	
+//        case 'coin_nv_ch_white':	    $coin_n_v_ch_white_val	    = $coinResult["value"];break;
+//        case 'coin_nv_ch_red':		    $coin_n_v_ch_red_val	    = $coinResult['value'];break;
+//        case 'coin_nv_ch_blue':		    $coin_n_v_ch_bluex_val	    = $coinResult['value'];break;
+//        case 'coin_nv_ch_green':	    $coin_n_v_ch_greenx_val	    = $coinResult['value'];break;
+//        case 'coin_nv_ch_black':	    $coin_n_v_ch_black_val	    = $coinResult['value'];break;
+//        case 'coin_nv_std_white':	    $coin_n_v_std_white_val	    = $coinResult['value'];break;
+//        case 'coin_nv_std_red':		    $coin_n_v_std_red_val	    = $coinResult['value'];break;
+//        case 'coin_nv_std_blue':	    $coin_n_v_std_blue_val	    = $coinResult['value'];break;
+//        case 'coin_nv_std_green':	    $coin_n_v_std_green_val	    = $coinResult['value'];break;
+//        case 'coin_nv_std_black':	    $coin_n_v_std_black_val	    = $coinResult['value'];break;
+//        case 'coin_yv_std_white':	    $coin_y_v_std_white_val	    = $coinResult['value'];break;
+//        case 'coin_yv_std_blue':	    $coin_y_v_std_blue_val	    = $coinResult['value'];break;
+//        case 'coin_yv_std_green':	    $coin_y_v_std_green_val	    = $coinResult['value'];break;
+//        case 'coin_yv_std_red':		    $coin_y_v_std_red_val	    = $coinResult['value'];break;
+//        case 'coin_yv_std_black':	    $coin_y_v_std_black_val	    = $coinResult['value'];break;
+//        case 'coin_yv_oth_red':		    $coin_y_v_oth_red_val	    = $coinResult['value'];break;
+//        case 'coin_yv_oth_green':	    $coin_y_v_oth_green_val	    = $coinResult['value'];break;
+//        case 'coin_yv_oth_lightblue':	    $coin_y_v_oth_lightblue_val	    = $coinResult['value'];break;
+//        case 'coin_yv_oth_whitepurple':	    $coin_y_v_oth_whitepurple_val   = $coinResult['value'];break;
+//        case 'coin_yv_ult_red':		    $coin_y_v_ult_red_val	    = $coinResult['value'];break;
+//        case 'coin_yv_ult_darkblue':	    $coin_y_v_ult_darkblue_val	    = $coinResult['value'];break;
+//        case 'coin_yv_ult_green':	    $coin_y_v_ult_green_val	    = $coinResult['value'];break;
+//        case 'coin_yv_ult_lightblue':	    $coin_y_v_ult_lightblue_val	    = $coinResult['value'];break;
+//        case 'coin_yv_ult_black':	    $coin_y_v_ult_black_val	    = $coinResult['value'];break;
+//        case 'coin_yv_ult_purple':	    $coin_y_v_ult_purple_val	    = $coinResult['value'];break;
+//        case 'coin_yv_ult_yellow':	    $coin_y_v_ult_yellow_val	    = $coinResult['value'];break;
+//    }
+//    switch($coinResult['label']){
+//	case 'coin_nv_ch_white':	    $coin_n_v_ch_white_qua	    = $coinResult['quantity'];break;
+//        case 'coin_nv_ch_red':		    $coin_n_v_ch_red_qua	    = $coinResult['quantity'];break;
+//        case 'coin_nv_ch_blue':		    $coin_n_v_ch_blue_qua	    = $coinResult['quantity'];break;
+//        case 'coin_nv_ch_green':	    $coin_n_v_ch_green_qua	    = $coinResult['quantity'];break;
+//        case 'coin_nv_ch_black':	    $coin_n_v_ch_black_qua	    = $coinResult['quantity'];break;
+//        case 'coin_nv_std_white':	    $coin_n_v_std_white_qua	    = $coinResult['quantity'];break;
+//        case 'coin_nv_std_red':		    $coin_n_v_std_red_qua	    = $coinResult['quantity'];break;
+//        case 'coin_nv_std_blue':	    $coin_n_v_std_blue_qua	    = $coinResult['quantity'];break;
+//        case 'coin_nv_std_green':	    $coin_n_v_std_green_qua	    = $coinResult['quantity'];break;
+//        case 'coin_nv_std_black':	    $coin_n_v_std_black_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_std_white':	    $coin_y_v_std_white_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_std_blue':	    $coin_y_v_std_blue_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_std_green':	    $coin_y_v_std_green_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_std_red':		    $coin_y_v_std_red_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_std_black':	    $coin_y_v_std_black_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_oth_red':		    $coin_y_v_oth_red_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_oth_green':	    $coin_y_v_oth_green_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_oth_lightblue':	    $coin_y_v_oth_lightblue_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_oth_whitepurple':	    $coin_y_v_oth_whitepurple_qua   = $coinResult['quantity'];break;
+//        case 'coin_yv_ult_red':		    $coin_y_v_ult_red_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_ult_darkblue':	    $coin_y_v_ult_darkblue_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_ult_green':	    $coin_y_v_ult_green_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_ult_lightblue':	    $coin_y_v_ult_lightblue_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_ult_black':	    $coin_y_v_ult_black_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_ult_purple':	    $coin_y_v_ult_purple_qua	    = $coinResult['quantity'];break;
+//        case 'coin_yv_ult_yellow':	    $coin_y_v_ult_yellow_qua	    = $coinResult['quantity'];break;
+//    }
+//}
+//
+//// GET TABLE OF USERDATA AND DEFINE VARIABLES - GET ALL COINS FOR COUNT A TOTALS
+//$sqlGetUserdata = "SELECT * FROM userdata;";
+//$allUserdata = mysqli_query($conn, $sqlGetUserdata);
+//while($userDataResult = mysqli_fetch_assoc($allUserdata)){
+//    $coin_n_v_ch_white_tot	    += $userDataResult['coin_n_v_ch_white'];
+//    $coin_n_v_ch_red_tot	    += $userDataResult['coin_n_v_ch_red'];
+//    $coin_n_v_ch_blue_tot	    += $userDataResult['coin_n_v_ch_blue'];
+//    $coin_n_v_ch_green_tot	    += $userDataResult['coin_n_v_ch_green'];
+//    $coin_n_v_ch_black_tot	    += $userDataResult['coin_n_v_ch_black'];
+//    $coin_n_v_std_white_tot	    += $userDataResult['coin_n_v_std_white'];
+//    $coin_n_v_std_red_tot	    += $userDataResult['coin_n_v_std_red'];
+//    $coin_n_v_std_blue_tot	    += $userDataResult['coin_n_v_std_blue'];
+//    $coin_n_v_std_green_tot	    += $userDataResult['coin_n_v_std_green'];
+//    $coin_n_v_std_black_tot	    += $userDataResult['coin_n_v_std_black'];
+//    $coin_y_v_std_white_tot	    += $userDataResult['coin_y_v_std_white'];
+//    $coin_y_v_std_blue_tot	    += $userDataResult['coin_y_v_std_blue'];
+//    $coin_y_v_std_green_tot	    += $userDataResult['coin_y_v_std_green'];
+//    $coin_y_v_std_red_tot	    += $userDataResult['coin_y_v_std_red'];
+//    $coin_y_v_std_black_tot	    += $userDataResult['coin_y_v_std_black'];
+//    $coin_y_v_oth_red_tot	    += $userDataResult['coin_y_v_oth_red'];
+//    $coin_y_v_oth_green_tot	    += $userDataResult['coin_y_v_oth_green'];
+//    $coin_y_v_oth_lightblue_tot	    += $userDataResult['coin_y_v_oth_lightblue'];
+//    $coin_y_v_oth_whitepurple_tot   += $userDataResult['coin_y_v_oth_whitepurple'];
+//    $coin_y_v_ult_red_tot	    += $userDataResult['coin_y_v_ult_red'];
+//    $coin_y_v_ult_darkblue_tot	    += $userDataResult['coin_y_v_ult_darkblue'];
+//    $coin_y_v_ult_green_tot	    += $userDataResult['coin_y_v_ult_green'];
+//    $coin_y_v_ult_lightblue_tot	    += $userDataResult['coin_y_v_ult_lightblue'];
+//    $coin_y_v_ult_black_tot	    += $userDataResult['coin_y_v_ult_black'];
+//    $coin_y_v_ult_purple_tot	    += $userDataResult['coin_y_v_ult_purple'];
+//    $coin_y_v_ult_yellow_tot	    += $userDataResult['coin_y_v_ult_yellow'];
+//}
 
-// GET TABLE OF USERDATA AND DEFINE VARIABLES - GET ALL COINS FOR COUNT A TOTALS
-$sqlGetUserdata = "SELECT * FROM userdata;";
-$allUserdata = mysqli_query($conn, $sqlGetUserdata);
-while($userDataResult = mysqli_fetch_assoc($allUserdata)){
-    $coin_n_v_ch_white_tot	    += $userDataResult['coin_n_v_ch_white'];
-    $coin_n_v_ch_red_tot	    += $userDataResult['coin_n_v_ch_red'];
-    $coin_n_v_ch_blue_tot	    += $userDataResult['coin_n_v_ch_blue'];
-    $coin_n_v_ch_green_tot	    += $userDataResult['coin_n_v_ch_green'];
-    $coin_n_v_ch_black_tot	    += $userDataResult['coin_n_v_ch_black'];
-    $coin_n_v_std_white_tot	    += $userDataResult['coin_n_v_std_white'];
-    $coin_n_v_std_red_tot	    += $userDataResult['coin_n_v_std_red'];
-    $coin_n_v_std_blue_tot	    += $userDataResult['coin_n_v_std_blue'];
-    $coin_n_v_std_green_tot	    += $userDataResult['coin_n_v_std_green'];
-    $coin_n_v_std_black_tot	    += $userDataResult['coin_n_v_std_black'];
-    $coin_y_v_std_white_tot	    += $userDataResult['coin_y_v_std_white'];
-    $coin_y_v_std_blue_tot	    += $userDataResult['coin_y_v_std_blue'];
-    $coin_y_v_std_green_tot	    += $userDataResult['coin_y_v_std_green'];
-    $coin_y_v_std_red_tot	    += $userDataResult['coin_y_v_std_red'];
-    $coin_y_v_std_black_tot	    += $userDataResult['coin_y_v_std_black'];
-    $coin_y_v_oth_red_tot	    += $userDataResult['coin_y_v_oth_red'];
-    $coin_y_v_oth_green_tot	    += $userDataResult['coin_y_v_oth_green'];
-    $coin_y_v_oth_lightblue_tot	    += $userDataResult['coin_y_v_oth_lightblue'];
-    $coin_y_v_oth_whitepurple_tot   += $userDataResult['coin_y_v_oth_whitepurple'];
-    $coin_y_v_ult_red_tot	    += $userDataResult['coin_y_v_ult_red'];
-    $coin_y_v_ult_darkblue_tot	    += $userDataResult['coin_y_v_ult_darkblue'];
-    $coin_y_v_ult_green_tot	    += $userDataResult['coin_y_v_ult_green'];
-    $coin_y_v_ult_lightblue_tot	    += $userDataResult['coin_y_v_ult_lightblue'];
-    $coin_y_v_ult_black_tot	    += $userDataResult['coin_y_v_ult_black'];
-    $coin_y_v_ult_purple_tot	    += $userDataResult['coin_y_v_ult_purple'];
-    $coin_y_v_ult_yellow_tot	    += $userDataResult['coin_y_v_ult_yellow'];
-}
+//// DEFINING A VARIABLES OF DIFFERENCE - HOW MONY COINS REMAINS IN BANK
+//$coin_n_v_ch_white_diff		= $coin_n_v_ch_white_qua - $coin_n_v_ch_white_tot;
+//$coin_n_v_ch_red_diff		= $coin_n_v_ch_red_qua - $coin_n_v_ch_red_tot;
+//$coin_n_v_ch_blue_diff		= $coin_n_v_ch_blue_qua - $coin_n_v_ch_blue_tot;
+//$coin_n_v_ch_green_diff		= $coin_n_v_ch_green_qua - $coin_n_v_ch_green_tot;
+//$coin_n_v_ch_black_diff		= $coin_n_v_ch_black_qua - $coin_n_v_ch_black_tot;
+//$coin_n_v_std_white_diff	= $coin_n_v_std_white_qua - $coin_n_v_std_white_tot;
+//$coin_n_v_std_red_diff		= $coin_n_v_std_red_qua - $coin_n_v_std_red_tot;
+//$coin_n_v_std_blue_diff		= $coin_n_v_std_blue_qua - $coin_n_v_std_blue_tot;
+//$coin_n_v_std_green_diff	= $coin_n_v_std_green_qua - $coin_n_v_std_green_tot;
+//$coin_n_v_std_black_diff	= $coin_n_v_std_black_qua - $coin_n_v_std_black_tot;
+//$coin_y_v_std_white_diff	= $coin_y_v_std_white_qua - $coin_y_v_std_white_tot;
+//$coin_y_v_std_blue_diff		= $coin_y_v_std_blue_qua - $coin_y_v_std_blue_tot;
+//$coin_y_v_std_green_diff	= $coin_y_v_std_green_qua - $coin_y_v_std_green_tot;
+//$coin_y_v_std_red_diff		= $coin_y_v_std_red_qua - $coin_y_v_std_red_tot;
+//$coin_y_v_std_black_diff	= $coin_y_v_std_black_qua - $coin_y_v_std_black_tot;
+//$coin_y_v_oth_red_diff		= $coin_y_v_oth_red_qua - $coin_y_v_oth_red_tot;
+//$coin_y_v_oth_green_diff	= $coin_y_v_oth_green_qua - $coin_y_v_oth_green_tot;
+//$coin_y_v_oth_lightblue_diff	= $coin_y_v_oth_lightblue_qua - $coin_y_v_oth_lightblue_tot;
+//$coin_y_v_oth_whitepurple_diff	= $coin_y_v_oth_whitepurple_qua - $coin_y_v_oth_whitepurple_tot;
+//$coin_y_v_ult_red_diff		= $coin_y_v_ult_red_qua - $coin_y_v_ult_red_tot;
+//$coin_y_v_ult_darkblue_diff	= $coin_y_v_ult_darkblue_qua - $coin_y_v_ult_darkblue_tot;
+//$coin_y_v_ult_green_diff	= $coin_y_v_ult_green_qua - $coin_y_v_ult_green_tot;
+//$coin_y_v_ult_lightblue_diff	= $coin_y_v_ult_lightblue_qua - $coin_y_v_ult_lightblue_tot;
+//$coin_y_v_ult_black_diff	= $coin_y_v_ult_black_qua - $coin_y_v_ult_black_tot;
+//$coin_y_v_ult_purple_diff	= $coin_y_v_ult_purple_qua - $coin_y_v_ult_purple_tot;
+//$coin_y_v_ult_yellow_diff	= $coin_y_v_ult_yellow_qua - $coin_y_v_ult_yellow_tot;
 
-// DEFINING A VARIABLES OF DIFFERENCE - HOW MONY COINS REMAINS IN BANK
-$coin_n_v_ch_white_diff		= $coin_n_v_ch_white_qua - $coin_n_v_ch_white_tot;
-$coin_n_v_ch_red_diff		= $coin_n_v_ch_red_qua - $coin_n_v_ch_red_tot;
-$coin_n_v_ch_blue_diff		= $coin_n_v_ch_blue_qua - $coin_n_v_ch_blue_tot;
-$coin_n_v_ch_green_diff		= $coin_n_v_ch_green_qua - $coin_n_v_ch_green_tot;
-$coin_n_v_ch_black_diff		= $coin_n_v_ch_black_qua - $coin_n_v_ch_black_tot;
-$coin_n_v_std_white_diff	= $coin_n_v_std_white_qua - $coin_n_v_std_white_tot;
-$coin_n_v_std_red_diff		= $coin_n_v_std_red_qua - $coin_n_v_std_red_tot;
-$coin_n_v_std_blue_diff		= $coin_n_v_std_blue_qua - $coin_n_v_std_blue_tot;
-$coin_n_v_std_green_diff	= $coin_n_v_std_green_qua - $coin_n_v_std_green_tot;
-$coin_n_v_std_black_diff	= $coin_n_v_std_black_qua - $coin_n_v_std_black_tot;
-$coin_y_v_std_white_diff	= $coin_y_v_std_white_qua - $coin_y_v_std_white_tot;
-$coin_y_v_std_blue_diff		= $coin_y_v_std_blue_qua - $coin_y_v_std_blue_tot;
-$coin_y_v_std_green_diff	= $coin_y_v_std_green_qua - $coin_y_v_std_green_tot;
-$coin_y_v_std_red_diff		= $coin_y_v_std_red_qua - $coin_y_v_std_red_tot;
-$coin_y_v_std_black_diff	= $coin_y_v_std_black_qua - $coin_y_v_std_black_tot;
-$coin_y_v_oth_red_diff		= $coin_y_v_oth_red_qua - $coin_y_v_oth_red_tot;
-$coin_y_v_oth_green_diff	= $coin_y_v_oth_green_qua - $coin_y_v_oth_green_tot;
-$coin_y_v_oth_lightblue_diff	= $coin_y_v_oth_lightblue_qua - $coin_y_v_oth_lightblue_tot;
-$coin_y_v_oth_whitepurple_diff	= $coin_y_v_oth_whitepurple_qua - $coin_y_v_oth_whitepurple_tot;
-$coin_y_v_ult_red_diff		= $coin_y_v_ult_red_qua - $coin_y_v_ult_red_tot;
-$coin_y_v_ult_darkblue_diff	= $coin_y_v_ult_darkblue_qua - $coin_y_v_ult_darkblue_tot;
-$coin_y_v_ult_green_diff	= $coin_y_v_ult_green_qua - $coin_y_v_ult_green_tot;
-$coin_y_v_ult_lightblue_diff	= $coin_y_v_ult_lightblue_qua - $coin_y_v_ult_lightblue_tot;
-$coin_y_v_ult_black_diff	= $coin_y_v_ult_black_qua - $coin_y_v_ult_black_tot;
-$coin_y_v_ult_purple_diff	= $coin_y_v_ult_purple_qua - $coin_y_v_ult_purple_tot;
-$coin_y_v_ult_yellow_diff	= $coin_y_v_ult_yellow_qua - $coin_y_v_ult_yellow_tot;
+//// WE HAVE ALL DATA AND VALUES, UPDATE TABLE OF COINS
+//// CHANGE: RELEASED (total coins - using now), REMAINS(quantity minus using now) 
+//$upd = "UPDATE coins SET released = '".$coin_n_v_ch_white_tot."', remains ='".$coin_n_v_ch_white_diff."' WHERE label='coin_nv_ch_white';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_n_v_ch_red_tot."', remains ='".$coin_n_v_ch_red_diff."' WHERE label='coin_nv_ch_red';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_n_v_ch_blue_tot."', remains ='".$coin_n_v_ch_blue_diff."' WHERE label='coin_nv_ch_blue';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_n_v_ch_green_tot."', remains ='".$coin_n_v_ch_green_diff."' WHERE label='coin_nv_ch_green';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_n_v_ch_black_tot."', remains ='".$coin_n_v_ch_black_diff."' WHERE label='coin_nv_ch_black';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_n_v_std_white_tot."', remains ='".$coin_n_v_std_white_diff."' WHERE label='coin_nv_std_white';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_n_v_std_red_tot."', remains ='".$coin_n_v_std_red_diff."' WHERE label='coin_nv_std_red';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_n_v_std_blue_tot."', remains ='".$coin_n_v_std_blue_diff."' WHERE label='coin_nv_std_blue';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_n_v_std_green_tot."', remains ='".$coin_n_v_std_green_diff."' WHERE label='coin_nv_std_green';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_n_v_std_black_tot."', remains ='".$coin_n_v_std_black_diff."' WHERE label='coin_nv_std_black';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_std_white_tot."', remains ='".$coin_y_v_std_white_diff."' WHERE label='coin_yv_std_white';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_std_blue_tot."', remains ='".$coin_y_v_std_blue_diff."' WHERE label='coin_yv_std_blue';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_std_green_tot."', remains ='".$coin_y_v_std_green_diff."' WHERE label='coin_yv_std_green';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_std_red_tot."', remains ='".$coin_y_v_std_red_diff."' WHERE label='coin_yv_std_red';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_std_black_tot."', remains ='".$coin_y_v_std_black_diff."' WHERE label='coin_yv_std_black';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_oth_red_tot."', remains ='".$coin_y_v_oth_red_diff."' WHERE label='coin_yv_oth_red';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_oth_green_tot."', remains ='".$coin_y_v_oth_green_diff."' WHERE label='coin_yv_oth_green';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_oth_lightblue_tot."', remains ='".$coin_y_v_oth_lightblue_diff."' WHERE label='coin_yv_oth_lightblue';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_oth_whitepurple_tot."', remains ='".$coin_y_v_oth_whitepurple_diff."' WHERE label='coin_yv_oth_whitepurple';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_ult_red_tot."', remains ='".$coin_y_v_ult_red_diff."' WHERE label='coin_yv_ult_red';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_ult_darkblue_tot."', remains ='".$coin_y_v_ult_darkblue_diff."' WHERE label='coin_yv_ult_darkblue';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_ult_green_tot."', remains ='".$coin_y_v_ult_green_diff."' WHERE label='coin_yv_ult_green';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_ult_lightblue_tot."', remains ='".$coin_y_v_ult_lightblue_diff."' WHERE label='coin_yv_ult_lightblue';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_ult_black_tot."', remains ='".$coin_y_v_ult_black_diff."' WHERE label='coin_yv_ult_black';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_ult_purple_tot."', remains ='".$coin_y_v_ult_purple_diff."' WHERE label='coin_yv_ult_purple';";
+//$query = mysqli_query($conn, $upd);
+//$upd = "UPDATE coins SET released = '".$coin_y_v_ult_yellow_tot."', remains ='".$coin_y_v_ult_yellow_diff."' WHERE label='coin_yv_ult_yellow';";
+//$query = mysqli_query($conn, $upd);
 
-// WE HAVE ALL DATA AND VALUES, UPDATE TABLE OF COINS
-// CHANGE: RELEASED (total coins - using now), REMAINS(quantity minus using now) 
-$upd = "UPDATE coins SET released = '".$coin_n_v_ch_white_tot."', remains ='".$coin_n_v_ch_white_diff."' WHERE label='coin_nv_ch_white';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_n_v_ch_red_tot."', remains ='".$coin_n_v_ch_red_diff."' WHERE label='coin_nv_ch_red';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_n_v_ch_blue_tot."', remains ='".$coin_n_v_ch_blue_diff."' WHERE label='coin_nv_ch_blue';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_n_v_ch_green_tot."', remains ='".$coin_n_v_ch_green_diff."' WHERE label='coin_nv_ch_green';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_n_v_ch_black_tot."', remains ='".$coin_n_v_ch_black_diff."' WHERE label='coin_nv_ch_black';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_n_v_std_white_tot."', remains ='".$coin_n_v_std_white_diff."' WHERE label='coin_nv_std_white';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_n_v_std_red_tot."', remains ='".$coin_n_v_std_red_diff."' WHERE label='coin_nv_std_red';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_n_v_std_blue_tot."', remains ='".$coin_n_v_std_blue_diff."' WHERE label='coin_nv_std_blue';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_n_v_std_green_tot."', remains ='".$coin_n_v_std_green_diff."' WHERE label='coin_nv_std_green';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_n_v_std_black_tot."', remains ='".$coin_n_v_std_black_diff."' WHERE label='coin_nv_std_black';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_std_white_tot."', remains ='".$coin_y_v_std_white_diff."' WHERE label='coin_yv_std_white';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_std_blue_tot."', remains ='".$coin_y_v_std_blue_diff."' WHERE label='coin_yv_std_blue';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_std_green_tot."', remains ='".$coin_y_v_std_green_diff."' WHERE label='coin_yv_std_green';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_std_red_tot."', remains ='".$coin_y_v_std_red_diff."' WHERE label='coin_yv_std_red';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_std_black_tot."', remains ='".$coin_y_v_std_black_diff."' WHERE label='coin_yv_std_black';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_oth_red_tot."', remains ='".$coin_y_v_oth_red_diff."' WHERE label='coin_yv_oth_red';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_oth_green_tot."', remains ='".$coin_y_v_oth_green_diff."' WHERE label='coin_yv_oth_green';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_oth_lightblue_tot."', remains ='".$coin_y_v_oth_lightblue_diff."' WHERE label='coin_yv_oth_lightblue';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_oth_whitepurple_tot."', remains ='".$coin_y_v_oth_whitepurple_diff."' WHERE label='coin_yv_oth_whitepurple';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_ult_red_tot."', remains ='".$coin_y_v_ult_red_diff."' WHERE label='coin_yv_ult_red';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_ult_darkblue_tot."', remains ='".$coin_y_v_ult_darkblue_diff."' WHERE label='coin_yv_ult_darkblue';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_ult_green_tot."', remains ='".$coin_y_v_ult_green_diff."' WHERE label='coin_yv_ult_green';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_ult_lightblue_tot."', remains ='".$coin_y_v_ult_lightblue_diff."' WHERE label='coin_yv_ult_lightblue';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_ult_black_tot."', remains ='".$coin_y_v_ult_black_diff."' WHERE label='coin_yv_ult_black';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_ult_purple_tot."', remains ='".$coin_y_v_ult_purple_diff."' WHERE label='coin_yv_ult_purple';";
-$query = mysqli_query($conn, $upd);
-$upd = "UPDATE coins SET released = '".$coin_y_v_ult_yellow_tot."', remains ='".$coin_y_v_ult_yellow_diff."' WHERE label='coin_yv_ult_yellow';";
-$query = mysqli_query($conn, $upd);
-
-// SET UP AND UPDATE USERDATA
-// FOR EACH USER DO THIS
-$sqlGetUserdata = "SELECT * FROM userdata;";
-$allUserdata = mysqli_query($conn, $sqlGetUserdata);
-while($userDataResult = mysqli_fetch_assoc($allUserdata)){
-    
-    // WE CAN USE OLD VARIABLES AS A NEW TOTALS - TOTAL OF COINS PER EACH USER
-    $coin_n_v_ch_white_tot	    = $userDataResult['coin_n_v_ch_white'];
-    $coin_n_v_ch_red_tot	    = $userDataResult['coin_n_v_ch_red'];
-    $coin_n_v_ch_blue_tot	    = $userDataResult['coin_n_v_ch_blue'];
-    $coin_n_v_ch_green_tot	    = $userDataResult['coin_n_v_ch_green'];
-    $coin_n_v_ch_black_tot	    = $userDataResult['coin_n_v_ch_black'];
-    $coin_n_v_std_white_tot	    = $userDataResult['coin_n_v_std_white'];
-    $coin_n_v_std_red_tot	    = $userDataResult['coin_n_v_std_red'];
-    $coin_n_v_std_blue_tot	    = $userDataResult['coin_n_v_std_blue'];
-    $coin_n_v_std_green_tot	    = $userDataResult['coin_n_v_std_green'];
-    $coin_n_v_std_black_tot	    = $userDataResult['coin_n_v_std_black'];
-    $coin_y_v_std_white_tot	    = $userDataResult['coin_y_v_std_white'];
-    $coin_y_v_std_blue_tot	    = $userDataResult['coin_y_v_std_blue'];
-    $coin_y_v_std_green_tot	    = $userDataResult['coin_y_v_std_green'];
-    $coin_y_v_std_red_tot	    = $userDataResult['coin_y_v_std_red'];
-    $coin_y_v_std_black_tot	    = $userDataResult['coin_y_v_std_black'];
-    $coin_y_v_oth_red_tot	    = $userDataResult['coin_y_v_oth_red'];
-    $coin_y_v_oth_green_tot	    = $userDataResult['coin_y_v_oth_green'];
-    $coin_y_v_oth_lightblue_tot	    = $userDataResult['coin_y_v_oth_lightblue'];
-    $coin_y_v_oth_whitepurple_tot   = $userDataResult['coin_y_v_oth_whitepurple'];
-    $coin_y_v_ult_red_tot	    = $userDataResult['coin_y_v_ult_red'];
-    $coin_y_v_ult_darkblue_tot	    = $userDataResult['coin_y_v_ult_darkblue'];
-    $coin_y_v_ult_green_tot	    = $userDataResult['coin_y_v_ult_green'];
-    $coin_y_v_ult_lightblue_tot	    = $userDataResult['coin_y_v_ult_lightblue'];
-    $coin_y_v_ult_black_tot	    = $userDataResult['coin_y_v_ult_black'];
-    $coin_y_v_ult_purple_tot	    = $userDataResult['coin_y_v_ult_purple'];
-    $coin_y_v_ult_yellow_tot	    = $userDataResult['coin_y_v_ult_yellow'];
-    
-    // SUM OF ALL COINS USER HAVE
-    $tempCoinTotalNumber = $coin_n_v_ch_white_tot + $coin_n_v_ch_red_tot + $coin_n_v_ch_blue_tot + $coin_n_v_ch_green_tot + $coin_n_v_ch_black_tot + $coin_n_v_std_white_tot + $coin_n_v_std_red_tot + $coin_n_v_std_blue_tot + $coin_n_v_std_green_tot + $coin_n_v_std_black_tot + $coin_y_v_std_white_tot + $coin_y_v_std_blue_tot + $coin_y_v_std_green_tot + $coin_y_v_std_red_tot + $coin_y_v_std_black_tot + $coin_y_v_oth_red_tot + $coin_y_v_oth_green_tot + $coin_y_v_oth_lightblue_tot + $coin_y_v_oth_whitepurple_tot + $coin_y_v_ult_red_tot + $coin_y_v_ult_darkblue_tot + $coin_y_v_ult_green_tot + $coin_y_v_ult_lightblue_tot + $coin_y_v_ult_black_tot + $coin_y_v_ult_purple_tot + $coin_y_v_ult_yellow_tot;
-    
-    // COUNTING VALUE OF COINS USER HAVE
-    $tempCoinTotalValue = ($coin_n_v_ch_white_val * $coin_n_v_ch_white_tot) + ($coin_n_v_ch_red_val * $coin_n_v_ch_red_tot) + ($coin_n_v_ch_blue_val * $coin_n_v_ch_blue_tot) + ($coin_n_v_ch_green_val * $coin_n_v_ch_green_tot) + ($coin_n_v_ch_black_val * $coin_n_v_ch_black_tot) + ($coin_n_v_std_white_val * $coin_n_v_std_white_tot) + ($coin_n_v_std_red_val * $coin_n_v_std_red_tot) + ($coin_n_v_std_blue_val * $coin_n_v_std_blue_tot) + ($coin_n_v_std_green_val * $coin_n_v_std_green_tot) + ($coin_n_v_std_black_val * $coin_n_v_std_black_tot) + ($coin_y_v_std_white_val * $coin_y_v_std_white_tot) + ($coin_y_v_std_blue_val * $coin_y_v_std_blue_tot) + ($coin_y_v_std_green_val * $coin_y_v_std_green_tot) + ($coin_y_v_std_red_val * $coin_y_v_std_red_tot) + ($coin_y_v_std_black_val * $coin_y_v_std_black_tot) + ($coin_y_v_oth_red_val * $coin_y_v_oth_red_tot) + ($coin_y_v_oth_green_val * $coin_y_v_oth_green_tot) + ($coin_y_v_oth_lightblue_val * $coin_y_v_oth_lightblue_tot) + ($coin_y_v_oth_whitepurple_val * $coin_y_v_oth_whitepurple_tot) + ($coin_y_v_ult_red_val * $coin_y_v_ult_red_tot) + ($coin_y_v_ult_darkblue_val * $coin_y_v_ult_darkblue_tot) + ($coin_y_v_ult_green_val * $coin_y_v_ult_green_tot) + ($coin_y_v_ult_lightblue_val * $coin_y_v_ult_lightblue_tot) + ($coin_y_v_ult_black_val * $coin_y_v_ult_black_tot) + ($coin_y_v_ult_purple_val * $coin_y_v_ult_purple_tot) + ($coin_y_v_ult_yellow_val * $coin_y_v_ult_yellow_tot);
-    
-    // COUNTING A BALANCE OF BANK TRANSACTION
-    $tempBankBalance = $userDataResult['data_bank_trans_val_received'] - $userDataResult['data_bank_trans_val_sent'];
-
-    // COUNTING AND DATA_CLEANPOINTS
-    $data_cleanpts_bal = $userDataResult['data_cleanpts_earned'] - $userDataResult['data_cleanpts_lost'];
-    
+//// SET UP AND UPDATE USERDATA
+//// FOR EACH USER DO THIS
+//$sqlGetUserdata = "SELECT * FROM userdata;";
+//$allUserdata = mysqli_query($conn, $sqlGetUserdata);
+//while($userDataResult = mysqli_fetch_assoc($allUserdata)){
+//    
+//    // WE CAN USE OLD VARIABLES AS A NEW TOTALS - TOTAL OF COINS PER EACH USER
+//    $coin_n_v_ch_white_tot	    = $userDataResult['coin_n_v_ch_white'];
+//    $coin_n_v_ch_red_tot	    = $userDataResult['coin_n_v_ch_red'];
+//    $coin_n_v_ch_blue_tot	    = $userDataResult['coin_n_v_ch_blue'];
+//    $coin_n_v_ch_green_tot	    = $userDataResult['coin_n_v_ch_green'];
+//    $coin_n_v_ch_black_tot	    = $userDataResult['coin_n_v_ch_black'];
+//    $coin_n_v_std_white_tot	    = $userDataResult['coin_n_v_std_white'];
+//    $coin_n_v_std_red_tot	    = $userDataResult['coin_n_v_std_red'];
+//    $coin_n_v_std_blue_tot	    = $userDataResult['coin_n_v_std_blue'];
+//    $coin_n_v_std_green_tot	    = $userDataResult['coin_n_v_std_green'];
+//    $coin_n_v_std_black_tot	    = $userDataResult['coin_n_v_std_black'];
+//    $coin_y_v_std_white_tot	    = $userDataResult['coin_y_v_std_white'];
+//    $coin_y_v_std_blue_tot	    = $userDataResult['coin_y_v_std_blue'];
+//    $coin_y_v_std_green_tot	    = $userDataResult['coin_y_v_std_green'];
+//    $coin_y_v_std_red_tot	    = $userDataResult['coin_y_v_std_red'];
+//    $coin_y_v_std_black_tot	    = $userDataResult['coin_y_v_std_black'];
+//    $coin_y_v_oth_red_tot	    = $userDataResult['coin_y_v_oth_red'];
+//    $coin_y_v_oth_green_tot	    = $userDataResult['coin_y_v_oth_green'];
+//    $coin_y_v_oth_lightblue_tot	    = $userDataResult['coin_y_v_oth_lightblue'];
+//    $coin_y_v_oth_whitepurple_tot   = $userDataResult['coin_y_v_oth_whitepurple'];
+//    $coin_y_v_ult_red_tot	    = $userDataResult['coin_y_v_ult_red'];
+//    $coin_y_v_ult_darkblue_tot	    = $userDataResult['coin_y_v_ult_darkblue'];
+//    $coin_y_v_ult_green_tot	    = $userDataResult['coin_y_v_ult_green'];
+//    $coin_y_v_ult_lightblue_tot	    = $userDataResult['coin_y_v_ult_lightblue'];
+//    $coin_y_v_ult_black_tot	    = $userDataResult['coin_y_v_ult_black'];
+//    $coin_y_v_ult_purple_tot	    = $userDataResult['coin_y_v_ult_purple'];
+//    $coin_y_v_ult_yellow_tot	    = $userDataResult['coin_y_v_ult_yellow'];
+//    
+//    // SUM OF ALL COINS USER HAVE
+//    $tempCoinTotalNumber = $coin_n_v_ch_white_tot + $coin_n_v_ch_red_tot + $coin_n_v_ch_blue_tot + $coin_n_v_ch_green_tot + $coin_n_v_ch_black_tot + $coin_n_v_std_white_tot + $coin_n_v_std_red_tot + $coin_n_v_std_blue_tot + $coin_n_v_std_green_tot + $coin_n_v_std_black_tot + $coin_y_v_std_white_tot + $coin_y_v_std_blue_tot + $coin_y_v_std_green_tot + $coin_y_v_std_red_tot + $coin_y_v_std_black_tot + $coin_y_v_oth_red_tot + $coin_y_v_oth_green_tot + $coin_y_v_oth_lightblue_tot + $coin_y_v_oth_whitepurple_tot + $coin_y_v_ult_red_tot + $coin_y_v_ult_darkblue_tot + $coin_y_v_ult_green_tot + $coin_y_v_ult_lightblue_tot + $coin_y_v_ult_black_tot + $coin_y_v_ult_purple_tot + $coin_y_v_ult_yellow_tot;
+//    
+//    // COUNTING VALUE OF COINS USER HAVE
+//    $tempCoinTotalValue = ($coin_n_v_ch_white_val * $coin_n_v_ch_white_tot) + ($coin_n_v_ch_red_val * $coin_n_v_ch_red_tot) + ($coin_n_v_ch_blue_val * $coin_n_v_ch_blue_tot) + ($coin_n_v_ch_green_val * $coin_n_v_ch_green_tot) + ($coin_n_v_ch_black_val * $coin_n_v_ch_black_tot) + ($coin_n_v_std_white_val * $coin_n_v_std_white_tot) + ($coin_n_v_std_red_val * $coin_n_v_std_red_tot) + ($coin_n_v_std_blue_val * $coin_n_v_std_blue_tot) + ($coin_n_v_std_green_val * $coin_n_v_std_green_tot) + ($coin_n_v_std_black_val * $coin_n_v_std_black_tot) + ($coin_y_v_std_white_val * $coin_y_v_std_white_tot) + ($coin_y_v_std_blue_val * $coin_y_v_std_blue_tot) + ($coin_y_v_std_green_val * $coin_y_v_std_green_tot) + ($coin_y_v_std_red_val * $coin_y_v_std_red_tot) + ($coin_y_v_std_black_val * $coin_y_v_std_black_tot) + ($coin_y_v_oth_red_val * $coin_y_v_oth_red_tot) + ($coin_y_v_oth_green_val * $coin_y_v_oth_green_tot) + ($coin_y_v_oth_lightblue_val * $coin_y_v_oth_lightblue_tot) + ($coin_y_v_oth_whitepurple_val * $coin_y_v_oth_whitepurple_tot) + ($coin_y_v_ult_red_val * $coin_y_v_ult_red_tot) + ($coin_y_v_ult_darkblue_val * $coin_y_v_ult_darkblue_tot) + ($coin_y_v_ult_green_val * $coin_y_v_ult_green_tot) + ($coin_y_v_ult_lightblue_val * $coin_y_v_ult_lightblue_tot) + ($coin_y_v_ult_black_val * $coin_y_v_ult_black_tot) + ($coin_y_v_ult_purple_val * $coin_y_v_ult_purple_tot) + ($coin_y_v_ult_yellow_val * $coin_y_v_ult_yellow_tot);
+//    
+//    // COUNTING A BALANCE OF BANK TRANSACTION
+//    $tempBankBalance = $userDataResult['data_bank_trans_val_received'] - $userDataResult['data_bank_trans_val_sent'];
+//
+//    // COUNTING AND DATA_CLEANPOINTS
+//    $data_cleanpts_bal = $userDataResult['data_cleanpts_earned'] - $userDataResult['data_cleanpts_lost'];
+//    
     // DEFINE A RANK
     $wl = $userDataResult['data_weblogins'];
     $rank = "";

@@ -1,4 +1,4 @@
-<fieldset id="fieldsetCalendar">    
+<fieldset id="fieldsetAchievements">    
     <div class="calendarDay">
         <h1>Hry pro jednotlivce</h1>
         <div class="calendarDayDetail">

@@ -43,15 +43,18 @@
                     case 'useCode':             include 'useCode.php';                  break;
                     case 'editUserPrep':        include 'editUserPrep.php';             break;
                     case 'editUser':            include 'editUser.php';                 break;
+                    case 'confirmSendGift':     include 'gifts.php';                    break;
                 
                     default:
                         //If not buttons, then select-option menu
                         switch ($value) {
+                        
                             //ADMIN cases
                             case 'addNewTeamPage':      include 'addNewTeamPage.php';           break;
                             case 'addNewCodePage':      include 'addNewCodePage.php';           break;
                             case 'bankManager':         include 'coinManagerPage.php';          break;
                             case 'editUserPage':        include 'editUserPage.php';             break;
+                            case 'giftPage':            include 'giftsPage.php';                break;
             
                             //USER cases
 
@@ -71,6 +74,7 @@
                             //EVERYONE cases
                         
                             case 'achievements':        include 'achievementsPage.php';         break;
+                            case 'gameResults':         include 'gameResultsPage.php';          break;
                             case 'uplGall':             include 'uplGalleryPage.php';           break;
                             case 'publGall':            include 'publicGalleryPage.php';        break;
                             case 'calendar':            include 'calendarCamp.php';             break;
@@ -87,7 +91,7 @@
             //                            case 'viewUserPrep':        include 'viewUserPrep.php'; break;
             //                            case 'ratT':                include 'ratingTeamsPage.php'; break;
             //                            case 'viewTeamPrep':        include 'viewTeamPrep.php'; break;
-            //                            case 'gameResults':         include 'gameResultsPage.php'; break;
+            //                            
             //                            case 'gameSpiner':          include 'gameSpiner.php'; break;
             //                            case 'profile':             include 'profile.php'; break;
             //                            case 'settings':            include 'settings.php'; break;

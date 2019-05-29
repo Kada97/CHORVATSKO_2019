@@ -38,7 +38,7 @@
                 <option value = "team" disabled>
                     Můj tým
                 </option>
-                <option value = "gameResults" disabled>
+                <option value = "gameResults">
                     Výsledky z her
                 </option>
                 <option value = "achievements">
@@ -126,7 +126,9 @@
                 <option value = "uplGall">
                     Všechny mé uploadované obrázky
                 </option>
-                
+                <option value = "giftPage">
+                    Dary
+                </option>
                 
                 
                 
