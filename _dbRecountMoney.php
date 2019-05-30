@@ -33,6 +33,7 @@
             $money_extra_qr_total           = 0;
             $money_extra_qr_ig              = 0;
             $money_extra_qr_tg              = 0;
+            $money_extra_code_total         = 0;
             $money_extra_clean_balance      = 0;
             $money_extra_clean_won          = 0;
             $money_extra_clean_lost         = 0;
@@ -40,6 +41,7 @@
             $coin_value_total               = 0;
             $coin_value_earned              = 0;
             $coin_value_returned            = 0;
+            $score                          = 0;
             
             $sqlBankRecords = 
                     "SELECT "
@@ -60,6 +62,7 @@
                     . "money_extra_web_achievements, "
                     . "money_extra_qr_ig, "
                     . "money_extra_qr_tg, "
+                    . "money_extra_code_total, "
                     . "money_extra_clean_won, "
                     . "money_extra_clean_lost, "
                     . "money_sanctions, "
@@ -87,6 +90,7 @@
             $money_extra_web_achievements   += $resultBankRecords['money_extra_web_achievements'];
             $money_extra_qr_ig              += $resultBankRecords['money_extra_qr_ig'];
             $money_extra_qr_tg              += $resultBankRecords['money_extra_qr_tg'];
+            $money_extra_code_total         += $resultBankRecords['money_extra_code_total'];
             $money_extra_clean_won          += $resultBankRecords['money_extra_clean_won'];
             $money_extra_clean_lost         += $resultBankRecords['money_extra_clean_lost'];
             $money_sanctions                += $resultBankRecords['money_sanctions'];
@@ -98,14 +102,16 @@
             $money_extra_qr_total           += $money_extra_qr_ig + $money_extra_qr_tg;
             $money_extra_web_total          += $money_extra_web_rank + $money_extra_web_achievements;
             $money_extra_ig_total           += $money_extra_ig_cl + $money_extra_ig_dk + $money_extra_ig_org + $money_extra_ig_sys;
-            $money_extra_total              += $money_extra_ig_total + $money_tg_received + $money_extra_web_total + $money_extra_qr_total + $money_extra_clean_balance;
+            $money_extra_total              += $money_extra_ig_total + $money_extra_web_total + $money_extra_qr_total + $money_extra_clean_balance + $money_extra_code_total;
             $money_ig_balance               += $money_ig_won - $money_ig_lost;
             $money_web_balance              += $money_web_won - $money_web_lost;
             $money_total_lost               += $money_web_lost + $money_ig_lost + $money_sanctions;
-            $money_total_won                += $money_web_won + $money_ig_won;
+            $money_total_won                += $money_web_won + $money_tg_received + $money_ig_won;
             $money_total_bet                += $money_web_bet + $money_ig_bet;
             $money_total_received           += $money_received + $money_extra_total + $coin_value_total;
             $money_actual_total             += $money_total_received + $money_total_won - $money_total_lost - $money_sent;
+            
+            $score                          += $money_total_won + $money_extra_total - $money_extra_clean_balance; + $money_extra_clean_won - $money_sanctions;
             
             $udpSqlBankRecords = 
                     "UPDATE money_records SET "
@@ -121,10 +127,16 @@
                     . "money_extra_web_total = '".$money_extra_web_total."', "
                     . "money_extra_qr_total = '".$money_extra_qr_total."', "
                     . "money_extra_clean_balance = '".$money_extra_clean_balance."', "
-                    . "coin_value_total = '".$coin_value_total."' "
+                    . "coin_value_total = '".$coin_value_total."', "
+                    . "score = '".$score."' "
                     . "WHERE id ='".$id."'";
             $queryUpdBankRecords = mysqli_query($conn,$udpSqlBankRecords);
             
+            $udpSqlUserdata = 
+                    "UPDATE userdata SET "
+                    . "score = '".$score."' "
+                    . "WHERE id ='".$id."'";
+            $queryUpdUserdata = mysqli_query($conn,$udpSqlUserdata);
         }
     }
 

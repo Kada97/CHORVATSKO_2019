@@ -29,8 +29,9 @@
             
 	    $queryBankRecords1 = mysqli_query($conn,$sqlBankRecords1);
 	    $resultBankRecords1 = mysqli_fetch_assoc($queryBankRecords1);
+            $monAct = $resultBankRecords1['money_actual_total'];
             
-            if ($resultBankRecords1['money_actual_total'] > 0 || $resultBankRecords1['money_actual_total'] - $amount >= 0) {
+            if ($resultBankRecords1['money_actual_total'] > 0 && $monAct - $amount >= 0) {
 	    
                 $sTot1 = $resultUserdata1['data_bank_trans_total'] + 1;
                 $sOut = $resultUserdata1['data_bank_trans_outgoing'] + 1;
@@ -82,14 +83,13 @@
 
                 dbRecountMoney($usersToRecountMoney);
                 $_SESSION['error_msg'] = 'Peníze byly ODESLÁNY!';
+                include 'sendMoneyPage.php';
             }
             else {
                 $_SESSION['error_msg'] = 'Nemáš dostatek peněz!';
+                include 'sendMoneyPage.php';
             }
         }
         
-        include 'sendMoneyPage.php';
-    }
-    if($_SESSION['error_msg'] != null){
-        include 'sendMoneyPage.php';
+        
     }

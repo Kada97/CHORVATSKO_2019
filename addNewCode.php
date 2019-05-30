@@ -36,8 +36,8 @@
         if ($typeGame == null) {
             $_SESSION['error_msg'] = 'Typ hry nezadán';
         }
-        if ($detailText == null && $typeGame == 6) {
-            $_SESSION['error_msg'] = 'K vazbě "Typ hry <6 = Other>" je potřeba povinně vyplnit poznámku';
+        if ($detailText == null && $typeGame == 8) {
+            $_SESSION['error_msg'] = 'K vazbě "Typ hry <8 = Other>" je potřeba povinně vyplnit poznámku';
         }
         
         if ($_SESSION['error_msg'] == '') {

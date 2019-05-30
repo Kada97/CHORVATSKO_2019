@@ -26,7 +26,7 @@
                 <option value = "calendar">
                     Kalendář
                 </option>
-                <option value = "ratU" disabled>
+                <option value = "ratU">
                     Žebříček uživatelů
                 </option>
                 <option value = "ratT" disabled>

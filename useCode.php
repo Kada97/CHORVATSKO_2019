@@ -45,52 +45,101 @@
 	    $codeInvoker = $_SESSION['username'];
 	    $codeTypegame = $okCode['typegame'];
             
-            if ($codeTypegame == 6) {
+            if ($codeTypegame == 7) {
                 $codeValue = 0;
             }
 	    
-	    
+//                          <li>(1,2)   1  = QR     = Find & Fill - Hidden (umisťování na různá místa)</li>
+//                          <li>(1,2)   2  = QR     = Treasury - Reward (odměna)</li>
+//                          <li>(1,2)   3  = QR     = InGame - Bonus (při hrách se můžou objevit kódy)</li>
+//                          <li>(1,2)   4  = nonQR  = Treasury - Reward (odměna jednotlivce, týmu, či bonusové ohodnocení)</li>
+//                          <li>(1)     5  = nonQR  = Daily Quest - Reward (za vykonané úkoly jakéhokoli rázu náleží odměna)</li>
+//                          <li>(1,2)   6  = nonQR  = InGame - Bonus (při hrách se můžou objevit kódy)</li>
+//                          <li>(1)     7  = nonQR  = Indície k rozklíčování šifry kolíku (nepočítá se odměna - nominální hodnota kódu, vyplní se 0)</li>
+//                          <li>(1,2)   8  = nonQR  = Other (jiné nespecifikované, potřeba vyplnit poznámku)</li>
+            
+            
 	    if($codeTypeuser == 1){
-		$getUserdata = mysqli_query($conn, "SELECT id, code_total, code_ig_entered FROM userdata WHERE username ='".$_SESSION["username"]."';");
-		$getMoneyRecords = mysqli_query($conn, "SELECT id, money_extra_qr_ig FROM money_records WHERE username ='".$_SESSION["username"]."';");
+		$getUserdata = mysqli_query($conn, "SELECT id, teamId, code_total, code_ig_entered, code_kolikCode FROM userdata WHERE username ='".$_SESSION["username"]."';");
+		$getMoneyRecords = mysqli_query($conn, "SELECT id, money_extra_qr_ig, money_extra_code_total FROM money_records WHERE username ='".$_SESSION["username"]."';");
                 
 		$userdata = mysqli_fetch_assoc($getUserdata);
 		$moneyRecords = mysqli_fetch_assoc($getMoneyRecords);
                 
 		$userid = $userdata['id'];
+                $teamId = $userdata['teamId'];
 		$userQrTot = $userdata['code_total']+1;
 		$userIgEnt = $userdata['code_ig_entered']+1;
+		$code_kolikCode = $userdata['code_kolikCode']+1;
 		$userQrMonUs = $moneyRecords['money_extra_qr_ig']+$codeValue;
 		
 		$updUserData = "UPDATE userdata SET code_total = '".$userQrTot."', code_ig_entered = '".$userIgEnt."' WHERE id='".$userid."';";
 		$queryUserData = mysqli_query($conn, $updUserData);
                 
-                $updMoneyRecords = "UPDATE money_records SET money_extra_qr_ig = '".$userQrMonUs."' WHERE id='".$userid."';";
-		$queryMoneyRecords = mysqli_query($conn, $updMoneyRecords);
+                $updMoneyRecords = "";
+		
+                
+                switch ($codeTypegame) {
+                    case 1:
+                    case 2:
+                    case 3:
+                        $updMoneyRecords = "UPDATE money_records SET money_extra_qr_ig = '".$userQrMonUs."' WHERE id='".$userid."';";
+                        break;
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 8:
+                        $updMoneyRecords = "UPDATE money_records SET money_extra_code_total = '".$userQrMonUs."' WHERE id='".$userid."';";
+                        break;
+                    case 7:
+                        $updMoneyRecords = "UPDATE userdata SET code_kolikCode = '".$code_kolikCode."' WHERE id='".$userid."';";
+                        $insertDataKolikSql = "INSERT INTO data_code_kolik (founder,teamId,code) VALUES ('$codeInvoker','$teamId','$codeCode');";
+                        $queryMoneyRecords = mysqli_query($conn, $insertDataKolikSql);
+                        
+                }
+                
+                $queryMoneyRecords = mysqli_query($conn, $updMoneyRecords);
                 
                 $u = array();
                 array_push($u, $userid);
                 dbRecountMoney($u);
-                
 	    }
 	    elseif($codeTypeuser == 2){
 		$getUserdata = mysqli_query($conn, "SELECT id, teamId, code_total, code_tg_entered FROM userdata WHERE username ='".$_SESSION["username"]."';");
 		$userdata = mysqli_fetch_assoc($getUserdata);
 		$userid = $userdata['id'];
 		$teamid = $userdata['teamId'];
-		$getTeamdata = mysqli_query($conn, "SELECT id, qr_mon_teams, qr_tot, mon_to_div_from_qr_remains FROM teamdata WHERE id ='".$teamid."';");
+		$getTeamdata = mysqli_query($conn, "SELECT id, qr_mon_teams, qr_tot, code_total, mon_to_div_from_qr_remains FROM teamdata WHERE id ='".$teamid."';");
 		$teamdata = mysqli_fetch_assoc($getTeamdata);
                 $userQrTot = $userdata['code_total']+1;
 		$userTgEnt = $userdata['code_tg_entered']+1;
-		$userQrMonTe = $teamdata['qr_mon_teams']+$codeValue;
+		$userQrMonTeQR = $teamdata['qr_mon_teams']+$codeValue;
+		$userQrMonTe = $teamdata['code_mon_total']+$codeValue;
 		$qrMonRemains = $teamdata['mon_to_div_from_qr_remains']+$codeValue;
-		$numbCodes = $teamdata['qr_tot']+1;
+		$numbCodesQR = $teamdata['qr_tot']+1;
+		$numbCodes = $teamdata['code_total']+1;
                 
 		$updUserData = "UPDATE userdata SET code_total = '".$userQrTot."', code_tg_entered = '".$userTgEnt."' WHERE id='".$userid."';";
 		$queryUserData = mysqli_query($conn, $updUserData);
                 
-                $updTeamdata = "UPDATE teamdata SET qr_mon_teams = '".$userQrMonTe."', mon_to_div_from_qr_remains = '".$qrMonRemains."', qr_tot = '".$numbCodes."' WHERE id='".$teamid."';";
-		$queryTeamdata = mysqli_query($conn, $updTeamdata);
+                $updTeamdata = "";
+		
+                
+                switch ($codeTypegame) {
+                    case 1:
+                    case 2:
+                    case 3:
+                        $updTeamdata = "UPDATE teamdata SET qr_mon_teams = '".$userQrMonTeQR."', mon_to_div_from_qr_remains = '".$qrMonRemains."', qr_tot = '".$numbCodesQR."' WHERE id='".$teamid."';";
+                        break;
+                    case 4:
+                    case 6:
+                    case 8:
+                        $updTeamdata = "UPDATE teamdata SET code_mon_total = '".$userQrMonTe."', mon_to_div_from_qr_remains = '".$qrMonRemains."', code_total = '".$numbCodes."' WHERE id='".$teamid."';";
+                        break;
+                }
+                
+                $queryTeamdata = mysqli_query($conn, $updTeamdata);
+                
 	    }
 	    
 	    $upd = "UPDATE data_codes SET valid = '".$codeValid."', invoker = '".$_SESSION["username"]."' WHERE id='".$codeId."';";

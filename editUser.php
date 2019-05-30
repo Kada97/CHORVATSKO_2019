@@ -150,6 +150,9 @@ if (isSet($_POST['editUser'])) {
             $upd = "UPDATE teams SET numb_registered = '".$nV."' WHERE id='".$team."';";
             $query = mysqli_query($conn, $upd);
             
+            $upd = "UPDATE data_user_kolik SET userteam = '".$resTeam['name']."', userteamId = '".$team."' WHERE id='".$_SESSION['editUserId'] . "';";
+            $query = mysqli_query($conn, $upd);
+            
             
             $_SESSION['editUserId']             = null;
             //$_SESSION['editUserUsername']       = null;

@@ -21,12 +21,18 @@ $moneyRecordsSql = "
     ('$username')
     ;";
 
+$kolikUserdataSql = "
+    INSERT INTO data_user_kolik
+    (username)
+    VALUES
+    ('$username')
+    ;";
 
 
 // CREATING ROWS IN DB
 $register = mysqli_query($conn, $registerSql) or die(mysqli_error($conn));
 $userData = mysqli_query($conn, $userdataSql) or die(mysqli_error($conn));
 $moneyRecords = mysqli_query($conn, $moneyRecordsSql) or die(mysqli_error($conn));
-//$kolikUserdata = 
+$kolikUserdata = mysqli_query($conn, $kolikUserdataSql) or die(mysqli_error($conn));
 
 

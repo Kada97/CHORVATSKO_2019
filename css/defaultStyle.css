@@ -651,7 +651,7 @@ fieldset .formRow > label {
     width: 100%;
     margin: 0;
     padding: 0 50px 0 50px;
-    font-size: 50px;
+    font-size: 20px;
     border: 0;
     text-align: center;
     text-decoration: none;
@@ -659,6 +659,10 @@ fieldset .formRow > label {
     transition-duration: 0.6s;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+#mobileOptions:first-child{
+    font-size: 50px;
 }
 
 .navSelectMobileManInstr select {

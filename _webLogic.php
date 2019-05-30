@@ -44,6 +44,7 @@
                     case 'editUserPrep':        include 'editUserPrep.php';             break;
                     case 'editUser':            include 'editUser.php';                 break;
                     case 'confirmSendGift':     include 'gifts.php';                    break;
+                    case 'viewUserPrep':        include 'viewUserPrep.php';             break;
                 
                     default:
                         //If not buttons, then select-option menu
@@ -73,6 +74,7 @@
 
                             //EVERYONE cases
                         
+                            case 'ratU':                include 'ratingUsersPage.php';          break;
                             case 'achievements':        include 'achievementsPage.php';         break;
                             case 'gameResults':         include 'gameResultsPage.php';          break;
                             case 'uplGall':             include 'uplGalleryPage.php';           break;
@@ -87,8 +89,8 @@
             //                            
             //                            
             //                            case 'buttDownPublAll':     include 'downloadAllPublicPictures.php'; break;
-            //                            case 'ratU':                include 'ratingUsersPage.php'; break;
-            //                            case 'viewUserPrep':        include 'viewUserPrep.php'; break;
+            //                            
+            //                            
             //                            case 'ratT':                include 'ratingTeamsPage.php'; break;
             //                            case 'viewTeamPrep':        include 'viewTeamPrep.php'; break;
             //                            

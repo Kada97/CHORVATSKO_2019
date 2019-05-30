@@ -53,6 +53,7 @@
                     $_SESSION['addTeamNumbMembers']     = '';
                     
                     $teamData = mysqli_query($conn, "INSERT INTO teamdata() VALUES();") or die(mysqli_error($conn));
+                    $teamData = mysqli_query($conn, "INSERT INTO data_team_kolik(team) VALUES('$name');") or die(mysqli_error($conn));
                     
                     echo("<meta http-equiv='refresh' content='0'>");
                 } else {

@@ -46,20 +46,21 @@
             <div class = "formRow" id="birthdateLikeRow">
                 <label for = "typeGame">Typ hry 
                     <ul>
-                        <li>1 = Find & Fill (umisťování QR kódů na různá místa)</li>
-                        <li>2 = Treasury - hidden (rafinovaně schovávané QR)</li>
-                        <li>3 = Reward (Nemusí být nutně QR; odměna jednotlivce, týmu, či bonusové ohodnocení)</li>
-                        <li>4 = Daily Quest (Nemusí být nutně QR; za vykonané úkoly jakéhokoli rázu náleží odměna)</li>
-                        <li>5 = InGame (Nemusí být nutně QR; při hrách se můžou objevit kódy)</li>
-                        <li>6 = Indície k rozklíčování šifry kolíku (Nemusí být nutně QR; nepočítá se odměna - nominální hodnota kódu, vyplní se 0)</li>
-                        <li>7 = Other (Nemusí být nutně QR; jiné nespecifikované, potřeba vyplnit poznámku</li>
+                        <li>(1,2)   1  = QR     = Find & Fill - Hidden (umisťování na různá místa)</li>
+                        <li>(1,2)   2  = QR     = Treasury - Reward (odměna)</li>
+                        <li>(1,2)   3  = QR     = InGame - Bonus (při hrách se můžou objevit kódy)</li>
+                        <li>(1,2)   4  = nonQR  = Treasury - Reward (odměna jednotlivce, týmu, či bonusové ohodnocení)</li>
+                        <li>(1)     5  = nonQR  = Daily Quest - Reward (za vykonané úkoly jakéhokoli rázu náleží odměna)</li>
+                        <li>(1,2)   6  = nonQR  = InGame - Bonus (při hrách se můžou objevit kódy)</li>
+                        <li>(1)     7  = nonQR  = Indície k rozklíčování šifry kolíku (nepočítá se odměna - nominální hodnota kódu, vyplní se 0)</li>
+                        <li>(1,2)   8  = nonQR  = Other (jiné nespecifikované, potřeba vyplnit poznámku)</li>
                     </ul>
                 </label>
                 <input type="number" 
                        name="typeGame" 
                        class = "txtFieldBirthdayLike"
                        min="1" 
-                       max="6" 
+                       max="8" 
                        value = "<?php echo (isset($_SESSION['addNewCodeTypeGame']) ? htmlspecialchars($_SESSION['addNewCodeTypeGame']) : '')?>"
                        required=""
                        >
