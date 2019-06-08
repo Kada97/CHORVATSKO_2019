@@ -13,6 +13,14 @@ function go(){
 //    
 }
 
+function goManInstr(){
+    document.homeNavManInstr.submit();
+}
+
+function goAdmin(){
+    document.homeNavAdmin.submit();
+}
+
 function setJsActive() {
     document.getElementById("jsActive").value = 1;
 }
@@ -89,9 +97,25 @@ function closeTab(){
     pswdC.addEventListener("blur",validatePasswords);
 
     form.addEventListener("submit",function (e) {
-        validateEmail(e);
         validatePasswords(e);
     });
+    
+function pictureRightsSelect(myVal) {
+    if (myVal == 'user'){
+        ifTouser.classList.remove("hiding");
+    }
+    else {
+        ifTouser.classList.add("hiding");
+    }
+    
+    if (myVal == 'other'){
+        choosePurpose.classList.remove("hiding");
+    }
+    else {
+        choosePurpose.classList.add("hiding");
+    }
+    
+}    
 
 
 

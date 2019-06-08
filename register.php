@@ -121,11 +121,7 @@
                 $verification = getVerificationCode($username);
                 $age          = getAge($birthday);
                 
-                $register = mysqli_query($conn, "INSERT INTO users(username, password, verification, firstname, lastname, birthdate, sex, age, agree1, agree2, needhelp)
-                                                 VALUES('$username' , '$password' , '$verification' , '$firstname' , '$lastname' , '$birthday' , '$sex' , '$age' , '$agree1' , '$agree2', 'OK');") or die(mysqli_error($conn));
-                
-                $userData = mysqli_query($conn, "INSERT INTO userdata(username, rank)
-                                                 VALUES('$username' , 'NOOB');") or die(mysqli_error($conn));
+                include 'insertWhenRegister.php';
                 
                 sendLog('registerPage', 'Úspěšně vytvořený účet: ' . $username . ' jménem: ' . $firstname . ' ' . $lastname . '.');
                 

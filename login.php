@@ -37,9 +37,15 @@
                     $row = mysqli_fetch_assoc($query);
                     
                     if ($password == $row['password']) {
+                        $id = $row['id'];
+                        $queryLog2  = "SELECT teamId FROM userdata WHERE id = '$id';";
+                        $query2     = mysqli_query($conn, $queryLog2);
+                        $row2       = mysqli_fetch_assoc($query2);
+                        
                         $_SESSION['user']       = $row;
                         $_SESSION['username']   = $username;
-			$_SESSION['userID']	= $row['id'];
+			$_SESSION['userID']	= $id;
+			$_SESSION['userTeamID']	= $row2['teamId'];
                         $_SESSION['loggedin']   = 1;
 
                         $get = mysqli_query($conn, "SELECT * FROM userdata WHERE username = '$username';");
@@ -50,7 +56,10 @@
                         $numbWrg = $numbRes['weblogins'];
                         $nL = $numbWrg + 1;
                         
-                        $upd = "UPDATE userdata SET weblogins = '$nL'  WHERE username = '$username';";
+                        $nR = checkRank($nL);
+                        $nB = getRankPrice($nR);
+                        
+                        $upd = "UPDATE userdata SET weblogins = '$nL', rank = '$nR', rank_percent_bonus = '$nB' WHERE username = '$username';";
                         $query = mysqli_query($conn, $upd);
                         
                         sendLog('loginPage', 'Uživatel: ' . $username . ' se úspěšně přihlásil.');

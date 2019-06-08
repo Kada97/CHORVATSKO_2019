@@ -24,95 +24,83 @@
     }
     else {
         echo '<header><nav>';
-        include 'navigation.php';
+        include '_navigation.php';
         echo '</nav></header>';
-	
+        
         if (empty($_POST)) {
             include '_home.php';
+            include '_dbRecountTeamdata.php';
         }
-//        else{
-//            foreach ($_POST as $key => $value) {
-//                switch ($key){
-//                    case 'home':		include '_home.php'; break;
-//                    case 'addT':                include 'addTeamPage.php'; break;
-//                    case 'addNewTeam':          include 'addTeam.php'; break;
-//                    case 'addNewCodePage':      include 'addNewCodePage.php'; break;
-//                    case 'addNewCode':          include 'addNewCode.php'; break;
-//                    case 'editUserPage':        include 'editUserPage.php'; break;
-//                    case 'editUserPrep':        include 'editUserPrep.php'; break;
-//                    case 'editUser':            include 'editUser.php'; break;
-//                    case 'addPicPage':          include 'addNewPicturePage.php'; break;
-//                    case 'addNewPic':           include 'addNewPicture.php'; break;
-//                    case 'publGall':            include 'publicGalleryPage.php'; break;
-//                    case 'privGall':            include 'privateGalleryPage.php'; break;
-//                    case 'buttDownPublAll':	include 'downloadAllPublicPictures.php'; break;
-//                    case 'ratU':		include 'ratingUsersPage.php'; break;
-//                    case 'viewUserPrep':	include 'viewUserPrep.php'; break;
-//                    case 'ratT':		include 'ratingTeamsPage.php'; break;
-//                    case 'viewTeamPrep':	include 'viewTeamPrep.php'; break;
-//                    case 'useCodePage':         include 'useCodePage.php'; break;
-//                    case 'useCode':             include 'useCode.php'; break;
-//                    case 'dayQuestion':         include 'dayQuestionPage.php'; break;
-//                    case 'gameSpiner':          include 'gameSpiner.php'; break;
-//                    case 'LOGOUT':              include '_logout.php'; /*logOut();*/break;
-//                    case 'profile':             include 'profile.php'; break;
-//                    case 'settings':            include 'settings.php'; break;
-//                    case 'about':               include 'about.php'; break;
-//                    case 'coinManager':         include 'coinManager.php'; break;
-//                    case 'confirmCoins':        include 'confirmCoins.php'; break;
-//                    case 'sendMoneyPage':       include 'sendMoneyPage.php'; break;
-//                    case 'confirmSend':         include 'sendMoney.php'; break;
-//
-//                    default:
-//                        switch ($value) {
-//                            case 'home':                include '_home.php'; break;
-//                            case 'addT':                include 'addTeamPage.php'; break;
-//                            case 'addNewTeam':          include 'addTeam.php'; break;
-//                            case 'addNewCodePage':      include 'addNewCodePage.php'; break;
-//                            case 'addNewCode':          include 'addNewCode.php'; break;
-//                            case 'editUserPage':        include 'editUserPage.php'; break;
-//                            case 'editUserPrep':        include 'editUserPrep.php'; break;
-//                            case 'editUser':            include 'editUser.php'; break;
-//                            case 'addPicPage':          include 'addNewPicturePage.php'; break;
-//                            case 'addNewPic':           include 'addNewPicture.php'; break;
-//                            case 'publGall':            include 'publicGalleryPage.php'; break;
-//                            case 'privGall':            include 'privateGalleryPage.php'; break;
+        else {
+            foreach ($_POST as $key => $value) {
+                
+                //Buttons
+                switch ($key) {
+                    case 'addNewTeam':          include 'addNewTeam.php';               break;
+                    case 'addNewCode':          include 'addNewCode.php';               break;
+                    case 'confirmCoins':        include 'confirmCoins.php';             break;
+                    case 'addNewPic':           include 'addNewPicture.php';            break;
+                    case 'confirmSendMoney':    include 'sendMoney.php';                break;
+                    case 'useCode':             include 'useCode.php';                  break;
+                    case 'editUserPrep':        include 'editUserPrep.php';             break;
+                    case 'editUser':            include 'editUser.php';                 break;
+                    case 'confirmSendGift':     include 'gifts.php';                    break;
+                    case 'viewUserPrep':        include 'viewUserPrep.php';             break;
+                    case 'viewTeamPrep':        include 'viewTeamPrep.php';             break;
+                
+                    default:
+                        //If not buttons, then select-option menu
+                        switch ($value) {
+                        
+                            //ADMIN cases
+                            case 'addNewTeamPage':      include 'addNewTeamPage.php';           break;
+                            case 'addNewCodePage':      include 'addNewCodePage.php';           break;
+                            case 'bankManager':         include 'coinManagerPage.php';          break;
+                            case 'editUserPage':        include 'editUserPage.php';             break;
+                            case 'giftPage':            include 'giftsPage.php';                break;
+            
+                            //USER cases
+
+                            case 'home':                include '_home.php';                    break;
+                            case 'privGall':            include 'privateGalleryPage.php';       break;
+                            case 'sendMoneyPage':       include 'sendMoneyPage.php';            break;
+                            case 'useCodePage':         include 'useCodePage.php';              break;
+                            case 'profile':             include 'myProfilePage.php';            break;
+                            case 'team':                include 'myTeamPage.php';               break;
+                            
+                            //USER and HOST cases
+
+                            case 'aboutCurrency':       include 'coinsComparePage.php';         break;
+                            case 'manuals':             include 'manualsAndInstructions.php';   break;
+                            case 'about':               include 'about.php';                    break;
+                            case 'addPicPage':          include 'addNewPicturePage.php';        break;
+                            case 'dailyQuestion':       include 'dailyQuestionPage.php';        break;
+
+                            //EVERYONE cases
+                        
+                            case 'ratU':                include 'ratingUsersPage.php';          break;
+                            case 'ratT':                include 'ratingTeamsPage.php';          break;
+                            case 'achievements':        include 'achievementsPage.php';         break;
+                            case 'gameResults':         include 'gameResultsPage.php';          break;
+                            case 'uplGall':             include 'uplGalleryPage.php';           break;
+                            case 'publGall':            include 'publicGalleryPage.php';        break;
+                            case 'calendar':            include 'calendarCamp.php';             break;
+                            case 'LOGOUT':              include '_logout.php';                  break;
+                            default:                    $key = 'home'; $value = 'home';
+
+                            
+                            //OLD cases
 //                            case 'buttDownPublAll':     include 'downloadAllPublicPictures.php'; break;
-//                            case 'ratU':                include 'ratingUsersPage.php'; break;
-//                            case 'viewUserPrep':        include 'viewUserPrep.php'; break;
-//                            case 'ratT':                include 'ratingTeamsPage.php'; break;
-//                            case 'viewTeamPrep':        include 'viewTeamPrep.php'; break;
-//                            case 'useCodePage':         include 'useCodePage.php'; break;
-//                            case 'useCode':             include 'useCode.php'; break;
-//                            case 'dayQuestion':         include 'dayQuestionPage.php'; break;
-//                            case 'gameResults':         include 'gameResultsPage.php'; break;
-//                            case 'achievements':        include 'achievementsPage.php'; break;
-//                            case 'aboutCoins':          include 'coinsComparePage.php'; break;
-//                            case 'uplGall':             include 'uplGalleryPage.php'; break;
-//                            case 'caldC':               include 'calendarCamp.php'; break;
-//                            case 'caldD':               include 'calendarDay.php'; break;
-//                            case 'gameSpiner':          include 'gameSpiner.php'; break;  
-//                            case 'coinManager':         include 'coinManager.php'; break;
-//                            case 'confirmCoins':        include 'confirmCoins.php'; break;
-//                            case 'sendMoneyPage':       include 'sendMoneyPage.php'; break;
-//                            case 'sendMoney':           include 'sendMoney.php'; break;
-//
-//                            case 'LOGOUT':              include '_logout.php'; /*logOut();*/break;
-//                            case 'profile':             include 'profile.php'; break;
+//                            case 'gameSpiner':          include 'gameSpiner.php'; break;
 //                            case 'settings':            include 'settings.php'; break;
-//                            case 'about':               include 'about.php'; break;
-//                            case 'profile':             include 'profile.php'; break;
-//                            case 'settings':            include 'settings.php'; break;
-//                            case 'about':               include 'about.php'; break;
-//                            case 'LOGOUT':              include '_logout.php'; /*logOut();*/break;
-//                            case 'home':                include '_home.php';break;
-//                            default:                    $key = 'home'; $value = 'home';
-//                        }
-//                }
-//            }
-//        }
-//        if (isset($_SESSION) && $_SESSION['error_msg'] != '') {
-//            sendLog('?', $_SESSION['error_msg']);
-//        }
+                            
+                        }
+                }
+            }
+        }
     }
+    if (isset($_SESSION) && $_SESSION['error_msg'] != '') {
+        sendLog('', $_SESSION['error_msg']);
+    }
+    
 ?>
