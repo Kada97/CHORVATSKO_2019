@@ -29,6 +29,7 @@
         
         if (empty($_POST)) {
             include '_home.php';
+            include '_dbRecountTeamdata.php';
         }
         else {
             foreach ($_POST as $key => $value) {
@@ -45,6 +46,7 @@
                     case 'editUser':            include 'editUser.php';                 break;
                     case 'confirmSendGift':     include 'gifts.php';                    break;
                     case 'viewUserPrep':        include 'viewUserPrep.php';             break;
+                    case 'viewTeamPrep':        include 'viewTeamPrep.php';             break;
                 
                     default:
                         //If not buttons, then select-option menu
@@ -63,6 +65,8 @@
                             case 'privGall':            include 'privateGalleryPage.php';       break;
                             case 'sendMoneyPage':       include 'sendMoneyPage.php';            break;
                             case 'useCodePage':         include 'useCodePage.php';              break;
+                            case 'profile':             include 'myProfilePage.php';            break;
+                            case 'team':                include 'myTeamPage.php';               break;
                             
                             //USER and HOST cases
 
@@ -75,6 +79,7 @@
                             //EVERYONE cases
                         
                             case 'ratU':                include 'ratingUsersPage.php';          break;
+                            case 'ratT':                include 'ratingTeamsPage.php';          break;
                             case 'achievements':        include 'achievementsPage.php';         break;
                             case 'gameResults':         include 'gameResultsPage.php';          break;
                             case 'uplGall':             include 'uplGalleryPage.php';           break;
@@ -85,18 +90,9 @@
 
                             
                             //OLD cases
-            //                            
-            //                            
-            //                            
-            //                            case 'buttDownPublAll':     include 'downloadAllPublicPictures.php'; break;
-            //                            
-            //                            
-            //                            case 'ratT':                include 'ratingTeamsPage.php'; break;
-            //                            case 'viewTeamPrep':        include 'viewTeamPrep.php'; break;
-            //                            
-            //                            case 'gameSpiner':          include 'gameSpiner.php'; break;
-            //                            case 'profile':             include 'profile.php'; break;
-            //                            case 'settings':            include 'settings.php'; break;
+//                            case 'buttDownPublAll':     include 'downloadAllPublicPictures.php'; break;
+//                            case 'gameSpiner':          include 'gameSpiner.php'; break;
+//                            case 'settings':            include 'settings.php'; break;
                             
                         }
                 }

@@ -2,6 +2,20 @@
 
     $_SESSION['error_msg'] = '';
     include "_connectDB.php";
+    include_once '_dbRecountUserdata.php';
+    include_once '_dbRecountMoney.php';
+    
+    $sqlGetNumberUsersForRecount = "SELECT COUNT(id) as number FROM users;";
+    $queryGetNumberUsersForRecount = mysqli_query($conn, $sqlGetNumberUsersForRecount);
+    $numberUsersForRecount = mysqli_fetch_assoc($queryGetNumberUsersForRecount);
+    
+    $idUsersForRecount = array();
+    for ($i = 1; $i <= $numberUsersForRecount['number']; $i++){
+        $idUsersForRecount[] = $i;
+    }
+    
+    dbRecountMoney($idUsersForRecount);
+    dbRecountUserdata($idUsersForRecount);
     
     $sql2 = "SELECT "
             . "id, "

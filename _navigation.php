@@ -20,8 +20,14 @@
                 <option value="msg" disabled selected hidden>
                     Menu
                 </option>
-                <option value = "home" disabled>
+                <option value = "home">
                     Přehled
+                </option>
+                <option value = "profile">
+                    Můj profil
+                </option>
+                <option value = "team">
+                    Můj tým
                 </option>
                 <option value = "calendar">
                     Kalendář
@@ -29,7 +35,7 @@
                 <option value = "ratU">
                     Žebříček uživatelů
                 </option>
-                <option value = "ratT" disabled>
+                <option value = "ratT">
                     Žebříček týmů
                 </option>
                 <option value = "profile" disabled>
@@ -99,6 +105,9 @@
                 <option value="msg" disabled selected hidden>
                     Admin menu
                 </option>
+                <option value = "home">
+                    Přehled
+                </option>
                 <option value = "calendar">
                     Kalendář
                 </option>
@@ -129,7 +138,12 @@
                 <option value = "giftPage">
                     Dary
                 </option>
-                
+                <option value = "ratU">
+                    Žebříček uživatelů
+                </option>
+                <option value = "ratT">
+                    Žebříček týmů
+                </option>
                 
                 
                 <option value = "LOGOUT">

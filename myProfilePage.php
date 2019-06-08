@@ -1,10 +1,21 @@
 <?php
 
     include '_connectDB.php';
-    $get = mysqli_query($conn, "SELECT * FROM users WHERE id ='".$_SESSION["viewUserId"]."';");
-    $get2 = mysqli_query($conn, "SELECT * FROM userdata WHERE id ='".$_SESSION["viewUserId"]."';");
-    $get3 = mysqli_query($conn, "SELECT * FROM money_records WHERE id ='".$_SESSION["viewUserId"]."';");
-    $get4 = mysqli_query($conn, "SELECT * FROM data_user_kolik WHERE id ='".$_SESSION["viewUserId"]."';");
+    include_once '_dbRecountUserdata.php';
+    include_once '_dbRecountMoney.php';
+    
+    $idUsersForRecount = array();
+    $idUsersForRecount[] = $_SESSION['userID'];
+    
+    dbRecountMoney($idUsersForRecount);
+    dbRecountUserdata($idUsersForRecount);
+    
+    
+    
+    $get = mysqli_query($conn, "SELECT * FROM users WHERE id ='".$_SESSION['userID']."';");
+    $get2 = mysqli_query($conn, "SELECT * FROM userdata WHERE id ='".$_SESSION['userID']."';");
+    $get3 = mysqli_query($conn, "SELECT * FROM money_records WHERE id ='".$_SESSION['userID']."';");
+    $get4 = mysqli_query($conn, "SELECT * FROM data_user_kolik WHERE id ='".$_SESSION['userID']."';");
     
     $res = mysqli_fetch_assoc($get);
     $res2 = mysqli_fetch_assoc($get2);
@@ -22,7 +33,7 @@
         $temp = $allResult[$key];
         $allResult[$key] = htmlspecialchars($temp);
     }
-
+   
     echo'
             
         <div class="sharedProfileDiv profileDivUser">
@@ -38,13 +49,16 @@
 		<div class="profileHeaderRow"><label>Pohlaví: </label>  '.$allResult['sex'].'<hr><br></div>
 		    
 		<div class="profileHeaderRow"><label>Vytvoření účtu: </label>'.$allResult['firstaccess'].'<br></div>
-                <div class="profileHeaderRow"><label>Poslední přihlášení: </label>'.$allResult['last_access'].'<hr><br></div>
+                <div class="profileHeaderRow"><label>Poslední aktivita: </label>'.$allResult['last_access'].'<hr><br></div>
 	
 		<div class="profileHeaderRow"><label>Tým: </label>'.$allResult['teamId'].'<hr><br></div>
 		    
 		<div class="profileHeaderRow"><label>Počet přihlášení: </label>'.$allResult['weblogins'].'<br></div>
 		<div class="profileHeaderRow"><label>Webová hodnost: </label>'.$allResult['rank'].'<hr><br></div>
 		<div class="profileHeaderRow"><label>Skóre: </label>'.$allResult['score'].'<hr><br></div>
+                    
+                <div class="profileHeaderRow"><a href="src/apk/com.google.zxing.client.android.apk">QR čtečka ke stažení</a><hr><br></div>
+		<div class="profileHeaderRow"><label>Verifikační kód: </label>'.$allResult['verification'].'<br><hr></div>
                     
 		    
             </div>

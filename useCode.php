@@ -24,7 +24,6 @@
             
 	    if (mysqli_num_rows($codeTextCheckOK) != 0) {
 		$invCode = $okCode;
-                echo $invCode['valid'];
 		if($invCode['valid'] == 0){
 		    $_SESSION['error_msg'] = "Tento kód použil uživatel: ".$invCode['invoker'].".\r\n Kód byl zadán dne a času ".$invCode['usetime'].",\n\r a obsahoval peníze v hodnotě ".$invCode['value']." HRD.";
 		}
@@ -61,7 +60,7 @@
             
 	    if($codeTypeuser == 1){
 		$getUserdata = mysqli_query($conn, "SELECT id, teamId, code_total, code_ig_entered, code_kolikCode FROM userdata WHERE username ='".$_SESSION["username"]."';");
-		$getMoneyRecords = mysqli_query($conn, "SELECT id, money_extra_qr_ig, money_extra_code_total FROM money_records WHERE username ='".$_SESSION["username"]."';");
+		$getMoneyRecords = mysqli_query($conn, "SELECT id, money_extra_qr_ig, money_extra_code FROM money_records WHERE username ='".$_SESSION["username"]."';");
                 
 		$userdata = mysqli_fetch_assoc($getUserdata);
 		$moneyRecords = mysqli_fetch_assoc($getMoneyRecords);
@@ -72,6 +71,7 @@
 		$userIgEnt = $userdata['code_ig_entered']+1;
 		$code_kolikCode = $userdata['code_kolikCode']+1;
 		$userQrMonUs = $moneyRecords['money_extra_qr_ig']+$codeValue;
+		$userCodeMonUs = $moneyRecords['money_extra_code']+$codeValue;
 		
 		$updUserData = "UPDATE userdata SET code_total = '".$userQrTot."', code_ig_entered = '".$userIgEnt."' WHERE id='".$userid."';";
 		$queryUserData = mysqli_query($conn, $updUserData);
@@ -89,7 +89,7 @@
                     case 5:
                     case 6:
                     case 8:
-                        $updMoneyRecords = "UPDATE money_records SET money_extra_code_total = '".$userQrMonUs."' WHERE id='".$userid."';";
+                        $updMoneyRecords = "UPDATE money_records SET money_extra_code = '".$userCodeMonUs."' WHERE id='".$userid."';";
                         break;
                     case 7:
                         $updMoneyRecords = "UPDATE userdata SET code_kolikCode = '".$code_kolikCode."' WHERE id='".$userid."';";
@@ -109,12 +109,12 @@
 		$userdata = mysqli_fetch_assoc($getUserdata);
 		$userid = $userdata['id'];
 		$teamid = $userdata['teamId'];
-		$getTeamdata = mysqli_query($conn, "SELECT id, qr_mon_teams, qr_tot, code_total, mon_to_div_from_qr_remains FROM teamdata WHERE id ='".$teamid."';");
+		$getTeamdata = mysqli_query($conn, "SELECT id, qr_mon_teams, qr_tot, code_total, code_mon, mon_to_div_from_qr_remains FROM teamdata WHERE id ='".$teamid."';");
 		$teamdata = mysqli_fetch_assoc($getTeamdata);
                 $userQrTot = $userdata['code_total']+1;
 		$userTgEnt = $userdata['code_tg_entered']+1;
 		$userQrMonTeQR = $teamdata['qr_mon_teams']+$codeValue;
-		$userQrMonTe = $teamdata['code_mon_total']+$codeValue;
+		$userQrMonTe = $teamdata['code_mon']+$codeValue;
 		$qrMonRemains = $teamdata['mon_to_div_from_qr_remains']+$codeValue;
 		$numbCodesQR = $teamdata['qr_tot']+1;
 		$numbCodes = $teamdata['code_total']+1;
@@ -134,7 +134,7 @@
                     case 4:
                     case 6:
                     case 8:
-                        $updTeamdata = "UPDATE teamdata SET code_mon_total = '".$userQrMonTe."', mon_to_div_from_qr_remains = '".$qrMonRemains."', code_total = '".$numbCodes."' WHERE id='".$teamid."';";
+                        $updTeamdata = "UPDATE teamdata SET code_mon = '".$userQrMonTe."', mon_to_div_from_qr_remains = '".$qrMonRemains."', code_total = '".$numbCodes."' WHERE id='".$teamid."';";
                         break;
                 }
                 

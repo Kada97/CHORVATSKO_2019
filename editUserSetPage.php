@@ -120,6 +120,14 @@
                        required>
             </div>
 
+            <div class = "formRow" id="birthdateLikeRow">    
+                <label for = "isCaptain" class ="radioTextRegister" id = "isCaptain">Je kapitánem?: </label>
+                <input type = "checkbox" 
+                       class = "txtField" 
+                       id="isCaptain" 
+                       name = "isCaptain"
+            </div>
+            
             <div class = "formRow">
                 <label for = "editQu" hidden>Potvrdit změny</label>
                 <input class="submit" 
@@ -128,6 +136,7 @@
                        name = "editUser" 
                        value = "Potvrdit změny">
             </div>
+            
 
         </fieldset>
     </form>

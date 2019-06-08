@@ -1,7 +1,7 @@
 <?php
 if (isSet($_POST['editUser'])) {
     
-    //$username       = null;
+    $username       = $_SESSION["editUserUsername"];
     $password       = null;
     $verification   = null;
     $firstname      = null;
@@ -11,6 +11,7 @@ if (isSet($_POST['editUser'])) {
     $age            = null;
     $needhelp       = null;
     $team           = null;
+    $isCaptain      = null;
     
     //$_SESSION['editUserUsernameNew']       = null;
     $_SESSION['editUserPasswordNew']       = null;
@@ -25,10 +26,7 @@ if (isSet($_POST['editUser'])) {
 
     foreach ($_POST as $key => $value) {
         switch ($key) {
-            
-//            case 'editUsername':    $username                           = $value;
-//                                        $_SESSION['editUserUsernameNew']    = $value; break;
-                                    
+                       
             case 'editPassword':    $password                           = $value;
                                     $_SESSION['editUserPasswordNew']    = $value; break;
                                     
@@ -55,10 +53,12 @@ if (isSet($_POST['editUser'])) {
             
             case 'editTeam':        $team                               = $value;
                                     $_SESSION['editUserTeamNew']        = $value; break;
+            
+            case 'isCaptain':       $isCaptain                          = $value; break;
         }
     }
 //    if ($username == null) {
-//        $_SESSION['error_msg'] = "Nové uživatelské jméno není vyplněno";
+//        $_SESSION['error_msg'] = "Uživatelské jméno není vyplněno";
 //    }
     if ($password == null) {
         $_SESSION['error_msg'] = 'Nové heslo není vyplněno';
@@ -147,12 +147,19 @@ if (isSet($_POST['editUser'])) {
             $upd = "UPDATE userdata SET teamId = '".$team."' WHERE id='" . $_SESSION['editUserId'] . "';";
             $query = mysqli_query($conn, $upd);
             
+            $upd = "UPDATE money_records SET teamId = '".$team."' WHERE id='" . $_SESSION['editUserId'] . "';";
+            $query = mysqli_query($conn, $upd);
+            
             $upd = "UPDATE teams SET numb_registered = '".$nV."' WHERE id='".$team."';";
             $query = mysqli_query($conn, $upd);
             
             $upd = "UPDATE data_user_kolik SET userteam = '".$resTeam['name']."', userteamId = '".$team."' WHERE id='".$_SESSION['editUserId'] . "';";
             $query = mysqli_query($conn, $upd);
             
+            if ($isCaptain) {
+                $upd = "UPDATE teamdata SET data_teamcpt = '".$username."' WHERE id='". $team . "';";
+                $query = mysqli_query($conn, $upd);
+            }
             
             $_SESSION['editUserId']             = null;
             //$_SESSION['editUserUsername']       = null;
@@ -187,7 +194,7 @@ if (isSet($_POST['editUser'])) {
 
 if ($_SESSION['error_msg'] != null) {
     
-    include 'editUserPageSet.php';
+    include_once 'editUserSetPage.php';
 }
 ?>
 

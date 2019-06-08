@@ -7,14 +7,30 @@
             <ul>
                 <li>Skupina dětí se musí upravit na následující počty:</li>
                 <ul>
+                    <li>28</li>
+                    <ul>
+                        <li>Vzniknou 4 týmy po 7 dětech</li>
+                    </ul>
+                    <li>30</li>
+                    <ul>
+                        <li><b><u>Vznikne 5 týmů po 6 dětech</u></b></li>
+                        <li>Vznikne 6 týmů po 5 dětech</li>
+                        <li>Vzniknou 3 týmy po 10 dětech</li>
+                    </ul>
+                    <li>32</li>
+                    <ul>
+                        <li>Vznikne 8 týmů po 4 dětech</li>
+                        <li>Vzniknou 4 týmy po 8 dětech</li>
+                    </ul>
                     <li>35</li>
                     <ul>
-                        <li>Vznikne 5 týmů po 7 dětech</li>
+                        <li><b><u>Vznikne 5 týmů po 7 dětech</u></b></li>
                         <li>Vznikne 7 týmů po 5 dětech</li>
                     </ul>
                     <li>36</li>
                     <ul>
-                        <li>Vznikne 6 týmů po 6 dětech</li>
+                        <li><b><u>Vznikne 6 týmů po 6 dětech</u></b></li>
+                        <li>Vzniknou 4 týmy po 9 dětech</li>
                     </ul>
                     <li>40</li>
                     <ul>
@@ -34,8 +50,8 @@
                 </ul>
                 <li>Z toho plyne:</li>
                 <ul>
-                    <li>Množství možných týmů bude v rozmezí mezi 5 a 9</li>
-                    <li>Množství počtu členů v týmu bude v rozmezí mezi 5 a 9</li>
+                    <li>Množství možných týmů bude v rozmezí mezi 4 a 9</li>
+                    <li>Množství počtu členů v týmu bude v rozmezí mezi 4 a 10</li>
                 </ul>
                 <li>Optimální konfigurace:</li>
                 <ul>
