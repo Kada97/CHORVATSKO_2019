@@ -82,7 +82,7 @@
             <input class = "txtField" 
                    type = "text" 
                    id = "addGameResultTeamId'.$id.'" 
-                   name = "addGameResultTeamId'.$id.'" 
+                   name = "addGameResultTeamId'.$id.'"
                    required>
         </div>
         ';
