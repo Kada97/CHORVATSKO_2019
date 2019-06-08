@@ -47,6 +47,7 @@
                     case 'confirmSendGift':     include 'gifts.php';                    break;
                     case 'viewUserPrep':        include 'viewUserPrep.php';             break;
                     case 'viewTeamPrep':        include 'viewTeamPrep.php';             break;
+                    case 'addGameResult':       include 'addGameResult.php';            break;
                 
                     default:
                         //If not buttons, then select-option menu
@@ -58,6 +59,7 @@
                             case 'bankManager':         include 'coinManagerPage.php';          break;
                             case 'editUserPage':        include 'editUserPage.php';             break;
                             case 'giftPage':            include 'giftsPage.php';                break;
+                            case 'addGameResultPage':   include 'addGameResultPage.php';        break;
             
                             //USER cases
 

@@ -120,6 +120,9 @@
                 <option value = "editUserPage">
                     Upravit uživatele
                 </option>
+                <option value = "addGameResultPage">
+                    Zadat výsledky z týmových her
+                </option>
                 <option value = "bankManager">
                     Bankovní manažer
                 </option>
