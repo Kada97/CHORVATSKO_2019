@@ -14,7 +14,8 @@
                type="text" 
                id="addGameName"
                name="addGameName" 
-               placeholder="Název hry">
+               placeholder="Název hry"
+               required>
     </div>
 
     <div class = "formRow" id="birthdateLikeRow">
@@ -82,7 +83,7 @@
             <input class = "txtField" 
                    type = "text" 
                    id = "addGameResultTeamId'.$id.'" 
-                   name = "addGameResultTeamId'.$id.'"
+                   name = "addGameResults[]"
                    required>
         </div>
         ';
