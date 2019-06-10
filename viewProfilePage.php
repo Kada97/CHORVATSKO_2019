@@ -53,7 +53,7 @@
     $accMon = 0;
     
     $accMon += $allResult['money_actual_total'];
-    $accMon -= $allResult['coin_value_total'];
+    //$accMon -= $allResult['coin_value_total'] + $allResult['bills_value_total'];
     echo'
             
         <div class="sharedProfileDiv profileDivPenize">
@@ -62,8 +62,14 @@
     
 	    <div class="profileHeaderRow"><label>Bohatství: </label>'.$allResult['money_actual_total'].'<br><hr></div>
 		
-	    <div class="profileHeaderRow"><label>Peníze na účtu: </label>'.$accMon.'<br></div>
-	    <div class="profileHeaderRow"><label>Peníze v žetonech: </label>'.$allResult['coin_value_total'].'<hr><br></div>
+	    <div class="profileHeaderRow"><label>Peníze na účtu: </label>'.$accMon.'<br><hr></div>
+	    <div class="profileHeaderRow"><label>Peníze v žetonech: </label>'.$allResult['coin_value_total'].'<br></div>
+	    <div class="profileHeaderRow"><label>Peníze v žetonech získané: </label>'.$allResult['coin_value_earned'].'<br></div>
+	    <div class="profileHeaderRow"><label>Peníze v žetonech odevzdané: </label>'.$allResult['coin_value_returned'].'<hr><br></div>
+                
+	    <div class="profileHeaderRow"><label>Peníze v bankovkách: </label>'.$allResult['bills_value_total'].'<br></div>
+	    <div class="profileHeaderRow"><label>Peníze v bankovkách získané: </label>'.$allResult['bills_value_earned'].'<br></div>
+	    <div class="profileHeaderRow"><label>Peníze v bankovkách odevzdané: </label>'.$allResult['bills_value_returned'].'<hr><br></div>
 		
 	    <div class="profileHeaderRow"><label>Součet vyhraných peněz: </label>'.$allResult['money_total_won'].'<br></div>
 	    <div class="profileHeaderRow"><label>Součet prohraných peněz: </label>'.$allResult['money_total_lost'].'<br></div>
@@ -162,7 +168,7 @@
 		<div class="profileHeaderRow"><label>Z toho hodnota za týmové hry: </label>'.$allResult['money_extra_tg_sys'].'<br></div>
 
 		<div class="profileHeaderRow"><label>Počet darů od kapitána: </label>'.$allResult['gifts_number_tg_cpt'].'<br></div>
-		<div class="profileHeaderRow"><label>Hodnota celkem: </label>'.$allResult['gifts_number_tg_cpt'].'<hr><br></div>
+		<div class="profileHeaderRow"><label>Hodnota celkem: </label>'.$allResult['money_extra_tg_cpt'].'<hr><br></div>
 		    
 		<div class="profileHeaderRow"><label>Počet darů - celkem: </label>'.$allResult['gifts_number_total'].'<hr><br></div>
 		<div class="profileHeaderRow"><label>Počet darů - z toho pro jednotlivce: </label>'.$allResult['gifts_number_ig'].'<hr><br></div>

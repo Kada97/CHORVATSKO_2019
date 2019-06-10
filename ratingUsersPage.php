@@ -17,38 +17,47 @@
     dbRecountMoney($idUsersForRecount);
     dbRecountUserdata($idUsersForRecount);
     
-    $sql2 = "SELECT "
+    $i = 0;
+    
+    $sqlNum = "SELECT "
+            . "id "
+            . "FROM userdata;";
+    
+    $queryNum = mysqli_query($conn, $sqlNum);
+    $numbUsers = mysqli_num_rows($queryNum);
+    while($i < $numbUsers){
+	$i++;
+        
+        $sql2 = "SELECT "
             . "id, "
             . "username, "
             . "teamId, "
-            . "score, "
             . "last_access, "
             . "rank "
-            . "FROM userdata ORDER BY score DESC;";
+            . "FROM userdata WHERE id ='".$i."';";
     
-    $sql3 = "SELECT "
-            . "id, "
-            . "username, "
-            . "score, "
-            . "money_actual_total, "
-            . "money_total_bet, "
-            . "money_total_won, "
-            . "money_total_lost "
-            . "FROM money_records ORDER BY score DESC;";
-            
-    
-    $allQuery2 = mysqli_query($conn, $sql2);
-    $numbUsers = mysqli_num_rows($allQuery2);
-    
-    $allQuery3 = mysqli_query($conn, $sql3);
-    
-    $res = mysqli_fetch_assoc($allQuery2);
-    $res2 = mysqli_fetch_assoc($allQuery3);
-    $allResult = array_merge($res, $res2);
-    
-    $i = 0;
-    while($i < $numbUsers){
-	$i++;
+        $sql3 = "SELECT "
+                . "id, "
+                . "username, "
+                . "score, "
+                . "money_actual_total, "
+                . "money_total_bet, "
+                . "money_total_won, "
+                . "money_total_lost "
+                . "FROM money_records WHERE id ='".$i."';";
+
+
+        $allQuery2 = mysqli_query($conn, $sql2);
+
+        $allQuery3 = mysqli_query($conn, $sql3);
+
+        $res = mysqli_fetch_assoc($allQuery2);
+        $res2 = mysqli_fetch_assoc($allQuery3);
+        $allResult = array_merge($res, $res2);
+        
+        
+        
+        
 	$sql1 = "SELECT id, username, firstname, lastname FROM users WHERE id ='".$i."';";
 	$get2 = mysqli_query($conn, $sql1);
 	$res2 = mysqli_fetch_assoc($get2);

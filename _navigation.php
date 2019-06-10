@@ -123,6 +123,9 @@
                 <option value = "addGameResultPage">
                     Zadat výsledky z týmových her
                 </option>
+                <option value = "divideResultsPage">
+                    Rozdělit získané peníze
+                </option>
                 <option value = "bankManager">
                     Bankovní manažer
                 </option>

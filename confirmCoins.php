@@ -2,6 +2,7 @@
 
     if (isSet($_POST['confirmCoins'])) {
         $chooseUser = null;
+        $coin0 = null;
         $coin1 = null;
         $coin2 = null;
         $coin3 = null;
@@ -35,6 +36,11 @@
                 case 'chooseUser':  $chooseUser             = $value;   
                                     $_SESSION['coinChooseUser'] = $value;  break;
                                 
+                case 'coin0':       $coin0                  = $value;
+                                    $_SESSION['coin0']      = $value;      
+                                    if($value !=0){$coins[] = 0;}            
+                                                            break;
+                                                            
                 case 'coin1':       $coin1                  = $value;
                                     $_SESSION['coin1']      = $value;      
                                     if($value !=0){$coins[] = 1;}            
@@ -171,7 +177,7 @@
            $_SESSION['error_msg'] = 'Vyber uživatele!'; 
         }
         if (count($coins) <= 0) {
-            $_SESSION['error_msg'] = 'Nebyl vybrán žádný žeton k manipulaci!'; 
+            $_SESSION['error_msg'] = 'Nebyl vybrán žádný žeton či bankovka k manipulaci!'; 
         }
         
         if ($_SESSION['error_msg'] == '') {
@@ -181,63 +187,121 @@
                 $id = $coins[$i];
                 $c = "coin".$id;
                 $qua = $_SESSION[$c];
-                if ($qua == 0){continue;}
-                
-                $sqlLogInsert = "INSERT INTO log_coins(coin_id,user_id,quantity)
+                if ($coins[$i] == 0){
+                    $sqlLogInsert = "INSERT INTO log_coins(coin_id,user_id,quantity)
                                  VALUES('$id','$chooseUser','$qua');";
-                $insertLog = mysqli_query($conn, $sqlLogInsert) or die(mysqli_error($conn));
-                
-                $sqlCoins = 
-                        "SELECT "
-                        . "released, "
-                        . "value "
-                        . "FROM coins WHERE id ='".$id."';";
+                    $insertLog = mysqli_query($conn, $sqlLogInsert) or die(mysqli_error($conn));
 
-                $queryCoins = mysqli_query($conn,$sqlCoins);
-                $resultCoins = mysqli_fetch_assoc($queryCoins);
+                    $sqlCoins = 
+                            "SELECT "
+                            . "released, "
+                            . "value "
+                            . "FROM coins WHERE id ='".$id."';";
 
-                $qua += $resultCoins['released'];
+                    $queryCoins = mysqli_query($conn,$sqlCoins);
+                    $resultCoins = mysqli_fetch_assoc($queryCoins);
 
-                $udpSqlCoins = 
-                        "UPDATE coins SET "
-                        . "released = '".$qua."' "
-                        . "WHERE id ='".$id."'";
-                $queryUpdCoins = mysqli_query($conn,$udpSqlCoins);
-                
-                
-                $sqlMoney = 
-                        "SELECT "
-                        . "coin_value_earned, "
-                        . "coin_value_returned "
-                        . "FROM money_records WHERE id ='".$chooseUser."';";
+                    $qua += $resultCoins['released'];
 
-                $queryMoney = mysqli_query($conn,$sqlMoney);
-                $resultMoney = mysqli_fetch_assoc($queryMoney);
+                    $udpSqlCoins = 
+                            "UPDATE coins SET "
+                            . "released = '".$qua."' "
+                            . "WHERE id ='".$id."'";
+                    $queryUpdCoins = mysqli_query($conn,$udpSqlCoins);
 
-                $earned     = 0;
-                $returned   = 0;
-                $earned     += $resultMoney['coin_value_earned'];
-                $returned   += $resultMoney['coin_value_returned'];
-                $coinValue  = $resultCoins['value'];
-                $udpSqlMoney = "";
-                
-                if ($_SESSION[$c] < 0) {
-                    $returned += $_SESSION[$c] * $coinValue * (-1);
-                    $udpSqlMoney = 
-                        "UPDATE money_records SET "
-                        . "coin_value_returned = '".$returned."' "
-                        . "WHERE id ='".$chooseUser."'";
+
+                    $sqlMoney = 
+                            "SELECT "
+                            . "bills_value_earned, "
+                            . "bills_value_returned "
+                            . "FROM money_records WHERE id ='".$chooseUser."';";
+
+                    $queryMoney = mysqli_query($conn,$sqlMoney);
+                    $resultMoney = mysqli_fetch_assoc($queryMoney);
+
+                    $earned     = 0;
+                    $returned   = 0;
+                    $earned     += $resultMoney['bills_value_earned'];
+                    $returned   += $resultMoney['bills_value_returned'];
+                    $coinValue  = $resultCoins['value'];
+                    $udpSqlMoney = "";
+
+                    if ($_SESSION[$c] < 0) {
+                        $returned += $_SESSION[$c] * $coinValue * (-1);
+                        $udpSqlMoney = 
+                            "UPDATE money_records SET "
+                            . "bills_value_returned = '".$returned."' "
+                            . "WHERE id ='".$chooseUser."'";
+                    }
+                    if ($_SESSION[$c] > 0) {
+                        $earned += $_SESSION[$c] * $coinValue;
+                        $udpSqlMoney = 
+                            "UPDATE money_records SET "
+                            . "bills_value_earned = '".$earned."' "
+                            . "WHERE id ='".$chooseUser."'";
+                    }
+
+                    $queryUpdMoney = mysqli_query($conn,$udpSqlMoney);
+                    
                 }
-                if ($_SESSION[$c] > 0) {
-                    $earned += $_SESSION[$c] * $coinValue;
-                    $udpSqlMoney = 
-                        "UPDATE money_records SET "
-                        . "coin_value_earned = '".$earned."' "
-                        . "WHERE id ='".$chooseUser."'";
+                else {
+                
+                    $sqlLogInsert = "INSERT INTO log_coins(coin_id,user_id,quantity)
+                                     VALUES('$id','$chooseUser','$qua');";
+                    $insertLog = mysqli_query($conn, $sqlLogInsert) or die(mysqli_error($conn));
+
+                    $sqlCoins = 
+                            "SELECT "
+                            . "released, "
+                            . "value "
+                            . "FROM coins WHERE id ='".$id."';";
+
+                    $queryCoins = mysqli_query($conn,$sqlCoins);
+                    $resultCoins = mysqli_fetch_assoc($queryCoins);
+
+                    $qua += $resultCoins['released'];
+
+                    $udpSqlCoins = 
+                            "UPDATE coins SET "
+                            . "released = '".$qua."' "
+                            . "WHERE id ='".$id."'";
+                    $queryUpdCoins = mysqli_query($conn,$udpSqlCoins);
+
+
+                    $sqlMoney = 
+                            "SELECT "
+                            . "coin_value_earned, "
+                            . "coin_value_returned "
+                            . "FROM money_records WHERE id ='".$chooseUser."';";
+
+                    $queryMoney = mysqli_query($conn,$sqlMoney);
+                    $resultMoney = mysqli_fetch_assoc($queryMoney);
+
+                    $earned     = 0;
+                    $returned   = 0;
+                    $earned     += $resultMoney['coin_value_earned'];
+                    $returned   += $resultMoney['coin_value_returned'];
+                    $coinValue  = $resultCoins['value'];
+                    $udpSqlMoney = "";
+
+                    if ($_SESSION[$c] < 0) {
+                        $returned += $_SESSION[$c] * $coinValue * (-1);
+                        $udpSqlMoney = 
+                            "UPDATE money_records SET "
+                            . "coin_value_returned = '".$returned."' "
+                            . "WHERE id ='".$chooseUser."'";
+                    }
+                    if ($_SESSION[$c] > 0) {
+                        $earned += $_SESSION[$c] * $coinValue;
+                        $udpSqlMoney = 
+                            "UPDATE money_records SET "
+                            . "coin_value_earned = '".$earned."' "
+                            . "WHERE id ='".$chooseUser."'";
+                    }
+
+                    $queryUpdMoney = mysqli_query($conn,$udpSqlMoney);
+
                 }
-                
-                $queryUpdMoney = mysqli_query($conn,$udpSqlMoney);
-                
             }  
             $user = array();
             $user[] = $chooseUser;

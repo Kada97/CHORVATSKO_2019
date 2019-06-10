@@ -48,6 +48,7 @@
                     case 'viewUserPrep':        include 'viewUserPrep.php';             break;
                     case 'viewTeamPrep':        include 'viewTeamPrep.php';             break;
                     case 'addGameResult':       include 'addGameResult.php';            break;
+                    case 'divideResults':       include 'divideResults.php';            break;
                 
                     default:
                         //If not buttons, then select-option menu
@@ -60,6 +61,7 @@
                             case 'editUserPage':        include 'editUserPage.php';             break;
                             case 'giftPage':            include 'giftsPage.php';                break;
                             case 'addGameResultPage':   include 'addGameResultPage.php';        break;
+                            case 'divideResultsPage':   include 'divideResultsPage.php';        break;
             
                             //USER cases
 

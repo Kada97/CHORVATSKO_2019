@@ -31,7 +31,7 @@
             <br>
             
             <div class = "formRow" id="bankManagerRow">
-                <label for="chooseUser" class="bankManagerUserLabel">Výběr uživatele</label>
+                <label for="chooseUser" class="bankManagerCoinLabel">Výběr uživatele</label>
                 <select id = "chooseUser" 
                         name = "chooseUser"
                         class="bankManagerValueField"
@@ -60,9 +60,23 @@
                     ?>
                 </select>
             </div>
+            <br><hr><br>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin1" class="bankManagerCoinLabel">Coin 1 :</label>
+                <label for = "coin0" class="bankManagerCoinLabel">Bankovky - HODNOTA: </label>
+                <input type="number"
+                       id="coin0"
+                       name="coin0" 
+                       class="bankManagerValueField"
+                       value = "<?php echo (isset($_SESSION['coin0']) ? htmlspecialchars($_SESSION['coin0']) : '0')?>"
+                       >
+            </div>
+            
+            <br><hr><br>
+            <br><hr><br>
+            
+            <div class = "formRow" id="bankManagerRow">
+                <label for = "coin1" class="bankManagerCoinLabel">Bez hodnoty, levný, bílý (10): </label>
                 <input type="number"
                        id="coin1"
                        name="coin1" 
@@ -72,7 +86,7 @@
             </div>
             
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin2" class="bankManagerCoinLabel">Coin 2 :</label>
+                <label for = "coin2" class="bankManagerCoinLabel">Bez hodnoty, levný, červený (50): </label>
                 <input type="number" 
                        id="coin2"
                        name="coin2" 
@@ -82,17 +96,17 @@
             </div>
             
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin3" class="bankManagerCoinLabel">Coin 3 :</label>
+                <label for = "coin5" class="bankManagerCoinLabel">Bez hodnoty, levný, černý (100): </label>
                 <input type="number" 
-                       id="coin3"
-                       name="coin3" 
+                       id="coin5"
+                       name="coin5" 
                        class="bankManagerValueField"
-                       value = "<?php echo (isset($_SESSION['coin3']) ? htmlspecialchars($_SESSION['coin3']) : '0')?>"
+                       value = "<?php echo (isset($_SESSION['coin5']) ? htmlspecialchars($_SESSION['coin5']) : '0')?>"
                        >
             </div>
             
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin4" class="bankManagerCoinLabel">Coin 4 :</label>
+                <label for = "coin4" class="bankManagerCoinLabel">Bez hodnoty, levný, zelený (250): </label>
                 <input type="number" 
                        id="coin4"
                        name="coin4" 
@@ -102,17 +116,19 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin5" class="bankManagerCoinLabel">Coin 5 :</label>
+                <label for = "coin3" class="bankManagerCoinLabel">Bez hodnoty, levný, modrý (500): </label>
                 <input type="number" 
-                       id="coin5"
-                       name="coin5" 
+                       id="coin3"
+                       name="coin3" 
                        class="bankManagerValueField"
-                       value = "<?php echo (isset($_SESSION['coin5']) ? htmlspecialchars($_SESSION['coin5']) : '0')?>"
+                       value = "<?php echo (isset($_SESSION['coin3']) ? htmlspecialchars($_SESSION['coin3']) : '0')?>"
                        >
             </div>
 
+            <br><hr><br>
+            
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin6" class="bankManagerCoinLabel">Coin 6 :</label>
+                <label for = "coin6" class="bankManagerCoinLabel">Bez hodnoty, standardní, bílý (10): </label>
                 <input type="number" 
                        id="coin6"
                        name="coin6" 
@@ -122,7 +138,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin7" class="bankManagerCoinLabel">Coin 7 :</label>
+                <label for = "coin7" class="bankManagerCoinLabel">Bez hodnoty, standardní, červený (50): </label>
                 <input type="number" 
                        id="coin7"
                        name="coin7" 
@@ -132,17 +148,17 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin8" class="bankManagerCoinLabel">Coin 8 :</label>
+                <label for = "coin10" class="bankManagerCoinLabel">Bez hodnoty, standardní, černý (100): </label>
                 <input type="number" 
-                       id="coin8"
-                       name="coin8" 
+                       id="coin10"
+                       name="coin10" 
                        class="bankManagerValueField"
-                       value = "<?php echo (isset($_SESSION['coin8']) ? htmlspecialchars($_SESSION['coin8']) : '0')?>"
+                       value = "<?php echo (isset($_SESSION['coin10']) ? htmlspecialchars($_SESSION['coin10']) : '0')?>"
                        >
             </div>
-
+            
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin9" class="bankManagerCoinLabel">Coin 9 :</label>
+                <label for = "coin9" class="bankManagerCoinLabel">Bez hodnoty, standardní, zelený (250): </label>
                 <input type="number" 
                        id="coin9"
                        name="coin9" 
@@ -152,17 +168,21 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin10" class="bankManagerCoinLabel">Coin 10 :</label>
+                <label for = "coin8" class="bankManagerCoinLabel">Bez hodnoty, standardní, modrý (500): </label>
                 <input type="number" 
-                       id="coin10"
-                       name="coin10" 
+                       id="coin8"
+                       name="coin8" 
                        class="bankManagerValueField"
-                       value = "<?php echo (isset($_SESSION['coin10']) ? htmlspecialchars($_SESSION['coin10']) : '0')?>"
+                       value = "<?php echo (isset($_SESSION['coin8']) ? htmlspecialchars($_SESSION['coin8']) : '0')?>"
                        >
             </div>
 
+            <br><hr><br>
+            <br><hr><br>
+            <br><hr><br>
+            
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin11" class="bankManagerCoinLabel">Coin 11 :</label>
+                <label for = "coin11" class="bankManagerCoinLabel">S hodnotou, standardní, bílý (5): </label>
                 <input type="number" 
                        id="coin11"
                        name="coin11" 
@@ -172,7 +192,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin12" class="bankManagerCoinLabel">Coin 12 :</label>
+                <label for = "coin12" class="bankManagerCoinLabel">S hodnotou, standardní, modrý (10): </label>
                 <input type="number" 
                        id="coin12"
                        name="coin12" 
@@ -182,7 +202,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin13" class="bankManagerCoinLabel">Coin 13 :</label>
+                <label for = "coin13" class="bankManagerCoinLabel">S hodnotou, standardní, zelený (25): </label>
                 <input type="number" 
                        id="coin13"
                        name="coin13" 
@@ -192,7 +212,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin14" class="bankManagerCoinLabel">Coin 14 :</label>
+                <label for = "coin14" class="bankManagerCoinLabel">S hodnotou, standardní, červený (50): </label>
                 <input type="number" 
                        id="coin14"
                        name="coin14" 
@@ -202,7 +222,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin15" class="bankManagerCoinLabel">Coin 15 :</label>
+                <label for = "coin15" class="bankManagerCoinLabel">S hodnotou, standardní, černý (100): </label>
                 <input type="number" 
                        id="coin15"
                        name="coin15" 
@@ -210,9 +230,11 @@
                        value = "<?php echo (isset($_SESSION['coin15']) ? htmlspecialchars($_SESSION['coin15']) : '0')?>"
                        >
             </div>
+            
+            <br><hr><br>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin16" class="bankManagerCoinLabel">Coin 16 :</label>
+                <label for = "coin16" class="bankManagerCoinLabel">S hodnotou, ostatní, červený (5): </label>
                 <input type="number" 
                        id="coin16"
                        name="coin16" 
@@ -222,7 +244,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin17" class="bankManagerCoinLabel">Coin 17 :</label>
+                <label for = "coin17" class="bankManagerCoinLabel">S hodnotou, ostatní, zelený (25): </label>
                 <input type="number" 
                        id="coin17"
                        name="coin17" 
@@ -232,7 +254,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin18" class="bankManagerCoinLabel">Coin 18 :</label>
+                <label for = "coin18" class="bankManagerCoinLabel">S hodnotou, ostatní, světlemodrý (50): </label>
                 <input type="number" 
                        id="coin18"
                        name="coin18" 
@@ -242,7 +264,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin19" class="bankManagerCoinLabel">Coin 19 :</label>
+                <label for = "coin19" class="bankManagerCoinLabel">S hodnotou, ostatní, bílofialový (500): </label>
                 <input type="number" 
                        id="coin19"
                        name="coin19" 
@@ -250,9 +272,11 @@
                        value = "<?php echo (isset($_SESSION['coin19']) ? htmlspecialchars($_SESSION['coin19']) : '0')?>"
                        >
             </div>
+            
+            <br><hr><br>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin2" class="bankManagerCoinLabel">Coin 20 :</label>
+                <label for = "coin2" class="bankManagerCoinLabel">S hodnotou, ultimate, červený (5): </label>
                 <input type="number" 
                        id="coin20"
                        name="coin20" 
@@ -262,7 +286,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin21" class="bankManagerCoinLabel">Coin 21 :</label>
+                <label for = "coin21" class="bankManagerCoinLabel">S hodnotou, ultimate, tmavěmodrý (10): </label>
                 <input type="number" 
                        id="coin21"
                        name="coin21" 
@@ -272,7 +296,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin22" class="bankManagerCoinLabel">Coin 22 :</label>
+                <label for = "coin22" class="bankManagerCoinLabel">S hodnotou, ultimate, zelený (25): </label>
                 <input type="number" 
                        id="coin22"
                        name="coin22" 
@@ -282,7 +306,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin23" class="bankManagerCoinLabel">Coin 23 :</label>
+                <label for = "coin23" class="bankManagerCoinLabel">S hodnotou, ultimate, světlemodrý (50): </label>
                 <input type="number" 
                        id="coin23"
                        name="coin23" 
@@ -292,7 +316,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin24" class="bankManagerCoinLabel">Coin 24 :</label>
+                <label for = "coin24" class="bankManagerCoinLabel">S hodnotou, ultimate, černý (100): </label>
                 <input type="number" 
                        id="coin24"
                        name="coin24" 
@@ -302,7 +326,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin25" class="bankManagerCoinLabel">Coin 25 :</label>
+                <label for = "coin25" class="bankManagerCoinLabel">S hodnotou, ultimate, fialový (500): </label>
                 <input type="number" 
                        id="coin25"
                        name="coin25" 
@@ -312,7 +336,7 @@
             </div>
 
             <div class = "formRow" id="bankManagerRow">
-                <label for = "coin26" class="bankManagerCoinLabel">Coin 26 :</label>
+                <label for = "coin26" class="bankManagerCoinLabel">S hodnotou, ultimate, žlutý (1000): </label>
                 <input type="number" 
                        id="coin26"
                        name="coin26" 
