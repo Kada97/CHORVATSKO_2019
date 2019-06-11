@@ -48,6 +48,7 @@
                     case 'viewUserPrep':        include 'viewUserPrep.php';             break;
                     case 'viewTeamPrep':        include 'viewTeamPrep.php';             break;
                     case 'addGameResult':       include 'addGameResult.php';            break;
+                    case 'addKolikResult':      include 'addKolikResult.php';           break;
                     case 'divideResults':       include 'divideResults.php';            break;
                 
                     default:
@@ -62,6 +63,8 @@
                             case 'giftPage':            include 'giftsPage.php';                break;
                             case 'addGameResultPage':   include 'addGameResultPage.php';        break;
                             case 'divideResultsPage':   include 'divideResultsPage.php';        break;
+                            case 'addKolikResultPage':   include 'addKolikResultPage.php';      break;
+                            case 'generateArchEnemy':   generateArchEnemy();                    break;
             
                             //USER cases
 
@@ -71,6 +74,7 @@
                             case 'useCodePage':         include 'useCodePage.php';              break;
                             case 'profile':             include 'myProfilePage.php';            break;
                             case 'team':                include 'myTeamPage.php';               break;
+                            case 'gatheredInstr':       include 'gatheredInstruction.php';      break;
                             
                             //USER and HOST cases
 

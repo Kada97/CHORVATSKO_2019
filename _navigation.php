@@ -74,6 +74,9 @@
                 <option value = "useCodePage">
                     Použít kód
                 </option>
+                <option value = "gatheredInstr">
+                    Nasbírané indície ke kolíkům
+                </option>
                 <option value = "sendMoneyPage">
                     Poslat peníze
                 </option>
@@ -123,6 +126,9 @@
                 <option value = "addGameResultPage">
                     Zadat výsledky z týmových her
                 </option>
+                <option value = "addKolikResultPage">
+                    Zadat výsledky z kolíku
+                </option>
                 <option value = "divideResultsPage">
                     Rozdělit získané peníze
                 </option>
@@ -149,6 +155,9 @@
                 </option>
                 <option value = "ratT">
                     Žebříček týmů
+                </option>
+                <option value = "generateArchEnemy">
+                    Vygenerovat nové úhlavní nepřítele
                 </option>
                 
                 
