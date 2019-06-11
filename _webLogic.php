@@ -50,6 +50,7 @@
                     case 'addGameResult':       include 'addGameResult.php';            break;
                     case 'addKolikResult':      include 'addKolikResult.php';           break;
                     case 'divideResults':       include 'divideResults.php';            break;
+                    case 'addKolikResult':      include 'addKolikResult.php';           break;
                 
                     default:
                         //If not buttons, then select-option menu

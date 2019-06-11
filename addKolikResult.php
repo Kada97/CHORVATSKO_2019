@@ -1,115 +1,183 @@
 <?php
 
-
     if (isSet($_POST['addKolikResult'])) {
+        $addKolikResultsUserId      = array();
+        $addKolikResultsUserTeamId  = array();
+        $addKolikResultsUsername    = array();
         $addKolikResultsUkradeno    = array();
+        $addKolikResultsUkradenoOrg = array();
         $addKolikResultsUchraneno   = array();
         $addKolikResultsKolikTeam   = array();
         $addKolikResultsTresty      = array();
+        $addKolikResultsIsLost      = array();
 
-        foreach($_POST['addKolikResultsUkradeno'] as $myarray) {
-            $addKolikResultsUkradeno[] = $myarray;
+        foreach($_POST['userId'] as $myarray) {
+            $addKolikResultsUserId[] = $myarray;
         }
-        foreach($_POST['addKolikResultsUchraneno'] as $myarray) {
-            $addKolikResultsUchraneno[] = $myarray;
+        foreach($_POST['userteam'] as $myarray) {
+            $addKolikResultsUserTeamId[] = $myarray;
         }
-        foreach($_POST['addKolikResultsKolikTeam'] as $myarray) {
-            $addKolikResultsKolikTeam[] = $myarray;
+        foreach($_POST['username'] as $myarray) {
+            $addKolikResultsUsername[] = $myarray;
         }
-        foreach($_POST['addKolikResultsTresty'] as $myarray) {
-            $addKolikResultsTresty[] = $myarray;
-        }
-
-
-            include '_connectDB.php';
-
-            $sqlGetTeamNames = "SELECT name FROM teams;";
-            $queryGetTeamNames = mysqli_query($conn, $sqlGetTeamNames);
-
-
-            $teamForSql = "";
-
-
-            $rows = array();
-            while($resultTeamNames = mysqli_fetch_array($queryGetTeamNames)){
-                $rows[] = $resultTeamNames;
+        foreach($_POST['addKolikResultsUkradeno'] as $value) {
+            $get = null;
+            $get = $value;
+            $state = 'false';
+            if ($get != 0 || $get != '0') {
+                $state = 'true';
             }
-
-            foreach($rows as $row) {
-                $teamForSql .= ','.$row[0];
+            $addKolikResultsUkradeno[] = $state;
+        }
+        foreach($_POST['addKolikResultsUkradenoOrg'] as $value) {
+            $get = null;
+            $get = $value;
+            $state = 'false';
+            if ($get != 0 || $get != '0') {
+                $state = 'true';
             }
+            $addKolikResultsUkradenoOrg[] = $state;
+        }
+        foreach($_POST['addKolikResultsUchraneno'] as $key => $value) {
+            $get = null;
+            $get = $value;
+            $state = 'false';
+            if ($get != 0 || $get != '0') {
+                $state = 'true';
+            }
+            $addKolikResultsUchraneno[] = $state;
+        }
+        foreach($_POST['addKolikResultsKolikTeam'] as $key => $value) {
+            $get = null;
+            $get = $value;
+            $state = 'false';
+            if ($get != 0 || $get != '0') {
+                $state = 'true';
+            }
+            $addKolikResultsKolikTeam[] = $value;
+        }
+        foreach($_POST['addKolikResultsTresty'] as $key => $value) {
+            $get = null;
+            $get = $value;
+            $state = 'false';
+            if ($get != 0 || $get != '0') {
+                $state = 'true';
+            }
+            $addKolikResultsTresty[] = $state;
+        }
 
-            $whenPlayed = $addGameDatePlayed.' '.$addGameTimePlayed.':00';
-            $averageResult = 0;
-            $iamLastValue = 100;
-            $iamFirstValue = 0;
-            $iamLastId = 0;
-            $iamFirstId = 0;
-            $gameResultString = "";
-            for ($i = 0; $i < count($addGameResults); $i++){
-                
-                $id = $i+1;
-                
-                $averageResult += $addGameResults[$i];
-                if ($addGameResults[$i] < $iamLastValue) {
-                    $iamLastValue = $addGameResults[$i];
-                    $iamLastId = $i+1;
+        include '_connectDB.php';
+        
+        $numberTeams = array_unique($addKolikResultsUserTeamId);
+        for ($i=1; $i <=count($numberTeams);$i++){
+            $addKolikResultsIsLost[] = $i;
+        }
+            
+        for ($i=0; $i <count($addKolikResultsUserId);$i++){
+            $userSqlSetBase     = "UPDATE data_user_kolik SET ";
+            $userSqlSetAppend   = "";
+            $userUpdate         = false;
+            
+            if ($addKolikResultsUkradeno[$i] == 'true') {
+                $userSqlSetAppend .= "total_captured_points = total_captured_points+1";
+                $userUpdate = true;
+            }
+            if ($addKolikResultsUkradenoOrg[$i] == 'true') {
+                if ($userUpdate) {$userSqlSetAppend .= ', ';}
+                $userSqlSetAppend .= "total_captured_points_org = total_captured_points_org+1";
+                $userUpdate = true;
+            }
+            if ($addKolikResultsUchraneno[$i] == 'true') {
+                if ($userUpdate) {$userSqlSetAppend .= ', ';}
+                $userSqlSetAppend .= "total_saved_points = total_saved_points+1";
+                $userUpdate = true;
+            }
+            if ($addKolikResultsTresty[$i] == 'true') {
+                if ($userUpdate) {$userSqlSetAppend .= ', ';}
+                $userSqlSetAppend .= "total_points_penalty = total_points_penalty+1";
+                $userUpdate = true;
+            }
+            if ($userUpdate) {
+                $userSqlSetAppend .= " WHERE id = '".$addKolikResultsUserId[$i]."';";
+                mysqli_query($conn, $userSqlSetBase . $userSqlSetAppend);
+            }
+        }      
+        
+        for ($i=0; $i <count($addKolikResultsUserId);$i++){
+            
+            if ($addKolikResultsUkradeno[$i] == 'true' || $addKolikResultsUchraneno[$i] == 'true' || $addKolikResultsUkradenoOrg[$i] == 'true') {
+                $username = $addKolikResultsUsername[$i];
+                $teamId = $addKolikResultsUserTeamId[$i];
+                $captured = $addKolikResultsKolikTeam[$i];
+                if ($addKolikResultsUkradenoOrg[$i] == 'true') {
+                    $captured = 0;
                 }
-                if ($addGameResults[$i] > $iamFirstValue) {
-                    $iamFirstValue = $addGameResults[$i];
-                    $iamFirstId = $i+1;
-                }
-                $gameResultString .= ",'".$addGameResults[$i]."'";
-                
-                
-                $wonMoney = $addGameBudget * $addGameResults[$i] / 100;
-                
-                $wonMoney10 = $wonMoney / 10;
-                $upd = "UPDATE teamdata SET mon_to_div_from_cpt_remains = '".$wonMoney10."' WHERE id='" . $id . "';";
-                $query = mysqli_query($conn, $upd);
-                
-                $selectTeamMoney = "SELECT mon_to_div_from_cg_remains, mon_cg_tot FROM teamdata WHERE id='" . $id . "';";
-                $querySelectTeamMoney = mysqli_query($conn, $selectTeamMoney);
-                $resultSelectTeamMoney = mysqli_fetch_assoc($querySelectTeamMoney);
-                $oldValue = $resultSelectTeamMoney['mon_to_div_from_cg_remains'];
-                $cgMoney = $resultSelectTeamMoney['mon_cg_tot'];
-                
-                $selectTeamSize = "SELECT numb_members FROM teams WHERE id='" . $id . "';";
-                $querySelectTeamSize = mysqli_query($conn, $selectTeamSize);
-                $resultSelectTeamSize = mysqli_fetch_assoc($querySelectTeamSize);
-                
-                $teamSize = $resultSelectTeamSize['numb_members'];
-                $budgetForUsers = $wonMoney * 0.65 / $teamSize;
-                $budgetForDivide = $wonMoney * 0.35;
-                
-                $newValue = $budgetForDivide + $oldValue;
-                $newValueMoney = $cgMoney + $wonMoney;
-                $upd = "UPDATE teamdata SET mon_to_div_from_cg_remains = '".$newValue."', mon_cg_tot = '".$newValueMoney."' WHERE id='" . $id . "';";
-                $query = mysqli_query($conn, $upd);
-                
-                
-                
-                $upd = "UPDATE money_records SET money_tg_received  = money_tg_received + {$budgetForUsers} WHERE teamId='" . $id . "';";
-                $query = mysqli_query($conn, $upd);
-                
-                
-                
+                $logSqlSet = "INSERT INTO log_kolik (username,userteamId,captured_kolik_idTeam) VALUES ('$username','$teamId','$captured');";
+            
+                mysqli_query($conn, $logSqlSet);
             }
-            $averageResult /= count($addGameResults);
-            $firstlastDiff = $iamFirstValue - $iamLastValue;
-
-            $columns = "game_name,when_played,game_popularity,preparation_time_minutes,game_budget,average_result,firstlast_diff{$teamForSql}";
-            $values = "('$addGameName','$whenPlayed','$addGamePopularity','$addGamePreparation','$addGameBudget','$averageResult','$firstlastDiff'{$gameResultString})";
-
-            $sqlCreateGameData = "INSERT INTO data_team_games"
-                    . "($columns) "
-                    . "VALUES "
-                    . "$values";
-            $createGameData = mysqli_query($conn, $sqlCreateGameData) or die(mysqli_error($conn));
-
         }
+        
+        for ($i=0; $i <count($addKolikResultsUserId);$i++){
+            $teamSqlSetBase     = "UPDATE data_team_kolik SET ";
+            $teamSqlSetAppend   = "";
+            $teamUpdate         = false;
+            
+            if ($addKolikResultsUkradeno[$i] == 'true') {
+                $teamSqlSetAppend .= "total_points_earned = total_points_earned+1";
+                $teamUpdate = true;
+            }
+            if ($addKolikResultsUkradenoOrg[$i] == 'true') {
+                if ($teamUpdate) {$teamSqlSetAppend .= ', ';}
+                $teamSqlSetAppend .= "total_points_earned_org = total_points_earned_org+1";
+                $teamUpdate = true;
+            }
+            if ($addKolikResultsUchraneno[$i] == 'true') {
+                $teamId = $addKolikResultsUserTeamId[$i];
+                for ($j = 0;$j < count($addKolikResultsIsLost); $j++) {
+//                    if ($key = array_search($teamId, $addKolikResultsIsLost) !== false) {
+//                        unset($addKolikResultsIsLost[$key]);
+//                    }
+                    if ($teamId == $addKolikResultsIsLost[$j]) {
+                        $addKolikResultsIsLost[$j] = 0;
+                    }
+                }
+                
+                if ($teamUpdate) {$teamSqlSetAppend .= ', ';}
+                $teamSqlSetAppend .= "total_points_saved = total_points_saved+1";
+                $teamUpdate = true;
+            }
+            if ($addKolikResultsTresty[$i] == 'true') {
+                if ($teamUpdate) {$teamSqlSetAppend .= ', ';}
+                $teamSqlSetAppend .= "total_points_penalty = total_points_penalty+1";
+                $teamUpdate = true;
+            }
+            if ($teamUpdate) {
+                $teamSqlSetAppend .= " WHERE id = '".$addKolikResultsUserTeamId[$i]."';";
+                echo $teamSqlSetBase . $teamSqlSetAppend . '<br>';
+                mysqli_query($conn, $teamSqlSetBase . $teamSqlSetAppend);
+            }
+        }
+        
+        if(count($addKolikResultsIsLost) > 0) {
+            for ($i=0; $i <count($addKolikResultsIsLost);$i++){
+                if ($addKolikResultsIsLost[$i] != 0) {
+                    $lostSql = "UPDATE data_team_kolik SET total_points_lost = total_points_lost+1 WHERE id = '".$addKolikResultsIsLost[$i]."';";
+                    mysqli_query($conn, $lostSql);
+                }
+            }
+        }
+        
+        $numberTeams2 = array_unique($addKolikResultsUserTeamId);
+        for ($i=0; $i <count($numberTeams2);$i++){
+            $sqlBestProfit = "SELECT username,(total_captured_points+(total_saved_points*2)+(total_captured_points_org*2)-total_points_penalty) as result FROM data_user_kolik WHERE userteamId = '".$numberTeams2[$i]."' ORDER BY result DESC LIMIT 0,1;";
+            $queryBestProfitFirstUser   = mysqli_query($conn,$sqlBestProfit);
+            $resultBestProfitFirstUser  = mysqli_fetch_array($queryBestProfitFirstUser);
+            
+            $bestUsername = ($resultBestProfitFirstUser[0] == null ? 'n/a' : $resultBestProfitFirstUser[0]. ' (score: ' . $resultBestProfitFirstUser[1] . ')');
+        
+            $balanceAndBestSql = "UPDATE data_team_kolik SET total_points_balance = total_points_earned+(total_points_saved*2)+(total_points_earned_org*2)-total_points_lost-total_points_penalty, best_player = '".$bestUsername."' WHERE id = '".$numberTeams2[$i]."';";
+            mysqli_query($conn, $balanceAndBestSql);
+        }
+        
     }
-    if($_SESSION['error_msg'] != null){
-        include 'addGameResultPage.php';
-    }
-?>
