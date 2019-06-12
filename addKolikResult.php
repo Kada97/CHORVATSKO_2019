@@ -10,6 +10,7 @@
         $addKolikResultsKolikTeam   = array();
         $addKolikResultsTresty      = array();
         $addKolikResultsIsLost      = array();
+        $archEnemy                  = array();
 
         foreach($_POST['userId'] as $myarray) {
             $addKolikResultsUserId[] = $myarray;
@@ -68,6 +69,13 @@
 
         include '_connectDB.php';
         
+        $sqlGetArchEnemy = "SELECT arch_enemy_team FROM data_team_kolik;";
+        $getArchEnemyQuery = mysqli_query($conn, $sqlGetArchEnemy);
+
+        while($getArchEnemyResult = mysqli_fetch_assoc($getArchEnemyQuery)){
+            $archEnemy[] = $getArchEnemyResult['arch_enemy_team'];
+        } 
+        
         $numberTeams = array_unique($addKolikResultsUserTeamId);
         for ($i=1; $i <=count($numberTeams);$i++){
             $addKolikResultsIsLost[] = $i;
@@ -79,7 +87,14 @@
             $userUpdate         = false;
             
             if ($addKolikResultsUkradeno[$i] == 'true') {
-                $userSqlSetAppend .= "total_captured_points = total_captured_points+1";
+                $whoStelt = $addKolikResultsUserTeamId[$i];
+                $myArchEnemy = $archEnemy[$whoStelt-1];
+                $whoLostKolik = $addKolikResultsKolikTeam[$i];
+                if ($myArchEnemy == $whoLostKolik){
+                    $userSqlSetAppend .= "total_captured_points = total_captured_points+2";
+                } else {
+                    $userSqlSetAppend .= "total_captured_points = total_captured_points+1";
+                }
                 $userUpdate = true;
             }
             if ($addKolikResultsUkradenoOrg[$i] == 'true') {
@@ -114,6 +129,12 @@
                 }
                 $logSqlSet = "INSERT INTO log_kolik (username,userteamId,captured_kolik_idTeam) VALUES ('$username','$teamId','$captured');";
             
+                $whoStelt = $addKolikResultsUserTeamId[$i];
+                $myArchEnemy = $archEnemy[$whoStelt-1];
+                $whoLostKolik = $addKolikResultsKolikTeam[$i];
+                if ($myArchEnemy == $whoLostKolik){
+                    mysqli_query($conn, $logSqlSet);
+                }
                 mysqli_query($conn, $logSqlSet);
             }
         }
@@ -124,7 +145,14 @@
             $teamUpdate         = false;
             
             if ($addKolikResultsUkradeno[$i] == 'true') {
-                $teamSqlSetAppend .= "total_points_earned = total_points_earned+1";
+                $whoStelt = $addKolikResultsUserTeamId[$i];
+                $myArchEnemy = $archEnemy[$whoStelt-1];
+                $whoLostKolik = $addKolikResultsKolikTeam[$i];
+                if ($myArchEnemy == $whoLostKolik){
+                    $teamSqlSetAppend .= "total_points_earned = total_points_earned+2";
+                } else {
+                    $teamSqlSetAppend .= "total_points_earned = total_points_earned+1";
+                }
                 $teamUpdate = true;
             }
             if ($addKolikResultsUkradenoOrg[$i] == 'true') {
@@ -134,13 +162,8 @@
             }
             if ($addKolikResultsUchraneno[$i] == 'true') {
                 $teamId = $addKolikResultsUserTeamId[$i];
-                for ($j = 0;$j < count($addKolikResultsIsLost); $j++) {
-//                    if ($key = array_search($teamId, $addKolikResultsIsLost) !== false) {
-//                        unset($addKolikResultsIsLost[$key]);
-//                    }
-                    if ($teamId == $addKolikResultsIsLost[$j]) {
-                        $addKolikResultsIsLost[$j] = 0;
-                    }
+                if (in_array($teamId, $addKolikResultsIsLost)) {
+                    $addKolikResultsIsLost[$teamId-1] = 0;
                 }
                 
                 if ($teamUpdate) {$teamSqlSetAppend .= ', ';}
@@ -162,7 +185,7 @@
         if(count($addKolikResultsIsLost) > 0) {
             for ($i=0; $i <count($addKolikResultsIsLost);$i++){
                 if ($addKolikResultsIsLost[$i] != 0) {
-                    $lostSql = "UPDATE data_team_kolik SET total_points_lost = total_points_lost+1 WHERE id = '".$addKolikResultsIsLost[$i]."';";
+                        $lostSql = "UPDATE data_team_kolik SET total_points_lost = total_points_lost+1 WHERE id = '".$addKolikResultsIsLost[$i]."';";
                     mysqli_query($conn, $lostSql);
                 }
             }
@@ -176,7 +199,7 @@
             
             $bestUsername = ($resultBestProfitFirstUser[0] == null ? 'n/a' : $resultBestProfitFirstUser[0]. ' (score: ' . $resultBestProfitFirstUser[1] . ')');
         
-            $balanceAndBestSql = "UPDATE data_team_kolik SET total_points_balance = total_points_earned+(total_points_saved*2)+(total_points_earned_org*2)-total_points_lost-total_points_penalty, best_player = '".$bestUsername."' WHERE id = '".$numberTeams2[$i]."';";
+            $balanceAndBestSql = "UPDATE data_team_kolik SET total_points_balance = total_points_earned+(total_points_saved*2)+(total_points_earned_org*2)-(total_points_lost*2)-total_points_penalty, best_player = '".$bestUsername."' WHERE id = '".$numberTeams2[$i]."';";
             mysqli_query($conn, $balanceAndBestSql);
         }
         
