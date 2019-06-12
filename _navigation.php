@@ -38,12 +38,6 @@
                 <option value = "ratT">
                     Žebříček týmů
                 </option>
-                <option value = "profile" disabled>
-                    Můj profil
-                </option>
-                <option value = "team" disabled>
-                    Můj tým
-                </option>
                 <option value = "gameResults">
                     Výsledky z her
                 </option>
@@ -82,9 +76,6 @@
                 </option>
                 <option value = "manuals">
                     Návody a pokyny
-                </option>
-                <option value = "about">
-                    O tomto webu
                 </option>
                 <option value = "LOGOUT">
                     Logout
@@ -159,8 +150,9 @@
                 <option value = "generateArchEnemy">
                     Vygenerovat nové úhlavní nepřítele
                 </option>
-                
-                
+                <option value = "cleanPointsPage">
+                    Úklidový manažer
+                </option>
                 <option value = "LOGOUT">
                     Logout
                 </option>

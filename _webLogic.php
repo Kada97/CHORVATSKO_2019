@@ -51,6 +51,7 @@
                     case 'addKolikResult':      include 'addKolikResult.php';           break;
                     case 'divideResults':       include 'divideResults.php';            break;
                     case 'addKolikResult':      include 'addKolikResult.php';           break;
+                    case 'cleanPoints':         include 'cleanPoints.php';              break;
                 
                     default:
                         //If not buttons, then select-option menu
@@ -64,8 +65,9 @@
                             case 'giftPage':            include 'giftsPage.php';                break;
                             case 'addGameResultPage':   include 'addGameResultPage.php';        break;
                             case 'divideResultsPage':   include 'divideResultsPage.php';        break;
-                            case 'addKolikResultPage':   include 'addKolikResultPage.php';      break;
+                            case 'addKolikResultPage':  include 'addKolikResultPage.php';       break;
                             case 'generateArchEnemy':   generateArchEnemy();                    break;
+                            case 'cleanPointsPage':     include 'cleanPointsPage.php';          break;
             
                             //USER cases
 

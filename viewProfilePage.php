@@ -92,6 +92,7 @@
     $koliky = 0;
     $koliky += $allResult['total_captured_points'];
     $koliky += $allResult['total_saved_points'];
+    $koliky += $allResult['total_captured_points_org'];
     
     echo'
             
@@ -102,6 +103,7 @@
 		<div class="profileHeaderRow"><label>Nasbíraných kolíků: </label>'.$koliky.'<br></div>
 		<div class="profileHeaderRow"><label>Z toho ukořistěných: </label>'.$allResult['total_captured_points'].'<br></div>
 		<div class="profileHeaderRow"><label>Z toho zachráněných: </label>'.$allResult['total_saved_points'].'<br></div>
+		<div class="profileHeaderRow"><label>Z toho od organizátorů: </label>'.$allResult['total_captured_points_org'].'<br></div>
 		<div class="profileHeaderRow"><label>Poslední evidovaný kolík: </label>'.$allResult['last_capture'].'<hr><br></div>
 		    
 		<div class="profileHeaderRow"><label>Počet zahájených webových her: </label>'.$allResult['wg_numb_played_total'].'<br></div>

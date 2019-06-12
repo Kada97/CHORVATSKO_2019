@@ -12,6 +12,9 @@
                 <option value = "aboutCurrency">
                     O platidlech a porovnání
                 </option>
+                <option value = "about">
+                    O tomto webu
+                </option>
             </select>
         </div>
     </form>
