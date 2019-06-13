@@ -241,7 +241,7 @@
             $resultBestActiveThirdUser  = mysqli_fetch_array($queryBestActiveThirdUser);
             
             
-            $sqlConvertTeamIdToName = "SELECT name FROM teams WHERE id = '".$id."'";
+            $sqlConvertTeamIdToName = "SELECT name FROM teams WHERE id = '$id'";
             $queryConvertTeamIdToName = mysqli_query($conn, $sqlConvertTeamIdToName);
             $resultConvertTeamIdToName = mysqli_fetch_assoc($queryConvertTeamIdToName);
             $teamName = $resultConvertTeamIdToName['name'];
@@ -249,7 +249,7 @@
             $sqlTeamGamesWonMoney = "SELECT SUM({$teamName}*game_budget/100) as result FROM data_team_games WHERE 1 ";
             $queryTeamGamesWonMoney = mysqli_query($conn, $sqlTeamGamesWonMoney);
             $resultTeamGamesWonMoney = mysqli_fetch_assoc($queryTeamGamesWonMoney);
-            $mon_cg_tot = $resultTeamGamesWonMoney['result'];
+            $mon_cg_tot += $resultTeamGamesWonMoney['result'];
             
             $gifts_team_tot                             = $gifts_team_by_dom_tot + $gifts_team_by_org_tot + $gifts_team_by_cl_tot + $gifts_team_by_sys_tot;
             $gifts_team_val                             = $gifts_team_by_dom_val + $gifts_team_by_org_val + $gifts_team_by_cl_val + $gifts_team_by_sys_val;

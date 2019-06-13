@@ -111,11 +111,17 @@
                 <option value = "addNewCodePage">
                     Přidat kód
                 </option>
+                <option value = "addNewIndividualGamePage">
+                    Přidat individuání hru
+                </option>
                 <option value = "editUserPage">
                     Upravit uživatele
                 </option>
                 <option value = "addGameResultPage">
                     Zadat výsledky z týmových her
+                </option>
+                <option value = "addIndividualGameResultPage">
+                    Zadat výsledky z her pro jednotlivce
                 </option>
                 <option value = "addKolikResultPage">
                     Zadat výsledky z kolíku
