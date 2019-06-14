@@ -35,17 +35,16 @@
     }
    
     echo'
-            
-        <div class="sharedProfileDiv profileDivUser">
-        <label class="infoL">Profil '.$allResult['username'].'</label>
-            <div class="profileHeader">
-    
-		<div class="profileHeaderRow"><label>Potřebuji pomoc: </label>'.(($allResult['needhelp'] == "OK") ? "Nepotřebuji" : "Prosím pomoc").'<hr><br></div>
+        <div class="sharedProfileDiv">
+        <fieldset>  
+            <legend id="legendGeneralDescription" align="center">Profil '.$allResult['username'].'</legend>
+                
+		<div  class = "formRow" id ="birthdateLikeRow"><label>Potřebuji pomoc: </label>'.(($allResult['needhelp'] == "OK") ? "Nepotřebuji" : "Prosím pomoc").'<hr><br></div>
 		    
-		<div class="profileHeaderRow"><label>Jméno: </label>'.$allResult['firstname'].'<br></div>
-                <div class="profileHeaderRow"><label>Příjmení: </label>'.$allResult['lastname'].'<br></div>
-                <div class="profileHeaderRow"><label>Věk: </label> '.$allResult['age'].'<br></div>
-                <div class="profileHeaderRow"><label>Narozeniny: </label> '.$allResult['birthdate'].'<br></div>
+		<label>Jméno: </label><div class = "formRow" id ="birthdateLikeRow">'.$allResult['firstname'].'<br></div>
+                <label>Příjmení: </label><div class = "formRow" id ="birthdateLikeRow">'.$allResult['lastname'].'<br></div>
+                <div class = "formRow" id ="birthdateLikeRow"><label>Věk: </label> '.$allResult['age'].'<br></div>
+                <div class = "formRow" id ="birthdateLikeRow"><label>Narozeniny: </label> '.$allResult['birthdate'].'<br></div>
 		<div class="profileHeaderRow"><label>Pohlaví: </label>  '.$allResult['sex'].'<hr><br></div>
 		    
 		<div class="profileHeaderRow"><label>Vytvoření účtu: </label>'.$allResult['firstaccess'].'<br></div>
@@ -61,8 +60,9 @@
 		<div class="profileHeaderRow"><label>Verifikační kód: </label>'.$allResult['verification'].'<br><hr></div>
                     
 		    
-            </div>
-        </div>
+           
+        </div> 
+        </fieldset>
     ';
     $accMon = 0;
     
@@ -242,6 +242,9 @@
 		
             </div>
         </div>
+        
+
+</div>
     ';          
 
 ?>

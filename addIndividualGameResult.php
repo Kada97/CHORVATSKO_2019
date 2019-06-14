@@ -70,7 +70,7 @@
                 $resultUsernameIndividual = mysqli_fetch_assoc($queryUsernameIndividual);
                 $usernameIndividual = $resultUsernameIndividual['username'];
 
-                $sqlUpdateScore = "UPDATE data_game_best_score SET score = '$moneyWon', number_overcomes = number_overcomes+1, username = '$usernameIndividual', userId = '$chooseUserTo' WHERE gamename = '$whichGame'";
+                $sqlUpdateScore = "UPDATE data_game_best_score SET gametype = 1, score = '$moneyWon', number_overcomes = number_overcomes+1, username = '$usernameIndividual', userId = '$chooseUserTo' WHERE gamename = '$whichGame'";
                 $queryUpdateScore = mysqli_query($conn, $sqlUpdateScore);
             }
 

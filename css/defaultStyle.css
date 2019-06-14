@@ -109,6 +109,14 @@ hr{
     width: 60%;
 }
 
+.sharedProfileDiv {
+    background-color: inherit;
+    position: relative;
+    left: 10%;
+    top: 15px;
+    width: 80%;
+}
+
 /* ---------------------------------------------------------------------------*/
 /* - MAJOR FORMS -------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
@@ -198,6 +206,14 @@ hr{
 }
 
 #giftMajorForm {
+    background-color: inherit;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    margin-top: 50px;
+}
+
+.profileHeader {
     background-color: inherit;
     position: relative;
     left: 5%;
@@ -305,6 +321,20 @@ fieldset .formRow > label {
     font-size: 2em;
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+.sharedProfileDiv > label {
+    width: 35%;
+    margin-right:1em;
+    padding-top:0.2em;
+    text-align:right;
+    font-weight:bold;
+    font-size: 1.5em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    color: darkcyan;
+    padding-right: 20px;
+    display: block;
 }
 
 .txtField {
@@ -819,5 +849,12 @@ select option:disabled {
     margin-top: 50px;
     padding-left: 50px;
     padding-top: 10px;
+}
+
+.profileHeaderRow {
+    position: relative;
+    width: 60%;
+    left: 35%;
+    
     
 }

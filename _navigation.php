@@ -39,14 +39,17 @@
                     Žebříček týmů
                 </option>
                 <option value = "gameResults">
-                    Výsledky z her
+                    Výsledky z her týmů
+                </option>
+                <option value = "gameIndivResults">
+                    Výsledky z her jednotlivců
                 </option>
                 <option value = "achievements">
                     Rekordy
                 </option>
-                <option value = "gameSpiner" disabled>
+                <!--<option value = "gameSpiner" disabled>
                     Hra Automat
-                </option>
+                </option>-->
                 <option value = "addPicPage">
                    Přidat obrázek
                 </option>
@@ -59,9 +62,9 @@
                 <option value = "uplGall">
                     Všechny mé uploadované obrázky
                 </option>
-                <option value = "buttDownPublAll" disabled>
+                <!--<option value = "buttDownPublAll" disabled>
                     Stáhnout vše veřejné
-                </option>
+                </option>-->
                 <option value = "dailyQuestion">
                     Hádanky
                 </option>

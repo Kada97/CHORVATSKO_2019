@@ -97,6 +97,7 @@
                             case 'ratT':                include 'ratingTeamsPage.php';          break;
                             case 'achievements':        include 'achievementsPage.php';         break;
                             case 'gameResults':         include 'gameResultsPage.php';          break;
+                            case 'gameIndivResults':    include 'gameIndivResultsPage.php';     break;
                             case 'uplGall':             include 'uplGalleryPage.php';           break;
                             case 'publGall':            include 'publicGalleryPage.php';        break;
                             case 'calendar':            include 'calendarCamp.php';             break;
