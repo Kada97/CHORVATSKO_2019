@@ -55,6 +55,16 @@
                     $teamData = mysqli_query($conn, "INSERT INTO teamdata() VALUES();") or die(mysqli_error($conn));
                     $teamData = mysqli_query($conn, "INSERT INTO data_team_kolik(team) VALUES('$name');") or die(mysqli_error($conn));
                     
+//                    $numberRowCheckQuery  = mysqli_query($conn, "SELECT id FROM teams;");
+//                    $teamNumber = mysqli_num_rows($numberRowCheckQuery);
+//                    $teamNumber++;
+//                    
+//                    $columnName = 'team_';
+//                    $columnName.=$teamNumber;
+                    $addColumnTeam = mysqli_query($conn, "ALTER TABLE data_team_games ADD `$name` DECIMAL(20,2) NOT NULL;") or die(mysqli_error($conn));
+                    
+                    
+                    
                     echo("<meta http-equiv='refresh' content='0'>");
                 } else {
                     $_SESSION['error_msg'] = 'Chyba při vytváření!';

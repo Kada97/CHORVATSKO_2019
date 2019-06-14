@@ -59,7 +59,7 @@
 		<div class="userViewRow"><label>Název týmu:</label>  '.$name.'<br></div>
 		<div class="userViewRow"><label>Skóre:</label>  '.$score.'<br></div>
                 <div class="userViewRow"><label>Barva:</label>  '.$color.'</div>
-		<div class="userViewRow"><label>Počet nasbíraných kolíků:</label>  '.$kolik.'</div>
+		<div class="userViewRow"><label>Počet nasbíraných bodů - kolíků:</label>  '.$kolik.'</div>
 		<div class="userViewRow"><label>Kapitán:</label>  '.$cpt.'<br></div>
 		    
                 <div class="settingsViewUser">

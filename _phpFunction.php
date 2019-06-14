@@ -151,4 +151,60 @@
         
         return $nB;
     }
+    
+    function generateArchEnemy() {
+        include '_connectDB.php';
+        
+        $teamNumberSql = mysqli_query($conn, "SELECT id FROM teams;");
+        $numbTeams = mysqli_num_rows($teamNumberSql);
+        
+        $teamArchEnemyOldSql = "SELECT arch_enemy_team FROM data_team_kolik ORDER BY id ASC;";
+        $teamArchEnemyOldQuery = mysqli_query($conn,$teamArchEnemyOldSql);
+        $teamArchEnemyOldResult = mysqli_fetch_assoc($teamArchEnemyOldQuery);
+        
+        
+        
+        $teams = array();
+        $oldEnemy = array();
+        for ($i = 1; $i <= $numbTeams; $i++) {
+            $teams[] = $i;
+            $teamArchEnemyOldSql = "SELECT arch_enemy_team FROM data_team_kolik WHERE id = '$i';";
+            $teamArchEnemyOldQuery = mysqli_query($conn,$teamArchEnemyOldSql);
+            $teamArchEnemyOldResult = mysqli_fetch_assoc($teamArchEnemyOldQuery);
+            $oldEnemy[] = $teamArchEnemyOldResult['arch_enemy_team'];
+            echo $teamArchEnemyOldResult['arch_enemy_team'];
+        }
+        
+        $archEnemy = $teams;
+        
+        $isSameValues = true;
+        while($isSameValues){
+            shuffle($archEnemy);
+            
+            for ($i = 0; $i < count($archEnemy); $i++) {
+                if($i+1 == $archEnemy[$i]){
+                    break;
+                }
+                
+                if ($oldEnemy[$i] == $archEnemy[$i]) {
+                    $isSameValues = true;
+                    break;
+                }
+                else {
+                    $isSameValues = false;
+                }
+            }
+            
+        }
+        
+        for ($i = 1; $i <= count($archEnemy); $i++) {
+            $idTeam = $archEnemy[$i-1];
+            
+            $sql = "UPDATE data_team_kolik SET arch_enemy_team = '".$idTeam."' WHERE id = '$i';";
+            mysqli_query($conn, $sql);
+            
+        }
+        
+        
+    }
 ?>

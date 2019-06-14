@@ -5,6 +5,7 @@
         $userdataColumns = getUserdataColumnsForTeamdata();
         $moneyrecordsColumns = getMoneyrecordsColumns();
         $teamdataColumns = getTeamdataColumns();
+        $kolikdataColumns = getKolikdataColumns();
         
         for ($i = 0; $i < count($teamsToRecount); $i++) {
             $id                                         = $teamsToRecount[$i];
@@ -14,6 +15,7 @@
             $mon_all_bet                                = 0;
             $cg_kolik_total                             = 0;
             $score                                      = 0;
+            $mon_cg_tot                                 = 0;
             $wg_numb_played_won                         = 0;
             $wg_numb_played_lost                        = 0;
             $wg_numb_played_draw                        = 0;
@@ -57,13 +59,22 @@
             $data_bank_trans_val_received               = 0;
             $data_bank_trans_numb_sent                  = 0;
             $data_bank_trans_numb_received              = 0;
-                
-            // For each team, count all KOLÍK pts
-            $sqlGetKolikPts = "SELECT SUM(total_captured_points + total_saved_points) as result FROM data_user_kolik WHERE userteamId = '".$id."';";
-            $queryGetKolikPts = mysqli_query($conn,$sqlGetKolikPts);
-            $resultGetKolikPts = mysqli_fetch_assoc($queryGetKolikPts);
-            $cg_kolik_total += $resultGetKolikPts['result'];
 
+            // KOLIKDATA GET
+            for ($j = 0; $j < count($kolikdataColumns); $j++) {
+                $tempColumn = $kolikdataColumns[$j];
+
+                $sqlGenericValueKolikdata = "SELECT ".$tempColumn." AS result FROM data_team_kolik WHERE id = '".$id."';";
+                $queryGenericValueKolikdata = mysqli_query($conn,$sqlGenericValueKolikdata);
+                $resultGenericValueKolikdata = mysqli_fetch_array($queryGenericValueKolikdata);
+
+                switch ($tempColumn) {
+
+                    case 'total_points_balance': $cg_kolik_total += $resultGenericValueKolikdata[0]; break;
+                }
+            }
+            
+            
             // USERDATA GET
             for ($j = 0; $j < count($userdataColumns); $j++) {
                 $tempColumn = $userdataColumns[$j];
@@ -228,8 +239,18 @@
             $resultBestActiveFirstUser  = mysqli_fetch_array($queryBestActiveFirstUser);
             $resultBestActiveSecondUser = mysqli_fetch_array($queryBestActiveSecondUser);
             $resultBestActiveThirdUser  = mysqli_fetch_array($queryBestActiveThirdUser);
-
-
+            
+            
+            $sqlConvertTeamIdToName = "SELECT name FROM teams WHERE id = '$id'";
+            $queryConvertTeamIdToName = mysqli_query($conn, $sqlConvertTeamIdToName);
+            $resultConvertTeamIdToName = mysqli_fetch_assoc($queryConvertTeamIdToName);
+            $teamName = $resultConvertTeamIdToName['name'];
+            
+            $sqlTeamGamesWonMoney = "SELECT SUM({$teamName}*game_budget/100) as result FROM data_team_games WHERE 1 ";
+            $queryTeamGamesWonMoney = mysqli_query($conn, $sqlTeamGamesWonMoney);
+            $resultTeamGamesWonMoney = mysqli_fetch_assoc($queryTeamGamesWonMoney);
+            $mon_cg_tot += $resultTeamGamesWonMoney['result'];
+            
             $gifts_team_tot                             = $gifts_team_by_dom_tot + $gifts_team_by_org_tot + $gifts_team_by_cl_tot + $gifts_team_by_sys_tot;
             $gifts_team_val                             = $gifts_team_by_dom_val + $gifts_team_by_org_val + $gifts_team_by_cl_val + $gifts_team_by_sys_val;
             $gifts_user_val                             = $gifts_user_by_dom_val + $gifts_user_by_org_val + $gifts_user_by_cl_val + $gifts_user_by_sys_val + $gifts_team_by_cpt_val;
@@ -265,6 +286,7 @@
             . "mon_all_won = '".$mon_all_won."', "
             . "mon_all_lost = '".$mon_all_lost."', "
             . "mon_all_bet = '".$mon_all_bet."', "
+            . "mon_cg_tot = '".$mon_cg_tot."', "
             . "cg_kolik_total = '".$cg_kolik_total."', "
             . "score = '".$score."', "
             . "wg_numb_played_tot = '".$wg_numb_played_tot."', "
@@ -422,5 +444,10 @@
             'gifts_team_by_sys_val',
             'qr_mon_teams',
             'code_mon',
+        );
+    }
+    function getKolikdataColumns() {
+        return array(
+            'total_points_balance',
         );
     }

@@ -38,21 +38,18 @@
                 <option value = "ratT">
                     Žebříček týmů
                 </option>
-                <option value = "profile" disabled>
-                    Můj profil
-                </option>
-                <option value = "team" disabled>
-                    Můj tým
-                </option>
                 <option value = "gameResults">
-                    Výsledky z her
+                    Výsledky z her týmů
+                </option>
+                <option value = "gameIndivResults">
+                    Výsledky z her jednotlivců
                 </option>
                 <option value = "achievements">
                     Rekordy
                 </option>
-                <option value = "gameSpiner" disabled>
+                <!--<option value = "gameSpiner" disabled>
                     Hra Automat
-                </option>
+                </option>-->
                 <option value = "addPicPage">
                    Přidat obrázek
                 </option>
@@ -65,23 +62,23 @@
                 <option value = "uplGall">
                     Všechny mé uploadované obrázky
                 </option>
-                <option value = "buttDownPublAll" disabled>
+                <!--<option value = "buttDownPublAll" disabled>
                     Stáhnout vše veřejné
-                </option>
+                </option>-->
                 <option value = "dailyQuestion">
                     Hádanky
                 </option>
                 <option value = "useCodePage">
                     Použít kód
                 </option>
+                <option value = "gatheredInstr">
+                    Nasbírané indície ke kolíkům
+                </option>
                 <option value = "sendMoneyPage">
                     Poslat peníze
                 </option>
                 <option value = "manuals">
                     Návody a pokyny
-                </option>
-                <option value = "about">
-                    O tomto webu
                 </option>
                 <option value = "LOGOUT">
                     Logout
@@ -117,8 +114,23 @@
                 <option value = "addNewCodePage">
                     Přidat kód
                 </option>
+                <option value = "addNewIndividualGamePage">
+                    Přidat individuání hru
+                </option>
                 <option value = "editUserPage">
                     Upravit uživatele
+                </option>
+                <option value = "addGameResultPage">
+                    Zadat výsledky z týmových her
+                </option>
+                <option value = "addIndividualGameResultPage">
+                    Zadat výsledky z her pro jednotlivce
+                </option>
+                <option value = "addKolikResultPage">
+                    Zadat výsledky z kolíku
+                </option>
+                <option value = "divideResultsPage">
+                    Rozdělit získané peníze
                 </option>
                 <option value = "bankManager">
                     Bankovní manažer
@@ -144,8 +156,12 @@
                 <option value = "ratT">
                     Žebříček týmů
                 </option>
-                
-                
+                <option value = "generateArchEnemy">
+                    Vygenerovat nové úhlavní nepřítele
+                </option>
+                <option value = "cleanPointsPage">
+                    Úklidový manažer
+                </option>
                 <option value = "LOGOUT">
                     Logout
                 </option>

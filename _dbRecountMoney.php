@@ -48,6 +48,9 @@
             $coin_value_total               = 0;
             $coin_value_earned              = 0;
             $coin_value_returned            = 0;
+            $bills_value_total              = 0;
+            $bills_value_earned             = 0;
+            $bills_value_returned           = 0;
             $score                          = 0;
             
             $sqlBankRecords = 
@@ -80,7 +83,9 @@
                     . "money_extra_clean_lost, "
                     . "money_sanctions, "
                     . "coin_value_earned, "
-                    . "coin_value_returned "
+                    . "coin_value_returned, "
+                    . "bills_value_earned, "
+                    . "bills_value_returned "
                     . "FROM money_records WHERE id ='".$id."';";
             
             $queryBankRecords = mysqli_query($conn,$sqlBankRecords);
@@ -115,8 +120,11 @@
             $money_sanctions                += $resultBankRecords['money_sanctions'];
             $coin_value_earned              += $resultBankRecords['coin_value_earned'];
             $coin_value_returned            += $resultBankRecords['coin_value_returned'];
+            $bills_value_earned             += $resultBankRecords['bills_value_earned'];
+            $bills_value_returned           += $resultBankRecords['bills_value_returned'];
             
             $coin_value_total               += $coin_value_earned - $coin_value_returned;
+            $bills_value_total              += $bills_value_earned - $bills_value_returned;
             $money_extra_clean_balance      += $money_extra_clean_won - $money_extra_clean_lost;
             $money_extra_qr_total           += $money_extra_qr_ig + $money_extra_qr_tg;
             $money_extra_web_total          += $money_extra_web_rank + $money_extra_web_achievements;
@@ -129,8 +137,8 @@
             $money_total_lost               += $money_web_lost + $money_ig_lost + $money_sanctions;
             $money_total_won                += $money_web_won + $money_tg_received + $money_ig_won;
             $money_total_bet                += $money_web_bet + $money_ig_bet;
-            $money_total_received           += $money_received + $money_extra_total + $coin_value_total;
-            $money_actual_total             += $money_total_received + $money_total_won - $money_total_lost - $money_sent;
+            $money_total_received           += $money_received + $money_extra_total;
+            $money_actual_total             += $money_total_received + $money_total_won - $money_total_lost - $money_sent - $coin_value_total - $bills_value_total;
             
             $score                          += $money_total_won + $money_extra_total - $money_extra_clean_balance + $money_extra_clean_won - $money_sanctions;
             
@@ -151,6 +159,7 @@
                     . "money_extra_qr_total = '".$money_extra_qr_total."', "
                     . "money_extra_clean_balance = '".$money_extra_clean_balance."', "
                     . "coin_value_total = '".$coin_value_total."', "
+                    . "bills_value_total = '".$bills_value_total."', "
                     . "score = '".$score."' "
                     . "WHERE id ='".$id."'";
             $queryUpdBankRecords = mysqli_query($conn,$udpSqlBankRecords);

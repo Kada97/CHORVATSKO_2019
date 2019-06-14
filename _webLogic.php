@@ -38,6 +38,7 @@
                 switch ($key) {
                     case 'addNewTeam':          include 'addNewTeam.php';               break;
                     case 'addNewCode':          include 'addNewCode.php';               break;
+                    case 'addNewGame':          include 'addNewIndividualGame.php';     break;
                     case 'confirmCoins':        include 'confirmCoins.php';             break;
                     case 'addNewPic':           include 'addNewPicture.php';            break;
                     case 'confirmSendMoney':    include 'sendMoney.php';                break;
@@ -47,6 +48,12 @@
                     case 'confirmSendGift':     include 'gifts.php';                    break;
                     case 'viewUserPrep':        include 'viewUserPrep.php';             break;
                     case 'viewTeamPrep':        include 'viewTeamPrep.php';             break;
+                    case 'addGameResult':       include 'addGameResult.php';            break;
+                    case 'addIndividualGameResult': include 'addIndividualGameResult.php'; break;
+                    case 'addKolikResult':      include 'addKolikResult.php';           break;
+                    case 'divideResults':       include 'divideResults.php';            break;
+                    case 'addKolikResult':      include 'addKolikResult.php';           break;
+                    case 'cleanPoints':         include 'cleanPoints.php';              break;
                 
                     default:
                         //If not buttons, then select-option menu
@@ -58,6 +65,13 @@
                             case 'bankManager':         include 'coinManagerPage.php';          break;
                             case 'editUserPage':        include 'editUserPage.php';             break;
                             case 'giftPage':            include 'giftsPage.php';                break;
+                            case 'addGameResultPage':   include 'addGameResultPage.php';        break;
+                            case 'addIndividualGameResultPage': include 'addIndividualGameResultPage.php'; break;
+                            case 'divideResultsPage':   include 'divideResultsPage.php';        break;
+                            case 'addKolikResultPage':  include 'addKolikResultPage.php';       break;
+                            case 'generateArchEnemy':   generateArchEnemy();                    break;
+                            case 'cleanPointsPage':     include 'cleanPointsPage.php';          break;
+                            case 'addNewIndividualGamePage': include 'addNewIndividualGamePage.php'; break;
             
                             //USER cases
 
@@ -67,6 +81,7 @@
                             case 'useCodePage':         include 'useCodePage.php';              break;
                             case 'profile':             include 'myProfilePage.php';            break;
                             case 'team':                include 'myTeamPage.php';               break;
+                            case 'gatheredInstr':       include 'gatheredInstruction.php';      break;
                             
                             //USER and HOST cases
 
@@ -82,6 +97,7 @@
                             case 'ratT':                include 'ratingTeamsPage.php';          break;
                             case 'achievements':        include 'achievementsPage.php';         break;
                             case 'gameResults':         include 'gameResultsPage.php';          break;
+                            case 'gameIndivResults':    include 'gameIndivResultsPage.php';     break;
                             case 'uplGall':             include 'uplGalleryPage.php';           break;
                             case 'publGall':            include 'publicGalleryPage.php';        break;
                             case 'calendar':            include 'calendarCamp.php';             break;
